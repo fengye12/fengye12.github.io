@@ -4,10 +4,11 @@ a {
 }
 #navbar{
   margin-bottom:0;
+  background:#ece1df;
 }
 #navbar a:hover,#navbar .active a{
    color: red;
-  background-color:#ece1df;
+  background-color:#fff;
 }
 pre {
   margin-left: 3%;
