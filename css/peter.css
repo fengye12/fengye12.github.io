@@ -13,10 +13,21 @@ a {
 pre {
   margin-left: 3%;
 }
+body{
+  background:#ece1df;
+}
+.typo{
+background:#fff;
+}
 .banner h1{
   padding:100px 0;
   font-size: 1.8em;
   text-align:center;
   background: url(../images/tao-bg.png) no-repeat center center;
   background-size: cover;
+}
+@media (min-width: 768px){
+.navbar-nav{
+  float:right;
+}
 }
