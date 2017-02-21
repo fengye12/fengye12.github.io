@@ -23,7 +23,7 @@ hi, I am fengye12.Welcom to my blog !
 <ul>
 
 
-<li><a href="http://github.com/fengye12/">Github</a></li>
+<li><a href="http://github.io/fengye12/">Github</a></li>
 
 </ul>
 <p><br /><b>Contact Information:</b></p>
