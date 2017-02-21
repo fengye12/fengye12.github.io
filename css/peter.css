@@ -2,61 +2,20 @@
 a {
   text-decoration: none;
 }
-
-#wrapper {
-  max-width: 800px;
-  margin: 0 auto 20px;
-  padding-left: 1em;
-  padding-right: 1em;
+#navbar{
+  margin-bottom:0;
 }
-
+#navbar a:hover,#navbar .active a{
+   color: red;
+  background-color:#ece1df;
+}
 pre {
   margin-left: 3%;
 }
-
-#menu
-{
-  position: relative;
-  background: #dbdbdb no-repeat;
-  height: 40px;
-  padding: 0px 0px 0px 0px;
-  margin: 0px 0px 10px 0px;
-}
-
-#menu ul li
-{
-  display: inline;
-  line-height: 40px;
-  padding-left: 3px;
-}
-
-#menu ul li.first
-{
-  border-left: 0px;
-}
-
-#menu ul li a
-{
-  background-color: transparent;
-  background-repeat: repeat-x;
-  padding: 8px 12px 8px 12px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-ul.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
-}
-
-ul.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
-}
-
-@media (max-width: 480px) {
-  blockquote {
-    margin: 0;
-  }
+.banner h1{
+  padding:100px 0;
+  font-size: 1.8em;
+  text-align:center;
+  background: url(../images/tao-bg.png) no-repeat center center;
+  background-size: cover;
 }
