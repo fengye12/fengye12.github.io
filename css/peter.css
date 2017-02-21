@@ -7,6 +7,11 @@ a {
   padding-left: 5%;
   padding-top: 1em;
   padding-bottom: 1em;
+  background:#97F6C1;
+}
+#wrapperBox{
+  background:url('../images/tao-bg.png') no-repeat center center;
+  background-size:cover;
 }
 #wrapper {
   max-width: 800px;
