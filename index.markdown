@@ -1,15 +1,9 @@
 ---
 layout: default
-title: fengye12's Corner
+title: FENGYE'S CORNER
 ---
-{% highlight console %}
-$ git clone ...
-{% endhighlight %}
-{% highlight ruby %}
-put hello
-{% endhighlight %}
+<div style="width:80%;margin:0 auto">
 hi, I am fengye12.Welcom to my blog !
-
 
 <p><br /><b>My Blog:</b></p>
   <ul class="posts">
@@ -18,6 +12,12 @@ hi, I am fengye12.Welcom to my blog !
     {% endfor %}
   </ul>
 
+<!-- {% highlight console %}
+$ git clone ...
+{% endhighlight %}
+{% highlight ruby %}
+put hello
+{% endhighlight %} -->
 <p><b>Find me on:</b></p>
 
 <ul>
@@ -31,5 +31,5 @@ hi, I am fengye12.Welcom to my blog !
 <blockquote>
 欢迎所有朋友加我微信：zjs123zjs1234
 </blockquote>
-
+</div>
 [oss]:http://en.wikipedia.org/wiki/Open_source
