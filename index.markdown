@@ -4,7 +4,10 @@ title: fengye12's Corner
 ---
 {% highlight console %}
 $ git clone ...
-{% endhihgtlight %}
+{% endhighlight %}
+{% highlight ruby %}
+put hello
+{% endhighlight %}
 hi, I am fengye12.Welcom to my blog !
 
 
