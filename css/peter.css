@@ -16,6 +16,10 @@ pre {
 body{
   background:#ece1df;
 }
+.contentBox{
+  width:80%;
+  margin:0 auto;
+}
 .typo{
 background:#fff;
 }
@@ -27,6 +31,10 @@ background:#fff;
   background-size: cover;
 }
 @media (min-width: 768px){
+  .contentBox{
+    width:100%;
+    margin:0 auto;
+  }
 .navbar-nav{
   float:right;
 }

@@ -54,7 +54,7 @@ iframe {
 
 /* 块/段落引用 */
 blockquote {
-	margin: 1em 4em 1em 2em;
+	// margin: 1em 4em 1em 2em;
 	padding: 0.6em 1em;
 	background: #f1f1f1;
 }
@@ -243,4 +243,12 @@ h1, h2, h3, h4, h5, h6{
 /* TODO: 供首字下沉使用 */
 .typo-first{
 
+}
+@media (max-width: 768px){
+body{
+font-size:14px;
+}
+.navbar-nav{
+  float:right;
+}
 }
