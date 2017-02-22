@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: 再见 Rails
 ---
 
@@ -30,7 +30,7 @@ title: 再见 Rails
 
 - [http://podcast.crater.io/](http://podcast.crater.io/) 作者 Josh Owens  十年 Rails 开发者，Peter 很早就是他的粉丝了，现在也是全职做 meteor 了。
 
-- [Jeffery Way](http://laracasts.com) 那天在 podcast 里提到，在美国圈子里一提起 Rails 很多人都是：恶心。但是 Jeffery 还是替 Rails 说话的：Rails changed everything! 
+- [Jeffery Way](http://laracasts.com) 那天在 podcast 里提到，在美国圈子里一提起 Rails 很多人都是：恶心。但是 Jeffery 还是替 Rails 说话的：Rails changed everything!
 
 ### 拥抱新技术得大于失，很值
 
