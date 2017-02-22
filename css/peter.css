@@ -30,6 +30,9 @@ font-size:14px;
   background-size: cover;
 }
 @media (min-width: 768px){
+.navbar-nav{
+  float:right;
+}
 .contentBox .post-content-preview{
 font-size:12px;
 }
