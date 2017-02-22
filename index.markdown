@@ -3,10 +3,13 @@ layout: default
 title: FENGYE'S CORNER
 ---
 <div style="contentBox">
-<h3>hi, I am fengye12.Welcom to my blog !</h3>
+<!-- <h3>hi, I am fengye12.Welcom to my blog !</h3> -->
   <ul class="posts">
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+      <li>
+      <h3>
+          <span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+      </h3>
       <div class="post-content-preview">
             {{ post.content | strip_html | truncate:100 }}
         </div>
