@@ -2,7 +2,7 @@
 layout: default
 title: FENGYE'S CORNER
 ---
-<div style="contentBox">
+<div class="contentBox">
 <!-- <h3>hi, I am fengye12.Welcom to my blog !</h3> -->
   <ul class="posts">
     {% for post in site.posts %}
