@@ -23,6 +23,9 @@ body{
 .typo{
 background:#fff;
 }
+.contentBox .post-content-preview{
+font-size:14px;
+}
 .banner h1{
   padding:100px 0;
   font-size: 1.8em;
@@ -37,5 +40,8 @@ background:#fff;
   }
 .navbar-nav{
   float:right;
+}
+.contentBox .post-content-preview{
+font-size:12px;
 }
 }
