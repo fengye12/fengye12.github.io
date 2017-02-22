@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 再见 Rails
-author:"fengye"
+author: ‘fengye’
 ---
 
 林语堂说，读书就像找情人，不喜欢了就换。我今天要讲的也是一个跟曾经的最爱的技术 Rails 分手的故事，而且会是一种非常没良心的决绝，老话说：提起裤子不认人！
