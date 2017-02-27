@@ -10,13 +10,22 @@
  <title>fengye's corner</title>
   <link rel="stylesheet" href="/css/idangerous.swiper.css">
 
+  <!--[if IE]>
+#navbar,.swiper-container{
+  position:relative;
+  left:0;
+  top:0;
+}
+  <![endif]-->
+
   <!--[if lt IE 9]>
               <script src="/js/html5shiv.min.js"></script>
               <script src="/js/respond.min.js"></script>
-          <![endif]-->
+    <![endif]-->
   <style>
 /* Demo Styles */
 html {
+
   height: 100%;
   background: #f7f7f7;
 }
@@ -39,7 +48,7 @@ body {
   font-size: 36px;
   position: relative;
   width: 90%;
-    margin-top: 80px;
+  margin-top: 80px;
   margin-bottom: 0;
   line-height: 50px;
   height: 50px;
@@ -222,6 +231,16 @@ color: #fff;
   var swiperH=$(".swiper-container").height()-20;
   $(".typo").css('margin-top', swiperH);
 
+
+  var isIE = function(ver){
+      var b = document.createElement('b')
+      b.innerHTML = '<!--[if IE ' + ver + ']><i></i><![endif]-->'
+      return b.getElementsByTagName('i').length === 1
+  }
+var ie=isIE();
+if(ie){
+
+}
   var mySwiper = new Swiper('.swiper-container',{
     pagination: '.pagination',
     paginationClickable: true,
