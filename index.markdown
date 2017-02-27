@@ -27,12 +27,10 @@ $ git clone ...
 put hello
 {% endhighlight %} -->
 <p><b>Find me on:</b></p>
-
 <ul>
 <li><a href="http://github.io/fengye12/">Github</a></li>
 </ul>
 <p><b>Contact Information:</b></p>
-
 <blockquote>
 欢迎所有朋友加我微信：zjs123zjs1234
 </blockquote>
