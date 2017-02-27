@@ -125,7 +125,6 @@ clip: rect(0 auto 25px 0);
   position: absolute;
   top: 0;
   width: 90%;
-  padding: 0 15px;
   border-radius: 10px;
   background: #fff;
   z-index: 2;
@@ -156,6 +155,16 @@ color: #fff;
     -o-animation-delay: .5s; */
      display: none;
 }
+#navbar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.swiper-container{
+  position: fixed;
+  top: 50px;
+}
 @-webkit-keyframes hue {
   from {
     -webkit-filter: hue-rotate(0deg);
@@ -165,6 +174,10 @@ color: #fff;
     -webkit-filter: hue-rotate(-360deg);
   }
 }
+@media (max-width: 768px){
+.typo{
+width: 95%;
+}}
 @media (min-width: 767px){
 #little-title{
   height: 40px;
@@ -198,7 +211,7 @@ color: #fff;
     <div class="pagination"></div>
   </div>
   <div id="wrapper" class="typo">
-    <h1 style="text-align: center; margin-bottom: 0;">枫叶博客List's</h1>
+    <h1 style="text-align: center; margin-bottom: 0;">枫叶博客List</h1>
     <br>
     {{ content }}
     <br>
