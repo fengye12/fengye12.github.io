@@ -24,7 +24,7 @@ body {
   background: #f7f7f7;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.5;
   position: relative;
   height: 100%;
@@ -124,7 +124,7 @@ clip: rect(0 auto 25px 0);
 .typo{
   position: absolute;
   top: 0;
-  width: 90%;
+  width: 100%;
   border-radius: 10px;
   background: #fff;
   z-index: 3;
@@ -156,15 +156,11 @@ color: #fff;
      display: none;
 }
 #navbar{
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
   z-index: 2;
 }
 .swiper-container{
   position: fixed;
-  top: 50px;
+  top: 0;
 }
 @-webkit-keyframes hue {
   from {
@@ -176,9 +172,7 @@ color: #fff;
   }
 }
 @media (max-width: 768px){
-.typo{
-width: 95%;
-}}
+}
 @media (min-width: 767px){
 #little-title{
   height: 40px;
