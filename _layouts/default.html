@@ -127,7 +127,7 @@ clip: rect(0 auto 25px 0);
   width: 90%;
   border-radius: 10px;
   background: #fff;
-  z-index: 2;
+  z-index: 3;
 }
 .little-title p{
   font-size: 18px;
@@ -160,6 +160,7 @@ color: #fff;
   top: 0;
   right: 0;
   left: 0;
+  z-index: 2;
 }
 .swiper-container{
   position: fixed;
@@ -226,6 +227,7 @@ width: 95%;
  $(".swiper-container").css('height', bodyH);
   var swiperH=$(".swiper-container").height()-20;
   $(".typo").css('margin-top', swiperH);
+
   var mySwiper = new Swiper('.swiper-container',{
     pagination: '.pagination',
     paginationClickable: true,
