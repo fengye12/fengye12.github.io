@@ -29,6 +29,12 @@ font-size:14px;
   background: url(../images/tao-bg.png) no-repeat center center;
   background-size: cover;
 }
+.content{
+padding:0 15px;
+border-radius:10px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+}
 @media (min-width: 768px){
 .navbar-nav{
   float:right;
