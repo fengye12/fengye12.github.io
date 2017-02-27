@@ -3,30 +3,39 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="/css/typo.css" />
-<link rel="stylesheet" type="text/css" href="/css/peter.css" />
-<title>  {{ page.title }} </title>
+<link  type="image/x-icon" href="/images/favicon.ico" rel="shortcut icon" />
+<link type="text/css" href="/css/animate.min.css"  rel="stylesheet" />
+<link type="text/css" href="/css/bootstrap.css"  rel="stylesheet" />
+<link  type="text/css" href="/css/typo.css" rel="stylesheet"/>
+<link  type="text/css" href="/css/peter.css" rel="stylesheet" />
+
+<script src="/js/jquery-3.1.1.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+<!--[if lt IE 9]>
+            <script src="/js/html5shiv.min.js"></script>
+            <script src="/js/respond.min.js"></script>
+        <![endif]-->
+
+<title>{{ page.title }}</title>
 </head>
-<div id="navbar">
-  <a href="http://fengye12.github.io/index.html">HOME</a> &nbsp;
-  <a href="http://fengye12.github.io/work/">WORK</a>
-  <a href="http://fengye12.github.io/about.html">ABOUT</a>
+{% include nav.html %}
+<div class="banner">
+    <h1>{{ page.title }}</h1>
 </div>
-<div id="wrapper" class="typo">
-  <h1 style="text-align: center; margin-bottom: 0;">{{ page.title }}</h1>
+<div id="wrapperBox">
+<div class="container typo">
+<div class="row">
   <br>
   {{ content }}
   <br>
-  <blockquote>
-  欢迎所有朋友加我微信：zjs123zjs1234
-  </blockquote>
-
-  <br>
-  <br>
-  <!-- UY BEGIN -->
-  <div id="uyan_frame"></div>
-  <script type="text/javascript"
-    src="http://v2.uyan.cc/code/uyan.js?uid=2008268"></script>
-  <!-- UY END -->>>
+  </div>
+</div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript"
+  src="http://v2.uyan.cc/code/uyan.js?uid=2008268"></script>
+<!-- UY END -->
 </div>
 </html>
+
