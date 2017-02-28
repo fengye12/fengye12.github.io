@@ -8,7 +8,7 @@ title: FENGYE'S CORNER
     {% for post in site.posts %}
       <li class="clearfix">
       <div class="leftD">
-        <img src="{{page.leftImg}}"/>
+        <img src='{{ site.baseurl }}/{% if page.leftImg %}{{ page.leftImg }}{% else %}}'/>
       </div>
       <div class="rightD">
     <h3>
