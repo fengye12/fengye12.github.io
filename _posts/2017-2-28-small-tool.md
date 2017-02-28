@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 前端小插件
+date:      2017-2-28
+leftImg: "/images/3.jpg"
 ---
 
 ### 代码改动比较的插件，直接在线使用就好

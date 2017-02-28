@@ -19,8 +19,38 @@ body{
 .typo{
 background:#fff;
 }
+.contentBox{
+  border-right:1px solid #ddd;
+}
+.contentBox .posts li{
+  position: relative;
+      display: inline-block;
+      width: 100%;
+      /* box-shadow: 7px 7px 5px #ccc; */
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 4px 10px rgba(0, 0, 0, 0.06);
+      background-color: #fff;
+      padding: 15px;
+      /* border-radius: 8px 8px 0 0; */
+      border-radius: 8px;
+      /* overflow: hidden; */
+      margin-bottom: 20px;
+}
+.posts .leftD,.posts .rightD{
+  float:left;
+}
+.posts .leftD{
+  width:30%;
+}
+.posts .leftD img{
+  width:30%;
+}
+.posts .rightD{
+  width:70%;
+  padding-left:15px;
+  box-sizing: border-box;
+}
 .contentBox .post-content-preview{
-font-size:14px;
+font-size:16px;
 }
 .banner h1{
   padding:100px 0;
@@ -40,6 +70,6 @@ border-radius:10px;
   float:right;
 }
 .contentBox .post-content-preview{
-font-size:12px;
+font-size:14px;
 }
 }
