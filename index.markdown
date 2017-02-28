@@ -8,13 +8,10 @@ title: FENGYE'S CORNER
     {% for post in site.posts %}
       <li class="clearfix">
       <div class="leftD">
-        <img src='/images/3.jpg'/>
         <img src="{{post.leftImg}}"/>
       </div>
       <div class="rightD">
-    <h3>
-        {{ post.title }}
-    </h3>
+        <p style="font-size:2px; font-weight: 500;margin-bottom:10px;">{{ post.title }}</p>
     <div class="post-content-preview">
           {{ post.content | strip_html | truncate:100 }}
       </div>
