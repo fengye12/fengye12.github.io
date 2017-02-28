@@ -1,6 +1,7 @@
 ---
 layout: post
 title: NaN类型说明
+leftImg:  /images/2before.jpg
 ---
 
 ## 描述

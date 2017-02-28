@@ -48,14 +48,17 @@ background:#fff;
 .rightD .FullText{
   position: absolute;
       right: 0;
-      bottom: 0;
+      bottom: 10px;
       display: inline-block;
       padding: 5px;
       border: 1px solid #ddd;
-      color:#fff;
       background:#3f92da;
       border-radius:4px;
       -webkit-border-radius:4px;
+}
+.rightD .FullText a,.rightD .FullText a:hover{
+  color:#fff;
+  text-decoration:none;
 }
 .posts .leftD img{
   width:100%;

@@ -11,7 +11,7 @@ title: FENGYE'S CORNER
         <img src="{{post.leftImg}}"/>
       </div>
       <div class="rightD">
-        <p style="font-size:2px; font-weight: 500;margin-bottom:10px;">{{ post.title }}</p>
+        <p style="font-size:24px; font-weight: 500;margin-bottom:10px;">{{ post.title }}</p>
     <div class="post-content-preview">
           {{ post.content | strip_html | truncate:100 }}
       </div>
