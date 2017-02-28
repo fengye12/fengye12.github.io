@@ -58,10 +58,13 @@ background:#fff;
 }
 .rightD .FullText a,.rightD .FullText a:hover{
   color:#fff;
+  font-size:18px;
   text-decoration:none;
 }
 .posts .leftD img{
   width:100%;
+  border-radius:5px;
+  -webkit-border-radius:5px;
 }
 .posts .rightD{
   position:relative;
@@ -87,6 +90,9 @@ border-radius:10px;
 -moz-border-radius:10px;
 }
 @media (max-width: 768px){
+  .rightD .FullText a,.rightD .FullText a:hover{
+    font-size:14px;
+  }
   .posts .leftD{
     width:100%;
     float:none;

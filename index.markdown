@@ -2,7 +2,7 @@
 layout: default
 title: FENGYE'S CORNER
 ---
-<div class="contentBox col-xs-12 col-sm-10  col-md-8 ">
+<div class="contentBox col-xs-12 col-sm-10  col-md-9 ">
 <h2 style="border-bottom: 1px solid #ddd;">文章列表</h2>
   <ul class="posts">
     {% for post in site.posts %}
@@ -41,6 +41,6 @@ put hello
 欢迎所有朋友加我微信：zjs123zjs1234
 </blockquote> -->
 </div>
-<div class="hidden-xs col-sm-2  col-md-4">
+<div class="hidden-xs col-sm-2  col-md-3">
   <h2 style="border-bottom: 1px solid #ddd;">其他列表</h2>
 </div>
