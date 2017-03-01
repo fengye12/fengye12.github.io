@@ -37,7 +37,6 @@ background:#fff;
       border-radius: 8px;
       /* overflow: hidden; */
       margin-bottom: 25px;
-      padding-bottom:0;
 }
 .posts .leftD,.posts .rightD{
   float:left;
@@ -48,7 +47,7 @@ background:#fff;
 .rightD .FullText{
   position: absolute;
       right: 0;
-      bottom: 10px;
+      bottom: 0;
       display: inline-block;
       padding: 5px;
       border: 1px solid #ddd;
@@ -58,7 +57,7 @@ background:#fff;
 }
 .rightD .FullText a,.rightD .FullText a:hover{
   color:#fff;
-  font-size:18px;
+  font-size:16px;
   text-decoration:none;
 }
 .posts .leftD img{

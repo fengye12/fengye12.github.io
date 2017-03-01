@@ -11,14 +11,14 @@ title: FENGYE'S CORNER
         <img src="{{post.leftImg}}"/>
       </div>
       <div class="rightD">
-        <p style="font-size:24px; font-weight: 500;margin-bottom:10px;">{{ post.title }}</p>
+        <p style="font-size:24px; line-height:24px;font-weight: 500;margin-bottom:10px;">{{ post.title }}</p>
     <div class="post-content-preview">
           {{ post.content | strip_html | truncate:100 }}
       </div>
-      <p class="post-meta">
+      <p class="post-meta" style="font-size:14px;">
       <!-- <span>{{ post.date | date_to_string }}</span> --><!--  &raquo; -->
           <!-- Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} -->
-        <span>{{ post.date}}</span><span class="FullText"><a href="{{ post.url }}">阅读全文</a></span>
+        <span>{{ post.date | date_to_string }}</span><span class="FullText"><a href="{{ post.url }}">阅读全文</a></span>
       </p>
       </div>
 
