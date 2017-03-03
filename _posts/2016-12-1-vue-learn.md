@@ -20,6 +20,7 @@ vueJS是一种轻量级的MVVM框架，它同时吸收了react和angular的优�
 命令行工具
 解决npm国内网络慢的问题。http://npm.taobao.org/  以后使用要用cnpm代替npm就ok
 接下来就可以用：$ cnpm install --global vue-cli
+<pre>
 # 全局安装 vue-cli
 $ cnpm install --global vue-cli
 # 创建一个基于 webpack (打包工具)模板的新项目
@@ -28,28 +29,37 @@ $ vue init webpack my-project
 $ cd my-project
 $ cnpm install
 $ cnpm run dev
-
+</pre>
 ### 从.vue到页面
+
 <img src="../images/.vue.png" alt="" />
 ### vue组件的重要选项data、methods、watch
 vue所有的数据都是放在data里面的
+
 <img src="../images/data.png" alt="" />
 ### 模板指令--html和vue对象额粘合剂
-数据渲染v-text、v-html、{{}}
+数据渲染v-text、v-html、{{}}]
+
 <img src="../images/html-vue.png" alt="" />
 ### 模板指令--v-if/v-show
+
 <img src="../images/vi-v-show.png" alt="" />
 ### 模板指令--v-for
+
 渲染循环列表
+
 <img src="../images/v-for.png" alt="" />
 ### 模板指令--v-on
 事件绑定
+
 <img src="../images/for-on.png" alt="" />
 ### 模板指令--v-bind
 属性绑定
+
 <img src="../images/bind.png" alt="" />
 思考上面的变量哪些是字符串哪些是布尔值
 ### 总结
+
 <img src="../images/1-zj.png" alt="" />
 
 ### 组件
@@ -58,11 +68,14 @@ vue所有的数据都是放在data里面的
 比如你开发了一个header.vue组件，当你需要应用这个组件时需要import header from "路径/header"，别忘了在引用的文件中注册：components: {header }
 
 ### 如何划分组件
+
 <img src="../images/zujian.png" alt="" />
 ### 组件调用
+
 <img src="../images/diaoyong.png" alt="" />
 ### 组件之间的通信
 父组件向子组件传递信息（参数）
+
 <img src="../images/tongxin.png" alt="" />
 子组件向父组件传递信息（参数）
 <pre>

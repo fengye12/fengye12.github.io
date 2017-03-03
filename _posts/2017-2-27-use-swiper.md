@@ -1,7 +1,7 @@
 ---
 layout: post
 title: swiper的使用
-leftImg:  /images/2before.jpg
+leftImg:  /images/2before.png
 ---
 
 ### Swiper
