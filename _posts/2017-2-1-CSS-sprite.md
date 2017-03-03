@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: 常用的css片段
+title:  常用的css片段
 leftImg:  /images/2before.jpg
 ---
 1、垂直对齐

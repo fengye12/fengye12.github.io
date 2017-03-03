@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  容易、效率、简洁的vue
