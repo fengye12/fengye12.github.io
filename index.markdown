@@ -13,7 +13,7 @@ title: FENGYE'S CORNER
       <div class="rightD">
         <p class="title">{{ post.title }}</p>
     <div class="post-content-preview">
-          {{ post.content | strip_html | truncate:100 }}
+          {{ post.content | strip_html | truncate:150 }}
       </div>
       <p class="post-meta" style="font-size:14px;">
       <!-- <span>{{ post.date | date_to_string }}</span> --><!--  &raquo; -->

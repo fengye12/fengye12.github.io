@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: 
+title:  容易、效率、简洁的vue
 leftImg:  /images/vue-logo.jpg
 ---
 <style>
