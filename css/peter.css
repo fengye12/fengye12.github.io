@@ -46,14 +46,17 @@ background:#fff;
 }
 .rightD .FullText{
   position: absolute;
-      right: 0;
-      bottom: 0;
+      right: 10px;
+      bottom:10px;
       display: inline-block;
       padding: 5px;
       border: 1px solid #ddd;
       background:#3f92da;
       border-radius:4px;
       -webkit-border-radius:4px;
+}
+.rightD .title{
+font-size:24px; line-height:24px;font-weight: 500;margin-bottom:10px;
 }
 .rightD .FullText a,.rightD .FullText a:hover{
   color:#fff;
@@ -66,7 +69,7 @@ background:#fff;
   -webkit-border-radius:5px;
 }
 .posts .rightD{
-  position:relative;
+  // position:relative;
   width:70%;
   padding-left:15px;
   box-sizing: border-box;
@@ -99,6 +102,10 @@ border-radius:10px;
   .posts .rightD{
     width:100%;
     float:none;
+  }
+  .rightD .title{
+  margin-top:10px;
+  font-size:18px;
   }
   .contentBox .post-content-preview{
     font-size:14px;

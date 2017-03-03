@@ -3,7 +3,7 @@ layout: default
 title: FENGYE'S CORNER
 ---
 <div class="contentBox col-xs-12 col-sm-10  col-md-9 ">
-<h2 style="border-bottom: 1px solid #ddd;">文章列表</h2>
+<h2 style="border-bottom: 1px solid #ddd; padding-bottom:8px;">文章列表</h2>
   <ul class="posts">
     {% for post in site.posts %}
       <li class="clearfix">
@@ -11,7 +11,7 @@ title: FENGYE'S CORNER
         <img src="{{post.leftImg}}"/>
       </div>
       <div class="rightD">
-        <p style="font-size:24px; line-height:24px;font-weight: 500;margin-bottom:10px;">{{ post.title }}</p>
+        <p class="title">{{ post.title }}</p>
     <div class="post-content-preview">
           {{ post.content | strip_html | truncate:100 }}
       </div>
