@@ -72,9 +72,9 @@ git config --global user.name "allowing"
 ``` python
 git config --local user.name "allowing"
 ```
-<img src="images/git-video-config-global.png" alt="" />
-<img src="images/git-video-config-local.png" alt="" />
-<img src="images/git-video-config-all.png" alt="" />
+<img src="/images/git-video-config-global.png" alt="" />
+<img src="/images/git-video-config-local.png" alt="" />
+<img src="/images/git-video-config-all.png" alt="" />
 ### 查看帮助
 
 git 查看帮助很简单，如下给出的命令。需要一定的英文能力。
@@ -455,3 +455,5 @@ git 是一款强大的工具，同时学习它也是一件不容易的事情，�
 建议新手写一个留言板，并使用它进行版本控制，在这个过程中慢慢体会它的好。最好能买一台服务器，不是共享的，是有独立操作系统的，能远程登录的，不会 linux 系统的同学可以买 windows 系统的，就好像操作自己的主机一样。
 
 重申重申重申，git 的概念都很抽象，所以 git 的文字版学习资料也好，视频教程也好，跟着学一遍是不行的，一定要自己用 git 来正式管理一个项目，这样才能掌握它。不然，久而久之，你就会对 git 是去热情，感觉它怎么不好怎么不好，或者抱怨教程不好，视频不行，产生这些厌烦情绪。
+###最后附图一张，自己体会
+<img src="/images/jieshu.png" alt="" />
