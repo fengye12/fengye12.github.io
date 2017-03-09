@@ -1,7 +1,7 @@
 ---
 layout: post
 title: jquery 日期Date
-leftImg:  /images/2before.jpg
+leftImg:  /images/2before.png
 ---
 
 现在开始往后面推5天是什么时间？往后推5个月呢？

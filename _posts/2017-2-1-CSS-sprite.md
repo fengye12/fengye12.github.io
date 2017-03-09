@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  常用的css片段
-leftImg:  /images/2before.jpg
+leftImg:  /images/css.png
 ---
 1、垂直对齐
 如果你用CSS，则你会有困惑：我该怎么垂直对齐容器中的元素？现在，利用CSS3的Transform，可以很优雅的解决这个困惑：
@@ -14,6 +14,8 @@ leftImg:  /images/2before.jpg
    transform: translateY(-50%);
 }
 </pre>
+1.1如果出现两个inline-block的div中间有缝隙，将父元素的font-size设置为0.或者两个div中间不要有空白。
+1.2如果两个div顶部不对其，可以在第一个div上写vertical-align:top;
 2、伸展一个元素到窗口高度
 在具体场景中，你可能想要将一个元素伸展到窗口高度，基本元素的调整只能调整容器的大小,因此要使一个元素伸展到窗口高度，我们需要伸展顶层元素：html和body:
 <pre>

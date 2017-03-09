@@ -1,6 +1,6 @@
 ---
 layout: post
-title: swiper的使用
+title: swiper简单说明
 leftImg:  /images/2before.png
 ---
 
