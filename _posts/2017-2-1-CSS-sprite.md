@@ -14,6 +14,20 @@ leftImg:  /images/css.png
    transform: translateY(-50%);
 }
 </pre>
+<pre>
+<div>
+   <span>
+      测试
+   </span>
+   div{
+   display:table;
+   }
+   span{
+   dispaly:table-cell;
+   vertical-align:middle;
+   }
+</div>
+</pre>
 1.1如果出现两个inline-block的div中间有缝隙，将父元素的font-size设置为0.或者两个div中间不要有空白。
 1.2如果两个div顶部不对其，可以在第一个div上写vertical-align:top;
 2、伸展一个元素到窗口高度

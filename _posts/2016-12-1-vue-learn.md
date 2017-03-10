@@ -97,6 +97,47 @@ vue所有的数据都是放在data里面的
 </pre>
 
 ###vue2.0 vue-router
+<pre>
+<router-link to="/goods">商品</router-link>//相当于a
+<router-link to="/seller">商家</router-link>
+<router-link to="ratings">评论</router-link>
+<router-view></router-view>//展示窗口
+import VueRouter from 'vue-router';//引进路由
+Vue.use(VueRouter);//使用路由
+let routes = [//设置路由
+ { path: '/goods', component: goods },
+ { path: '/ratings', component: ratings },
+ { path: '/seller', component: seller }
+];
+let router = new VueRouter({//实例化一个路由
+'linkActiveClass': 'active',//当前的class
+  routes: routes
+});
+ new Vue({//初始化一个vue实例并挂载
+    el: '#app',
+  router,
+  template: '<App/>',
+  components: { App }
+  // render: h => h(App)
+});
+router.push('/goods');//默认显示
+</pre>
+###vue2.0 ref
+<pre>
+<div ref="menuWrapper">
+    <div class="food-list-hook"></div>
+</div>
+</pre>
+在dom中定义了ref之后
+就可以通过：
+<pre>
+let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook');方式去获得她以及她的子元素
+</pre>
+### nextTick
+当要计算跟dom相关的东西的时候，要保证我们的dom已经渲染上去（虽然说vue中dom中有自然映射
+但是实际dom发生变化是在nextTick之后）所以此时到调用nextTick( () => {})这个接口，这样比较安全
+### created
+创建实例，但还未挂载
 
 
 
