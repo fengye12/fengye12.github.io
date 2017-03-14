@@ -3,7 +3,8 @@ layout: post
 title: css兼容性处理总结
 leftImg:  /images/ie.png
 ---
-
+###检测ie版本的利器
+http://caibaojian.com/detect-ie-version.html
 ###透明度
 ``` python
 filter:alpha(opacity=80); /* IE */ 
