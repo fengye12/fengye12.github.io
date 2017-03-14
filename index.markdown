@@ -44,7 +44,7 @@ put hello
 <div class="hidden-xs col-sm-2  col-md-3">
   <h2 style="border-bottom: 1px solid #ddd;">动态时钟</h2>
 <div class="clock">
-  <canvas id="clock" width="200px" height="200px"  style="margin:20px auto">
+  <canvas id="clock" width="120px" height="120px"  style="margin:20px auto">
       <script>
         var dom = document.getElementById('clock');
           var ctx = dom.getContext('2d');
