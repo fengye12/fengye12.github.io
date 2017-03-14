@@ -42,8 +42,9 @@ put hello
 </blockquote> -->
 </div>
 <div class="hidden-xs col-sm-2  col-md-3">
-  <h2 style="border-bottom: 1px solid #ddd;">其他列表</h2>
-  <canvas id="clock" width="100px" height="100px">
+  <h2 style="border-bottom: 1px solid #ddd;">动态时钟</h2>
+<div class="clock">
+  <canvas id="clock" width="200px" height="200px"  style="margin:20px auto">
       <script>
         var dom = document.getElementById('clock');
           var ctx = dom.getContext('2d');
@@ -147,4 +148,5 @@ put hello
   draw();
   setInterval(draw, 1000)
       </script>
+</div>
 </div>
