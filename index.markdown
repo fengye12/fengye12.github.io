@@ -2,7 +2,7 @@
 layout: default
 title: FENGYE'S CORNER
 ---
-<div class="contentBox col-xs-12 col-sm-10  col-md-9 ">
+<div class="contentBox col-xs-12 col-sm-9  col-md-8 ">
 <h2 style="border-bottom: 1px solid #ddd; padding-bottom:8px;">文章列表</h2>
   <ul class="posts">
     {% for post in site.posts %}
@@ -41,9 +41,9 @@ put hello
 欢迎所有朋友加我微信：zjs123zjs1234
 </blockquote> -->
 </div>
-<div class="hidden-xs col-sm-2  col-md-3">
+<div class="hidden-xs col-sm-3  col-md-4">
   <h2 style="border-bottom: 1px solid #ddd;">动态时钟</h2>
-<div class="clock">
+<div class="clock" style="text-align:cenetr;">
   <canvas id="clock" width="120px" height="120px"  style="margin:20px auto">
       <script>
         var dom = document.getElementById('clock');
