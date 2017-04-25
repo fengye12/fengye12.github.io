@@ -16,8 +16,7 @@ CurrentDate.setMonth(CurrentDate.getMonth()+5);
 alert(CurrentDate.getMonth()+1)
 </pre>
 ##  Js计算时间差（天、小时、分钟、秒）
-<pre>
-<script type="text/javascript">          
+<pre>          
     var date1= '2015/05/01 00:00:00';  //开始时间  
     var date2 = new Date();    //结束时间  
     var date3 = date2.getTime() - new Date(date1).getTime();   //时间差的毫秒数        
@@ -38,7 +37,6 @@ alert(CurrentDate.getMonth()+1)
     var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数  
     var seconds=Math.round(leave3/1000)  
     alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")  
-</script> 
 </pre>
 
 
