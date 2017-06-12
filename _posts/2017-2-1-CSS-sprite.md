@@ -3,6 +3,47 @@ layout: post
 title:  常用的css片段
 leftImg:  /images/css.png
 ---
+
+### 常用网址
+css解决方案:http://www.w3cplus.com/solution/index/index.html
+sticky-footer:http://www.w3cplus.com/css3/css-secrets/sticky-footers.html
+<div class="detailshow">
+   <div class="detail-warpper clearfix">
+      <div class="detail-main"></div>
+   </div>
+   <div class="detail-close"></div>
+</div>
+<style>
+   .clearfix{
+      display: inline-block;
+
+   }
+   .clearfix:after{
+      dispaly:block;
+      content: ",";
+height: 0;
+line-height: 0;
+clear: both;
+visibility: hidden;
+   }
+   .detail-warpper{
+      min-height: 100%;
+   }
+   .detail-main{
+      margin-top: 64px;
+      padding-bottom: -64px  auto 0 auto;
+      clear: both;
+   }
+   .detail-close{
+      background: url() ;
+      position: relative;
+      width: 32px;
+      height: 32px;
+      margin: -64px auto 0 auto;
+      clear: both;
+
+   }
+</style>
 1、垂直对齐
 如果你用CSS，则你会有困惑：我该怎么垂直对齐容器中的元素？现在，利用CSS3的Transform，可以很优雅的解决这个困惑：
 ``` python
@@ -89,7 +130,7 @@ button {
    background-size: auto 200%;
    background-position: 0 100%;
    transition: background-position 0.5s;
-}   
+}
 button:hover {
    background-position: 0 0;
 }
@@ -135,7 +176,7 @@ td {
 效果：http://jsfiddle.net/agusesetiyono/1kwhsfvo/light/
 
 8、包裹长文本
-如果你碰到一个比自身容器长的文本，这个技巧对你很有用。在这个示例中，默认时，不管容器的宽度，文本都将水平填充。 
+如果你碰到一个比自身容器长的文本，这个技巧对你很有用。在这个示例中，默认时，不管容器的宽度，文本都将水平填充。
 long text
 简单的CSS代码就能在容器中调整文本：
 <pre>
@@ -144,7 +185,7 @@ pre {
    word-wrap: break-word;
 }
 </pre>
-效果看起来如下： 
+效果看起来如下：
 effect
 9、制造模糊文本
 想要让文本模糊？可以使用color透明和text-shadow实现。

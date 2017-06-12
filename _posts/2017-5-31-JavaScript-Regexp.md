@@ -1,3 +1,9 @@
+---
+layout: post
+title: 正则表达式
+leftImg:  /images/ie.png
+---
+
 ### 1、start
 var str = "123abc";
 var patt1 = /^[0-9]+abc$/;
