@@ -21,9 +21,9 @@ leftImg:  /images/ie.png
 http://caibaojian.com/detect-ie-version.html
 ### 透明度
 ``` python
-filter:alpha(opacity=80); /* IE */ 
--moz-opacity:0.8; /* Moz + FF */ 
-opacity: 0.8; /* 支持CSS3的浏览器（FF 1.5也支持）*/ 
+filter:alpha(opacity=80); /* IE */
+-moz-opacity:0.8; /* Moz + FF */
+opacity: 0.8; /* 支持CSS3的浏览器（FF 1.5也支持）*/
 ```
 ### flex
 ``` python
@@ -59,22 +59,22 @@ background-color: rgba(255, 255, 255, 0.5);
 -webkit-min-device-pixel-ratio为1.0
 所有非Retina的Mac
 所有非Retina的iOS设备
-Acer Iconia A500 
+Acer Iconia A500
 Samsung Galaxy Tab 10.1
-Samsung Galaxy S 
- 
+Samsung Galaxy S
+
 -webkit-min-device-pixel-ratio为1.3
 Google Nexus 7
- 
+
 -webkit-min-device-pixel-ratio为1.5
-Google Nexus S 
-Samsung Galaxy S II 
+Google Nexus S
+Samsung Galaxy S II
 HTC Desire
 HTC Desire HD
-HTC Incredible S 
+HTC Incredible S
 HTC Velocity
-HTC Sensation 
- 
+HTC Sensation
+
 -webkit-min-device-pixel-ratio为2.0
 iPhone 4
 iPhone 4S
@@ -88,7 +88,7 @@ Google Nexus 10
 Samsung Galaxy S III
 Samsung Galaxy Note II
 Sony Xperia S
-HTC One X 
+HTC One X
 js判断
 if (window.devicePixelRatio) {
     alert(window.devicePixelRatio)
@@ -111,3 +111,10 @@ border-style:  dashed solid dashed dashed;//解决ie6下面的黑色
 ```
 ### flex
 注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
+### ie8以下不兼容placeholder
+直接引入补丁文件就可以https://github.com/danbentley/placeholder
+### ie8以下不兼容h5新特性 和css3 新属性
+使用补丁文件
+html5shiv.min和respond.min（媒体查询文件，主义只有在服务器端才能生效）
+### layer弹出层的使用
+注意下载官网的layer文件夹整个放在目录下 只需引入layer.js就可
