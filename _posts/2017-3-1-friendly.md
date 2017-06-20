@@ -118,3 +118,75 @@ border-style:  dashed solid dashed dashed;//解决ie6下面的黑色
 html5shiv.min和respond.min（媒体查询文件，主义只有在服务器端才能生效）
 ### layer弹出层的使用
 注意下载官网的layer文件夹整个放在目录下 只需引入layer.js就可
+### input placeholder颜色
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ddd; opacity:1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #ddd;opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #ddd;opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #ddd;opacity:1;
+}
+### box-sizing
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+### input写法(pc端)
+<div class="layui-form-item">
+    <label class="layui-form-label">输入框输入框输入框输入框输入框输入框</label>
+    <div class="layui-input-block">
+      <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <style>
+  .layui-form-item {
+      margin-bottom: 15px;
+      clear: both;
+
+  }
+   .layui-form-item:after {
+       content: '\20';
+       clear: both;
+       display: block;
+       height: 0;
+   }
+   .layui-form-label{
+    text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        float: left;
+            display: block;
+            padding: 9px 15px;
+            width: 80px;
+            font-weight: 400;
+            text-align: right;
+            line-height: 20px;
+                position: relative;
+   }
+   .layui-input-block {
+       margin-left: 110px;
+       min-height: 36px;
+   }
+   .layui-input {
+       display: block;
+       width: 100%;
+       padding-left: 10px;
+       height: 38px;
+           line-height: 38px;
+           line-height: 36px\9;
+           border: 1px solid #e6e6e6;
+           background-color: #fff;
+           border-radius: 2px;
+           outline: 0;
+           -webkit-box-sizing: border-box!important;
+           -moz-box-sizing: border-box!important;
+           box-sizing: border-box!important;
+   }
+  </style>
