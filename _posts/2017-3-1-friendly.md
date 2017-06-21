@@ -185,8 +185,8 @@ box-sizing: border-box;
            background-color: #fff;
            border-radius: 2px;
            outline: 0;
-           -webkit-box-sizing: border-box!important;
-           -moz-box-sizing: border-box!important;
-           box-sizing: border-box!important;
+           -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+           box-sizing: border-box;
    }
   </style>
