@@ -190,3 +190,6 @@ box-sizing: border-box;
            box-sizing: border-box;
    }
   </style>
+###  高仿google输入框提示
+https://github.com/fengye12/autocomplete
+这个比之前找的都好，因为不会出现程序动态增加input时出现初始化困难。之前的插件使用的是id 选择器更不行
