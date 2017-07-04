@@ -193,3 +193,45 @@ box-sizing: border-box;
 ###  高仿google输入框提示
 https://github.com/fengye12/autocomplete
 这个比之前找的都好，因为不会出现程序动态增加input时出现初始化困难。之前的插件使用的是id 选择器更不行
+### 两个数组去重的方法
+<pre>
+  var arr1 = [1,2,3,4,5]; //数组A
+
+  var arr2 = [1,2,3];//数组B
+
+  var temp = []; //临时数组1
+
+  var temparray = [];//临时数组2
+
+  for (var i = 0; i < arr2.length; i++) {
+
+  temp[arr2[i]] = true;//巧妙地方：把数组B的值当成临时数组1的键并赋值为真
+
+  };
+
+  for (var i = 0; i < arr1.length; i++) {
+
+  if (!temp[arr1[i]]) {
+
+  temparray.push(arr1[i]);
+  //巧妙地方：同时把数组A的值当成临时数组1的键并判断是否为真，如果不为真说明没重复，就合并到一个新数组里，这样就可以得到一个全新并无重复的数组
+
+  } ;
+
+  };
+  document.write(temparray.join(",") + "");
+</pre>
+## 禁止浏览器后退的方法
+<pre>
+从A页面出去以后就不在能返回daoA，在A上加js
+  window.history.forward();
+  function StopBack() { window.history.forward(); }
+  $('body').on('onload', function(event) {
+   StopBack();
+  });
+  $('body').on('onpageshow', function(event) {
+   if (event.persisted) StopBack();
+  });
+  从A跳转到B禁止在返回A
+  window.location.replace("index.html?loginOut=true");//禁止浏览器后退
+</pre>
