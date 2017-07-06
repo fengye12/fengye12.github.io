@@ -235,3 +235,85 @@ https://github.com/fengye12/autocomplete
   从A跳转到B禁止在返回A
   window.location.replace("index.html?loginOut=true");//禁止浏览器后退
 </pre>
+### 模拟遮罩层
+<pre>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <script src="js/jquery-1.11.1.min.js"></script>
+  </head>
+  <style>
+      .layui-layer-shade{
+          z-index:19891014;
+          background-color:#000;
+          opacity:0.3;
+          filter:alpha(opacity=30);
+          position: fixed;
+          pointer-events: auto;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: none;
+          /* _height: expression(document.body.offsetHeight+"px"); */
+      }
+      .layui-layer-page{
+          z-index: 19891015;
+          min-width: 450px;
+          min-height: 480px;
+          top: 50%;
+          left: 50%;
+          margin-left: -225px;
+          margin-top: -240px;
+          display: none;
+      }
+      .layui-layer{
+          background: #fff;
+          position: fixed;
+          pointer-events: auto;
+          border-radius: 2px;
+          -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+          -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+          -webkit-overflow-scrolling: touch;
+          padding: 0;
+          background-color: #fff;
+          -webkit-background-clip: content;
+          box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+      }
+      .closeIcon{
+          position: absolute;
+          right: 16px;
+          top: 16px;
+          height: 16px;
+          width: 16px;
+          background: url(img/icon.png) no-repeat;
+          background-position: 1px -40px;
+          cursor: pointer;
+      }
+    @-webkit-keyframes layer-bounceIn{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}
+    @keyframes layer-bounceIn{0%{opacity:0;-webkit-transform:scale(.5);-ms-transform:scale(.5);transform:scale(.5)}100%{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}
+    .layer-anim{-webkit-animation-name:layer-bounceIn;animation-name:layer-bounceIn}
+
+  </style>
+  <body>
+      <button>show</button>
+      <div class="layui-layer-shade" id="layui-layer-shade1" times="1"></div>
+      <div class="layui-layer layui-layer-page  layer-anim" id="layui-layer1" type="page" times="1" showtime="0" contype="string" >
+          <i class="closeIcon"></i>
+          <script>
+              $(".closeIcon").click(function(event) {
+                  $("#layui-layer-shade1").hide();
+                  $("#layui-layer1").hide();
+              });
+              $("button").click(function(event) {
+                  $("#layui-layer-shade1").show();
+                  $("#layui-layer1").show();
+              });
+          </script>
+      </div>
+  </body>
+  </html>
+</pre>
