@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  易用、高效、灵活的vue
+title:  React
 leftImg:  /images/vue-logo.png
 ---
 

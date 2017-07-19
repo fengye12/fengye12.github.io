@@ -1,0 +1,74 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;padding: 0;border: 0;outline: 0;font-weight: inherit;font-style: inherit;font-size: 100%;font-family: inherit;vertical-align: baseline;}
+  body {color: #2f332a;font: 15px/21px Arial, Helvetica, simsun, sans-serif;background: #fff \9;}
+  /* h1, h2, h3, h4, h5, h6 {color: #2f332a;font-weight: bold;font-family: Helvetica, Arial, sans-serif;} */
+  h1 {font-size: 24px;line-height: 34px;text-align: center;}
+  /* h2 {font-size: 14px;line-height: 24px;padding-top: 5px;} */
+  h6 {font-weight: normal;font-size: 12px;letter-spacing: 1px;line-height: 24px;text-align: center;}
+  a {color:#3C6E31;text-decoration: underline;}
+  /* a:hover {background-color:#3C6E31;color:white;} */
+  input.radio {margin: 0 2px 0 8px;}
+  input.radio.first {margin-left:0;}
+  input.empty {color: lightgray;}
+  code {color: #2f332a;}
+  .highlight_red {color:#A60000;}
+  .highlight_green {color:#A7F43D;}
+  li {list-style: circle;font-size: 12px;}
+  li.title {list-style: none;}
+  ul.list {margin-left: 17px;}
+  .zTreeDemoBackground .ztree li{font-size:14px;line-height:18px;}
+
+  div.rightMenu{text-align:center; padding-top:20px;}
+  .rightMenu button{height:35px;cursor:pointer;width:50px;display:block;margin:0 auto;margin-bottom:10px;line-height:35px;background:#fff;border:1px solid #ddd}
+  .rightMenu button:hover{background:#eaf7f6;box-shadow: 0 0 1px #007FFF;}
+  .rightMenu .click{background:#28b2a4;border-color:#28b2a4;color:#fff;}
+  .rightMenu .click:hover{background:#009F95;border-color:#28B2A4;box-shadow: 0 0 1px #007FFF;}
+  div.zTreeDemoBackground {width:35%;height:362px;text-align:left;position:relative;float:left;height:500px;border:1px solid #28b2a4;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+  div.zTreeDemoEdit{float:left;position:relative;width:63%;margin-left:2%;height:500px;border:1px solid #28b2a4;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+  div.topTitle{padding:10px 15px;width:100%;line-height:16px;background:#28b2a4;font-size:14px;color:#fff;font-weight:600;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+  ul.ztree {width:100%;height:462px;padding:20px 60px 15px 30px;overflow-y:scroll;overflow-x:auto;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+  ul.log {border: 1px solid #617775;width:300px;height:170px;overflow: hidden;}
+  ul.log.small {height:45px;}
+  ul.log li {color: #666666;list-style: none;padding-left: 10px;}
+  ul.log li.dark {background-color: #E3E3E3;}
+
+  div.rightMenu{position:absolute;top:36px;height:462px;width:20%;right:5%;}
+  /* ruler */
+  div.ruler {height:20px; width:220px; background-color:#f0f6e4;border: 1px solid #333; margin-bottom: 5px; cursor: pointer}
+  div.ruler div.cursor {height:20px; width:30px; background-color:#3C6E31; color:white; text-align: right; padding-right: 5px; cursor: pointer}
+  @font-face {font-family: "iconfont";
+  src: url('font/iconfont.eot'); /* IE9*/
+  src: url('font/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('font/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:17px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ztree li span.button.add {margin-left:2px; margin-right: -1px; background-position:-144px 0; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.edit,.ztree li span.button.remove{
+  display: none;
+}
+.zTreeDemoEdit .rightcontent{padding:20px 0;}
+.layui-form-item { margin-bottom: 15px; clear: both; }
+.layui-form{margin-bottom:0}
+.layui-form span{padding-right:12px;}
+.layui-form-item:after { content: '\20'; clear: both; display: block; height: 0; }
+.layui-form-label{ text-overflow: ellipsis; overflow: hidden; white-space: nowrap; float: left; display: block; padding: 9px 15px; width: 80px; font-weight: 400; text-align: right; line-height: 20px; position: relative; }
+.layui-input-block { margin-left: 110px; min-height: 36px; width:300px;}
+.layui-input { display: block; width: 100%; padding-left: 10px; height: 38px; line-height: 38px; line-height: 36px\9; border: 1px solid #e6e6e6; background-color: #fff; border-radius: 2px; outline: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.btnContent{padding:0 110px;}
+.addNew{position:relative;padding-top:10px;}
+.addNew .layui-input-block{width:150px;}
+.btnContent button{height:35px;cursor:pointer;line-height:35px;padding:0 10px;background:#28b2a4;margin-right:15px;border:none;border:1px solid #28b2a4;border-radius:4px;color:#fff}
+.btnContent button:hover{background:#009F95;border-color:#28B2A4;box-shadow: 0 0 1px #007FFF;}
+.fathersave{position:absolute;left:300px;bottom:2px;}
+.addNew button{height:35px;cursor:pointer;line-height:35px;padding:0 20px;background:#28b2a4;margin-right:15px;border:none;border:1px solid #28b2a4;border-radius:4px;color:#fff}
+.addNew button:hover{background:#009F95;border-color:#28B2A4;box-shadow: 0 0 1px #007FFF;}

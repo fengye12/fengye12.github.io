@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+ <TITLE>控制面板</TITLE>
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <meta name="keywords" content="杭州米阳食品服务端">
+ <meta name="description" content="杭州米阳食品服务端">
+ <meta name="copyright" content="Copyright 杭州米阳食品服务端 版权所有" >
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+ <meta http-equiv="X-UA-Compatible" content="IE=9">
+ <!-- <link type="image/x-icon" href="../style/image/favcion.ico" rel="shortcut icon"> -->
+ <link rel="stylesheet" type="text/css" href="css/common.css">
+ <link rel="stylesheet" href="css/menuControl.css" type="text/css">
+ <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+ <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+ <!-- <script type="text/javascript" src="../style//js/jquery.cookie.js"></script> -->
+ <!-- <script type="text/javascript" src="../style/js/json_parse.js"></script> -->
+ <!-- <script type="text/javascript" src="../style/js/wxapp.js"></script> -->
+ <!-- <script type="text/javascript" src="../style/js/wxjson.js"></script> -->
+ <!-- <script type="text/javascript" src="../style/js/leftNav.js"></script> -->
+ <script src="js/layer/layer.js"></script>
+ <script type="text/javascript" src="js/jquery.ztree.all.min.js"></script>
+ <!-- <script src="../style/js/jquery.placeholder.js"></script> -->
+ <script src="js/menuControl.js"></script>
+<!--[if lt IE 9]>
+           <script src="../style/js/html5shiv.min.js"></script>
+	 <script src="../style/js/respond.min.js"></script>
+<![endif]-->
+</HEAD>
+  <BODY>
+  <div class="wrap">
+  	<div class="warp-content clearfix">
+  		<p class="bread-nav">
+  			<a href="#">路径1</a>/
+  			<a href="#">路径2</a>/
+  			<a href="#">路径2</a>
+  		</p>
+  		<h2 class="content-title">
+  			<a href="javascript:void(0);">控制面板</a>
+  		</h2>
+  		<div class="warp-main">
+  			<div class="zTreeDemoBackground">
+  				<div class="topTitle">节点树</div>
+  				<ul id="treeDemo" class="ztree"></ul>
+  				<div class="rightMenu">
+  					<button class="drag" title="拖动节点">
+  						<i class="icon iconfont">&#xe657;</i>
+  					</button>
+  					<button class="top" title="选中节点置顶" onclick="moveNode('top')">
+  						<i class="icon iconfont">&#xe605;</i>
+  					</button>
+  					<button class="up" title="向上移动选中的节点" onclick="moveNode('up')">
+  						<i class="icon iconfont">&#xe62b;</i>
+  					</button>
+  					<button class="down " title="向下移动选中的节点" onclick="moveNode('down')">
+  						<i class="icon iconfont">&#xe626;</i>
+  					</button>
+  					<button class="bottom" title="选中节点置尾" onclick="moveNode('bottom')">
+  						<i class="icon iconfont">&#xe69e;</i>
+  					</button>
+  					<button class="delete" title="删除选中节点">
+  						<i class="icon iconfont">&#xe617;</i>
+  					</button>
+  					<button class="refesh" title="刷新选中节点">
+  						<i class="icon iconfont">&#xe725;</i>
+  					</button>
+  					<button class="refeshAll" title="刷新所有节点">
+  						<i class="icon iconfont">&#xe60d;</i>
+  					</button>
+  				</div>
+  			</div>
+  			<div class="zTreeDemoEdit">
+  				<div class="topTitle">编辑</div>
+  				<div class="rightcontent">
+  					<div class="layui-form">
+  						<label class="layui-form-label"></label>
+  						<div class="layui-input-block">
+  							<span>ID:<i class="ID"></i></span><span>LV:<i class="Lv"></i></span>
+  						</div>
+  					</div>
+  					<div class="layui-form-item">
+  						<label class="layui-form-label">标题</label>
+  						<div class="layui-input-block">
+  							<input type="text" name="" placeholder="" autocomplete="off" class="layui-input name">
+  						</div>
+  					</div>
+  					<div class="layui-form-item">
+  						<label class="layui-form-label">链接地址</label>
+  						<div class="layui-input-block">
+  							<input type="text" name="" placeholder="" autocomplete="off" class="layui-input url">
+  						</div>
+  					</div>
+  					<div class="layui-form-item">
+  						<label class="layui-form-label">导航信息</label>
+  						<div class="layui-input-block">
+  							<input type="text" name="" placeholder="" autocomplete="off" class="layui-input navigate">
+  						</div>
+  					</div>
+  					<div class="btnContent layui-form-item">
+  						<button class="addRootNode">新增根节点</button>
+  						<button class="addChildNode">新增子节点</button>
+  						<button class="save">保存节点</button>
+  						<!-- <button class="addnew">新增</button> -->
+  					</div>
+  					<div class="addNew layui-form-item">
+  						<div class="layui-form-item">
+  							<label class="layui-form-label">父节点ID</label>
+  							<div class="layui-input-block">
+  								<input type="text" name="" placeholder="请输入父节点ID" autocomplete="off" class="layui-input parentId">
+  							</div>
+  						</div>
+  						<button class="fathersave addnew">保存节点</button>
+  					</div>
+
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+   </BODY>
+ </HTML>

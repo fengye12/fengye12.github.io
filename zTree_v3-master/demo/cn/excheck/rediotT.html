@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <TITLE> ZTREE DEMO - radio</TITLE>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../../../css/demo.css" type="text/css">
+    <link rel="stylesheet" href="../../../css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+
+    <script type="text/javascript" src="../../../js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="../../../js/jquery.ztree.excheck.js"></script>
+    <!--
+    <script type="text/javascript" src="../../../js/jquery.ztree.exedit.js"></script>
+    -->
+    <SCRIPT type="text/javascript">
+        <!--
+        var setting = {
+            check: {
+                enable: true,
+                chkStyle: "radio",
+                radioType: "all"
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+              view: {
+                fontCss: setFontCss
+            },
+            callback:{
+                // beforeExpand:beforeExpand
+            }
+        };
+
+        var zNodes =[
+            { id:1, pId:0, name:"随意勾选 1", open:false},
+            { id:133, pId:11, name:"哈哈哈", open:false},
+            { id:134, pId:133, name:"丫丫", open:false},
+            { id:11, pId:1, name:"随意勾选 1-1", open:false},
+            { id:111, pId:11, name:"随意勾选 1-1-1"},
+            { id:112, pId:11, name:"随意勾选 1-1-2"},
+            { id:12, pId:1, name:"呵呵", open:false},
+            { id:121, pId:12, name:"随意勾选 1-2-1"},
+            { id:122, pId:12, name:"随意勾选 1-2-2"},
+            { id:2, pId:0, name:"随意勾选 2", open:false},
+            { id:21, pId:2, name:"随意勾选 2-1"},
+            { id:22, pId:2, name:"嘻嘻嘻", open:false},
+            { id:221, pId:22, name:"随意勾选 2-2-1", checked:false},
+            { id:222, pId:22, name:"娃娃"},
+            { id:23, pId:2, name:"随意勾选 2-3"}
+        ];
+
+        // var code;
+        // function setCheck() {
+        //  var type = $("#level").attr("checked")? "level":"all";
+        //  setting.check.radioType = type;
+        //  showCode('setting.check.radioType = "' + type + '";');
+        //  $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        // }
+        // function showCode(str) {
+        //  if (!code) code = $("#code");
+        //  code.empty();
+        //  code.append("<li>"+str+"</li>");
+        // }
+
+        $(document).ready(function(){
+            // setCheck();
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+            // $("#level").bind("change", setCheck);
+            // $("#all").bind("change", setCheck);
+                // $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+                　
+                　　//拿到所有树节点
+                // 　　var nodes =  treeObj.transformToArray(treeObj.getNodes());
+                　　//for循环逐个修改树节点属性
+
+                // var setting = {
+                //   view: {fontCss: setFontCss},
+                //   //...其他配置
+                // }
+                    // console.log((nodes[i].name).indexOf("哈哈")>-1)
+                    // 　　if((nodes[i].name).indexOf("哈哈")>-1){
+                        // var level=nodes[i].level;
+                        // var getNode=nodes[i];
+                        // // getNode.color="red";
+                        // // var pnodes=getNode.getParentNode();
+
+
+
+
+
+
+
+            　　
+        });
+        // function beforeExpand(treeId,treeNode){
+        // //alert(treeNode.expand);
+        // //alert(treeNode.expand !== false);
+        // return !(treeNode.expand!== false);//treeNode.expand alert出来是undefined
+        // }
+        var nodeList;
+      function updateNodes(highlight) {
+        var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+        for( var i=0, l=nodeList.length; i<l; i++) {
+            nodeList[i].highlight = highlight;
+            zTree.updateNode(nodeList[i]);
+        }
+      }
+      function setFontCss(treeId, treeNode) {
+        return (!!treeNode.highlight) ? {color:"#A60000", "font-weight":"bold"} : {color:"#333", "font-weight":"normal"};
+      }
+        //-->
+        function search(){
+            var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+            var val=$("#search").val();
+            if(val!=""){
+            nodeList=treeObj.transformToArray(treeObj.getNodes())
+             updateNodes(false);
+            var nodes = treeObj.getNodesByParamFuzzy("name",val, null);
+             // treeObj.expandAll(false);
+             for(var i=0;i<nodeList.length;i++){
+                // nodeList[i].open=true;
+                       treeObj.expandNode(nodeList[i],false,true,false,false);
+                       // treeObj.expandNode(nodeList[i],null,true,false,false);
+                        // treeObj.expandNode(nodeList[i],false,false,false,false);
+                   }
+            　　for(var i = 0;i<nodes.length;i++)
+            　　{
+                    nodeList=nodes;
+                var level=nodes[i].level;
+                var getNode=nodes[i];
+                // updateNodes(nodeList)
+
+
+                 updateNodes(true);
+                treeObj.updateNode(nodes[i]);
+                // treeObj.expandNode(nodes[level], true,false, false, false);
+                for(var j=0;j<level;j++){
+                var pnodes=getNode.getParentNode();
+                if(j==level-1){
+                    treeObj.expandNode(pnodes, true,false, false, false);
+                }else if(pnodes){
+
+               treeObj.expandNode(pnodes, true,false, false, false);
+                 console.log(pnodes);
+
+                 getNode=pnodes;
+                }else{
+                 return false;
+                }
+                }
+            }}
+
+        }
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+<h1>Radio 勾选操作</h1>
+<input type="text " placeholder="搜索" id="search" /><button id="searchR" onclick="search()">哈哈哈哈</button>
+<h6>[ 文件路径: excheck/radio.html ]</h6>
+<div class="content_wrap">
+    <div class="zTreeDemoBackground left">
+        <ul id="treeDemo" class="ztree"></ul>
+    </div>
+    <div class="right">
+        <ul class="info">
+            <li class="title"><h2>1、setting 配置信息说明</h2>
+                <ul class="list">
+                <li class="highlight_red">使用 radio，必须设置 setting.check 中的各个属性，详细请参见 API 文档中的相关内容</li>
+                <li><p>radio 分组范围：<input type="radio" id="level" class="radio first" name="radioGroup" checked /><span>同一级内</span>
+                        <input type="radio" id="all" class="radio" name="radioGroup"/><span>整棵树内</span><br/>
+                        <ul id="code" class="log" style="height:20px;"></ul></p>
+                </li>
+                </ul>
+            </li>
+            <li class="title"><h2>2、treeNode 节点数据说明</h2>
+                <ul class="list">
+                <li class="highlight_red">1)、如果需要初始化默认节点被勾选，请设置 treeNode.checked 属性，详细请参见 API 文档中的相关内容</li>
+                <li class="highlight_red">2)、如果某节点不显示 radio，请设置 treeNode.nocheck 属性，详细请参见 API 文档中的相关内容</li>
+                <li class="highlight_red">3)、如果更换 checked 属性，请参考 API 文档中 setting.data.key.checked 的详细说明</li>
+                <li>4)、其他请参考 API 文档中 treeNode.checkedOld / getCheckStatus / check_Child_State / check_Focus 的详细说明</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</BODY>
+</HTML>
