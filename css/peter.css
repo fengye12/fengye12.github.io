@@ -91,6 +91,7 @@ color:#666;
   background-size: cover;
 }
 .banner{
+  position: relative;
   height: 300px;
 }
 .banner canvas{
