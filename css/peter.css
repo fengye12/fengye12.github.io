@@ -87,7 +87,7 @@ color:#666;
   top: 0;
   width: 100%;
   text-align:center;
-  background: url(../images/tao-bg.png) no-repeat center center;
+  /* background: url(../images/tao-bg.png) no-repeat center center; */
   background-size: cover;
 }
 .banner{
