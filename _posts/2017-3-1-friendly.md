@@ -12,8 +12,28 @@ leftImg:  /images/ie.png
     ::-moz-selection { background: #e2eae2; }
     ::-webkit-selection { background: #e2eae2; }
 </style>
+### ie8及以下background-size:100% 100%;不起作用
+浏览器兼容：
+IE 和遨游不支持；
+Firefox 添加私有属性 -moz-background-size 支持；
+Safari 和 Chrome 添加私有属性 -webkit-background-size 支持；
+Opera 不支持 background-size 属性，添加其私有属性 -o-background-size 也不支持。
+<pre>
+  background:#00ff00 url(img.jpg) no-repeat;
+  -moz-background-size:60% 80%;
+  -webkit-background-size:60% 80%;
+  -o-background-size:60% 80%;}
+  background-size:60% 80%;
+</pre>
+在IE不支持这个属性的时候可以通过滤镜来实现这样的一个效果。(据说路径要是绝对路径)
+<pre>
+  background-image: url('file:///F:/test/images/flashbg.jpg');
+  background-size:
+  cover;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='file:///F:/test/images/flashbg.jpg',sizingMethod='scale');
+</pre>
+注意：路径须要一样，并且是绝对路径
 ### ie6及以下版本不支持fixed;
-在IE7以上的浏览器以及标准浏览器，都支持一个属性 position:fixed ，可以很简单地实现想要的效果，而且当窗口滚动时，该元素的滚动也会很平滑，但是在IE6及以下的版本浏览器下，并不支持该属性，所以只好使用position:absolute来代替实现，但新问题出现，你会发现，当滚动窗口时，该元素会出现抖动的现象，看起来就很不舒服，为了去掉这个抖动的BUG，为了实现平滑滚动，就有了以下这个css代码
+在IE7以上的浏览器以及标准浏览器，都支持一个属性 position:fixed ，可以很简单地实现想要的效果，而且当窗口滚动时，该元素的滚动也会很平滑，但是在IE6及以下的版本浏览器下，并不支持该属性，所以只好使用position:absolute来代替实现，但新问题出现，你会发现，当滚动窗口时，该元素会出现抖动的现象，看起来就很不舒服，为了去掉这个抖动的BUG，为了实现平滑滚动，就有了以下这个css代码；
 ``` python
 *html{_background-image:url(about:blank);_background-attachment:fixed;}
 ```
@@ -191,7 +211,7 @@ box-sizing: border-box;
    }
   </style>
 ###  高仿google输入框提示
-https://github.com/fengye12/autocomplete
+https://github.com/fengye12/autocomplete（汉字匹配不行）
 这个比之前找的都好，因为不会出现程序动态增加input时出现初始化困难。之前的插件使用的是id 选择器更不行
 ### 两个数组去重的方法
 <pre>
