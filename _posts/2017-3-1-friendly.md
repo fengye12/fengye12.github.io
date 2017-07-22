@@ -211,7 +211,24 @@ box-sizing: border-box;
    }
   </style>
 ###  高仿google输入框提示
-https://github.com/fengye12/autocomplete（汉字匹配不行）
+https://github.com/fengye12/autocomplete
+缺点：匹配汉字不行
+解决方案：manageData()注释掉（841行）
+<code>
+.on('keydown.xdsoft input.xdsoft cut.xdsoft paste.xdsoft', function( event ){
+        var ret = manageKey(event);
+
+        if (ret === false || ret === true) {
+          return ret;
+        }
+
+        setTimeout(function(){
+          manageData();
+        },1);
+
+        // manageData();
+      })
+  </code>
 这个比之前找的都好，因为不会出现程序动态增加input时出现初始化困难。之前的插件使用的是id 选择器更不行
 ### 两个数组去重的方法
 <pre>
