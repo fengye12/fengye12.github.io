@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <title>球场</title>
+    </head>
+    <style>
+        .back{
+            position: absolute;
+            left: 0.32rem;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            width: 0.24rem;
+            height: 0.41rem;
+        }
+        .topDetail{
+            margin-top: 12px;
+            padding: 0.2rem 0.3rem;
+            background: #2ac134;
+        }
+        .topDetail .topCenter{
+            width: 100%;
+            height: 2rem;
+            box-shadow: 0  3px  6px rgba(0,0,0,0.5);
+              -webkit-box-shadow: 0  3px  6px rgba(0,0,0,0.5);
+        }
+        .topCenter .circle{
+            width: 0.46rem;
+            height: 0.46rem;
+            border-radius: 50%;
+            background: #2ac134;
+            top: 35%;
+             -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            position: absolute;
+        }
+        .topCenter .circle:first-child{
+             left: -0.23rem;
+             box-shadow: -1px 0  0 rgba(0,0,0,0.4) inset;
+               -webkit-box-shadow: -1px 0 0 rgba(0,0,0,0.4) inset;
+
+        }
+        .topCenter .circle1{
+             right: -0.23rem;
+             box-shadow: 1px 0 0 rgba(0,0,0,0.4) inset;
+               -webkit-box-shadow: 1px 0 0 rgba(0,0,0,0.4) inset;
+        }
+        .topCenter .liner{
+            width: 6.44rem;
+            height: 1px;
+            transform: scaleY(0.5);
+            -webkit-transform: scaleY(0.5);
+            border-bottom: 1px dashed #ddd;
+            position: absolute;
+            top: 35%;
+            left: 0.23rem;
+             -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .topCenter .Bname{
+            height: 0.7rem;
+            line-height: 0.7rem;
+            padding: 0 0.38rem;
+            padding-bottom: 0.15rem;
+        }
+        .topCenter .detail{
+            height: 0.5rem;
+            line-height: 0.5rem;
+            padding: 0 0.38rem;
+        }
+        .detail .time{
+            padding-left: 10px;
+        }
+        .per-info{
+            margin-top: 0.12rem;
+
+        }
+        .per-info .height2{
+            padding-left: 0.31rem;
+            background: #fff;
+        }
+        .line-p{
+            border-bottom: 1px solid #ddd;
+            padding-right: 0.3rem;
+        }
+.line-p1{
+    border: none;
+}
+     .per-info .line-p input{
+        height: 0.68rem;
+        font-size: 14px;
+        padding: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        width: 3rem;
+        text-align: right;
+        color: #6f6f6f;
+     }
+     .num .add{
+        font-size: 16px;
+        display: inline-block;
+        border: 1px solid #6f6f6f;
+        color: #6f6f6f;
+         width: 0.44rem;
+         height: 0.44rem;
+         text-align: center;
+         line-height: 0.44rem;
+          margin-top: 0.13rem;
+              margin-left:0.19rem ;
+         }
+         .num .dec{
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #a0a0a0;
+            color: #a0a0a0;
+            width: 0.44rem;
+            height: 0.44rem;
+            text-align: center;
+            line-height: 0.44rem;
+          margin-top: 0.13rem;
+        margin-right:0.19rem ;
+         }
+         .huodong{
+            margin: 0.12rem 0 0.28rem 0;
+            padding: 0 0.3rem;
+         }
+         .huodong input{
+            height: 0.7rem;
+            font-size: 14px;
+            padding: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            width: 3rem;
+            text-align: right;
+         }
+         .pay{
+            margin-bottom: 1.93rem;
+         }
+        .pay .SpayWay{
+            border-bottom: 1px solid #ddd;
+            padding: 0 0.3rem;
+        }
+        .pay .weixinPay{
+            height: 1.26rem;
+            line-height: 1.26rem;
+            background: url('images/weixin.png') no-repeat 0.32rem center;
+            background-size: 0.5rem 0.42rem;
+            padding-left: 1.07rem;
+            border-bottom: 1px solid #ddd;
+              }
+            .pay .xianjinPay{
+                height: 1.26rem;
+                line-height: 1.26rem;
+                background: url('images/xinjin.png') no-repeat 0.32rem center;
+                background-size: 0.5rem 0.42rem;
+                padding-left: 1.07rem;
+                  }
+                .pay .selected{
+                    width: 0.38rem;
+                    height: 0.38rem;
+                    position: absolute;
+                    right: 0.3rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                }
+                .height0{
+                    position: fixed;
+                    height: 0.96rem;
+                    line-height: 0.96rem;
+                    bottom: 0;
+                    width: 7.5rem;
+                    box-sizing: border-box;
+                    padding: 0 0.3rem;
+
+                }
+                .height0 .total{
+                font-size: 24px;
+                }
+                .comfire{
+                    border: none;
+                    width: 2.9rem;
+                    height: 0.7rem;
+                    font-size: 15px;
+                  margin-top: 0.13rem;
+                  border-radius: 2px;
+                }
+                .topWarp{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0,0,0,0.5);
+                    display: none;
+                }
+                .topWarp .tips{
+                    width: 5.3rem;
+                    height: 2.6rem;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                     margin: auto;
+                    border-radius: 5px;
+                    text-align: center;
+                }
+                .greenColor{
+                    color: #2ac134;
+                }
+                .tips .de-center{
+                    line-height: 1.2rem;
+                    height: 1.2rem;
+                }
+    </style>
+    <body>
+    <div class="wrap">
+        <header class="mainBg header relative">订单预览<a href="javascript:history.go(-1);"><img src="images/back.png"  class="back"/></a></header>
+        <div class="topDetail">
+            <div class="topCenter whiteBg relative">
+            <span class="circle"></span><span class="circle circle1"></span>
+            <div class="liner"></div>
+            <p class="bigsize Bname">西田国王球场</p>
+            <p class="detail"><span class="gray">订场时间</span><span class="time realTime"></span></p>
+            <p class="detail"><span class="gray">场次类型</span><span class="time selectedType"></span><span class="redColor fr courtType">七人场</span></p>
+            </div>
+        </div>
+        <div class="per-info">
+            <div class="height2"><p class="line-p"><span class="gray">姓名</span><input type="text" class="fr"  /></p></div>
+            <div class="height2"><p class="line-p" ><span class="gray">联系方式</span><input type="text" class="fr"  /></p></div>
+            <div class="height2 num"><p class="line-p line-p1"><span class="gray">份数</span><span class="add fr" onclick="add()">+</span><span class="redColor fr bigSize">×<i class="nNum">1</i>份</span><span class="dec fr" onclick="dec()">-</span></p>
+            </div>
+            </div>
+            <p class="height2 whiteBg gray huodong">优惠活动<input type="text" class="fr"  placeholder="请填写优惠码" /></p>
+            <div class="pay whiteBg ">
+                <p class="height1 SpayWay ">选择支付方式</p>
+                <p class="weixinPay payway relative">微信支付<img src="images/selected.png" class="selected"/></p>
+                <p class="xianjinPay payway relative">现金支付</p>
+            </div>
+            <p class="height0 whiteBg"><span class="redColor">合计：
+            <i class="smallSize">￥</i ><em class="total">80</em></span><button class="comfire fr mainBg" onclick="Dosubmit()">去支付</button></p>
+            <div class="topWarp">
+                <div class="tips whiteBg">
+                    <p class="height2 bigsize">提示</p>
+                    <p class="bigSize de-center">已预定成功该时段球场</p>
+                    <p class="height2 greenColor bigsize"><span class="BTn">确定</span></p>
+                </div>
+            </div>
+        </div>
+            <script>
+    window.onload=function(){
+     defaultF();
+
+    }
+    var sPrice=sessionStorage.getItem('price');
+    var selectDate=sessionStorage.getItem("selectYear")+sessionStorage.getItem("selectDate");
+     var selectType= sessionStorage.getItem('selectTye');
+     var courtType=sessionStorage.getItem('cName');
+    function defaultF(){
+      $(".topDetail .realTime").text(selectDate);
+      $(".topDetail .selectedType").text(selectType);
+      $(".topDetail .courtType").text(courtType);
+      $(".height0 .total").text(sPrice);
+      $(".pay").on('click', '.payway', function(event) {
+          event.preventDefault();
+          /* Act on the event */
+          $(".pay .selected").remove();
+          $(this).append('<img src="images/selected.png" class="selected"/>')
+      });
+
+      $(".topWarp").on('touchstart', function(event) {
+          // event.preventDefault();
+          /* Act on the event */
+          $(".tips .BTn").on('touchstart', function(event) {
+              event.preventDefault();
+              /* Act on the event */
+              $(".topWarp").hide();
+          });
+      });
+    }
+function Dosubmit(){
+    var checkedPw= $(".pay .selected").parent('p').text();
+    if(checkedPw=='现金支付'){
+      $(".topWarp").show();
+      var jinzhi=0;
+      document.addEventListener("touchmove",function(e){
+      if(jinzhi==0){
+      e.preventDefault();
+      e.stopPropagation();
+      }
+      },false);
+      $(".tips .BTn").on('click', function(event) {
+        jinzhi=1;
+          event.preventDefault();
+          /* Act on the event */
+          $(".topWarp").hide();
+      });
+    }
+    else{
+        //微信支付
+    }
+}
+function add(){
+var sum=$(".per-info .nNum");
+sum.text(+sum.text()+1);
+$(".height0 .total").text(sum.text()*sPrice)
+}
+function dec(){
+   var sum=$(".per-info .nNum");
+   sum.text(+sum.text()-1);
+   if(sum.text()<1){
+    sum.text('1')
+   }
+   $(".height0 .total").text(sum.text()*sPrice)
+}
+    </script>
+
+    </body>
+</html>

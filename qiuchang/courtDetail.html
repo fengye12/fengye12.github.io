@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <title>球场</title>
+    </head>
+    <style>
+        .back{
+            position: absolute;
+            left: 0.32rem;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            width: 0.24rem;
+            height: 0.41rem;
+        }
+        .courtBg img{
+        width: 7.5rem;
+        height: 3rem;
+        }
+        .facilities{
+            padding: 0.18rem 0.3rem;
+            background: #fff;
+            width: 100%;
+             box-sizing: border-box;
+             border-bottom: 1px solid #ddd;
+             color: #a3a3a3;
+        }
+        .facilities span{
+            display: inline-block;
+            width: 25%;
+            text-align: center;
+            float: left;
+        }
+        .facilities .img-box{
+            height: 26px;
+        }
+        .number-Info{
+            background-image: url(images/phone.png);
+            background-repeat: no-repeat;
+            background-position: 0.32rem center;
+            padding-left: 0.66rem;
+            background-size: 0.24rem 0.4rem;
+            color: #6f6f6f;
+        }
+        .dateList{
+            margin-top: 0.28rem;
+        }
+        .dateList .liSelect li{
+            width: 50%;
+            color: #747474;
+            text-align: center;
+            height: 0.88rem;
+            line-height: 0.88rem;
+        }
+        .liSelect{
+            border-bottom: 1px solid #ddd;
+            padding: 0 0.32rem;
+        }
+         .dateList .liSelect li p{
+            width: 30%;
+            margin: auto;
+         }
+        .dateList .liSelect li.active p{
+            border-bottom: 2px solid #ef5350;
+            color: #ef5350;
+        }
+        .date-info{
+           padding: 0.22rem 0 0.22rem 0.28rem;
+        }
+        .date-info li{
+            width: 20%;
+            line-height: 18px;
+            box-sizing: border-box;
+            float: left;
+            padding-right: 0.18rem;
+            text-align: center;
+            color: #747474;
+        }
+        .date-info li>div{
+            padding: 4px 0;
+        }
+        .date-info li.active1>div{
+            background: #ef5350 ;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .date-info li.disabled>div{
+            color: #c4c4c4;
+        }
+        .re-Btn{
+            position: fixed;
+            bottom: 0.3rem;
+        }
+        .re-Btn input{
+            width: 4rem;
+            height: 0.8rem;
+            color: #fff;
+            margin-left: 1.75rem;
+            border-radius: 20px;
+            font-size: 15px;
+        }
+        .date-info .none{
+            display: none;
+        }
+    </style>
+    <body>
+    <div class="wrap">
+        <header class="mainBg header relative">球场详情<a href="javascript:history.go(-1);"><img src="images/back.png"  class="back"/></a></header>
+        <div class="courtBg"><img src="images/qirenBg.png" onclick="back()"/></div>
+        <div class="facilities clearfix">
+            <span><p class="img-box"><img src="images/icon1Xl.png"  width="25px" height="20px"/></p><p>行李寄存</p></span>
+            <span><p class="img-box"><img src="images/icon2WiFi.png"  width="22px" height="15px"/></p><p>免费WIFI</p></span>
+            <span><p class="img-box"><img src="images/icon3MY.png"  width="25px" height="23px"/></p><p>免费淋浴</p></span>
+            <span><p class="img-box"><img src="images/icon4Pa.png"  width="15px" height="20px"/></p><p>免费停车</p></span>
+        </div>
+        <p class="height2 number-Info whiteBg">1558812406</p>
+        <div class="dateList whiteBg">
+            <ul class="liSelect clearfix">
+                <li class="fl active"><p>包场</p></li>
+                <li class="fl"><p>散客</p></li>
+            </ul>
+            <ul class="date-info clearfix smallSize">
+                <li >
+                <div>
+                    <p>11月24号</p>
+                    <p class="none"></p>
+                    <p >周一</p>
+                </div>
+                </li>
+                <li>
+                <div>
+                    <p>11月24号</p>
+                    <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+                <li class="active1">
+                <div>
+                    <p>11月24号</p>
+                     <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+                <li class="disabled">
+                <div>
+                    <p>11月24号</p>
+                    <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+                <li>
+                <div>
+                    <p>11月24号</p>
+                  <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+                <li>
+                <div>
+                    <p>11月24号</p>
+                     <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+                <li>
+                <div>
+                    <p>11月24号</p>
+                     <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+                <li>
+                <div>
+                    <p>11月24号</p>
+                     <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+                <li>
+                <div>
+                    <p>11月24号</p>
+                     <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+                <li>
+                <div>
+                    <p>11月24号</p>
+                     <p class="none"></p>
+                    <p>周一</p>
+                </div>
+                </li>
+            </ul>
+        </div>
+        <form action="" class="re-Btn">
+            <input type="button" value="立即预订" class="mainBg" onclick="getDate()"/>
+        </form>
+    </div>
+    <script>
+    //假设上一步点击的是五人球场
+    window.onload=function(){
+        defaultF();
+    }
+    var courtType=sessionStorage.getItem('cName');
+
+    function defaultF(){
+    if(courtType=="七人球场"){
+       $(".courtBg img").attr('src', 'images/qirenBg.png');
+    }else if(courtType=="五人球场"){
+       $(".courtBg img").attr('src', 'images/wurenBg.png');
+    }else if(courtType=='网球场'){
+         $(".courtBg img").attr('src', 'images/wangqiuBg.png');
+    }
+    //包场和散客之间变换
+        var oUL=$(".liSelect");
+        var oLI=$(".liSelect li")
+        oUL.on('click', 'li', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            oLI.removeClass('active')
+            $(this).addClass('active')
+        });
+    //循环出日期
+    var weekArr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+$(".date-info li").each(function(index, el) {
+    var currentDay=new Date();
+    currentDay.setDate(currentDay.getDate()+index);
+    var Year=currentDay.getFullYear();
+    var Month=currentDay.getMonth()+1;
+    var  Day=currentDay.getDate();
+    var week=weekArr[currentDay.getDay()];
+    $(this).find('p').first().text(Month+'月'+Day+'日');
+     $(this).find('p').last().text(week);
+     $(this).find(".none").text(Year+'年')
+});
+//除了没有场次天意外的天数选择后的样式
+$(".date-info li").not('.disabled').on('click', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    $(".date-info li").removeClass('active1')
+    $(this).addClass('active1');
+
+});
+}
+function getDate(){
+    var selectDate=$(".date-info .active1").find('p').first().text();
+    var selectWeek=$(".date-info .active1").find('p').last().text();
+    var selectYear=$(".date-info .active1").find('.none').text();
+    var selectTye=$(".liSelect .active").text();
+    sessionStorage.setItem('selectTye',selectTye);
+    sessionStorage.setItem('selectDate',selectDate);
+    sessionStorage.setItem('selectWeek',selectWeek);
+    sessionStorage.setItem('selectYear',selectYear);
+    window.open("dateSelect.html",'_self')
+}
+    </script>
+    </body>
+</html>

@@ -12,6 +12,8 @@ leftImg:  /images/ie.png
     ::-moz-selection { background: #e2eae2; }
     ::-webkit-selection { background: #e2eae2; }
 </style>
+### 转ico
+http://www.bitbug.net/
 ### ie8及以下background-size:100% 100%;不起作用
 浏览器兼容：
 IE 和遨游不支持；

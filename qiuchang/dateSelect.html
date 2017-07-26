@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <title>球场</title>
+    </head>
+    <body>
+    <style>
+    .back{
+        position: absolute;
+        left: 0.32rem;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        width: 0.24rem;
+        height: 0.41rem;
+    }
+    .height1{
+        padding: 0 0.32rem;
+        color: #747474;
+    }
+   .selectWeek{
+    padding-left: 6px;
+   }
+   .selectTimer{
+    margin-top: 0.34rem;
+   }
+   .height4{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+   }
+   .timeList li{
+    padding: 0 0.44rem 0 0.72rem;
+    border-top: 1px solid #ddd;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    background: #fff;
+    position: relative;
+   }
+   .timeList .selected{
+    position: absolute;
+    width: 0.38rem;
+    height: 0.38rem;
+    left: 0.18rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+   }
+   .needKnow{
+    padding: 0.31rem 0.44rem 0.31rem 0.72rem;
+    color: #747474;
+    font-size: 13px;
+    line-height: 22px;
+   }
+   .re-Btn{
+margin-top: 0.42rem;
+margin-bottom: 0.3rem;
+   }
+   .re-Btn input{
+       width: 4rem;
+       height: 0.8rem;
+       color: #fff;
+       margin-left: 1.75rem;
+       border-radius: 20px;
+       font-size: 15px;
+       border: none;
+   }
+   .timeList .deTime1{
+    display: none;
+   }
+    </style>
+    <div class="wrap">
+  <header class="mainBg header relative">球场详情<a href="javascript:history.go(-1);"><img src="images/back.png"  class="back"/></a></header>
+    <p class="whiteBg height1 bigsize"><span class="selectDate"></span><span class="selectWeek"></span><span class="fr redColor selectType">包场</span></p>
+    <div class="selectTimer">
+    <p class="height4 whiteBg bigsize">选择入场时间</p>
+    <ul class="timeList bigsize">
+        <li  class="deTime"><img src="images/selected.png" class="selected"/><span>9:00—12:00</span><span class="fr redColor price bigerSize">¥540</span></li>
+        <li  class="deTime"><span class="timePoint">12:00—15:00</span><span class="fr redColor price bigerSize">¥540</span></li>
+        <li class="deTime"><span class="timePoint">15:00—18:00</span><span class="fr redColor price  bigerSize">¥540</span></li>
+        <li  class="deTime"><span class="timePoint">20:30—22:30</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime"><span class="timePoint">22:30—01:30</span><span class="fr redColor price bigerSize">¥540</span></li>
+        <li  class="deTime"><span class="timePoint">18:30—20:30</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><img src="images/selected.png" class="selected"/><span class="timePoint">9:00-10:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">10:00—11:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">11:00-12:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">12:00-13:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">13:00-14:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">14:00-15:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">15:00-16:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">16:00-17:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">17:00-18:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">18:00-19:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">19:00-20:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">20:00-21:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">21:00-22:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">22:00-23:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">23:00-24:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+        <li  class="deTime1"><span class="timePoint">24:00-01:00</span><span class="fr redColor price bigerSize">¥680</span></li>
+    </ul>
+    </div>
+    <div class="needKnow">
+<p>订场须知</p>
+<p>1、请提前半小时到达球场，做好热身哦</p>
+<p>2、因天气等特殊原因造成的赛场不可用，客服会提前和您沟通</p>
+    </div>
+    <form action="" class="re-Btn">
+        <input type="button" value="确认订单" class="mainBg" onclick="getDate()"/>
+    </form>
+    </div>
+    </body>
+    <script>
+    //从session中取出选择的日期
+    window.onload=function(){
+        defaultF();
+    }
+        var selectDate=sessionStorage.getItem("selectYear")+sessionStorage.getItem("selectDate");
+        var selectWeek=sessionStorage.getItem("selectWeek");
+         var selectType= sessionStorage.getItem('selectTye');
+          var courtType=sessionStorage.getItem('cName');
+          function defaultF(){
+          var arr1=['￥540','￥540','￥540','￥680','￥680','￥540'];
+          var arr2=['￥360','￥360','￥360','￥450','￥450','￥360'];
+          var arr3=['￥80','￥80','￥80','￥80','￥80','￥80','￥80','￥80','￥80','￥100','￥100','￥100','￥100','￥100','￥100','￥100']
+          if(courtType=='七人球场'){
+             $(".timeList .selected").last().remove();
+            for(var i=0;i<$(".timeList .deTime .price").length;i++){
+               $(".timeList .deTime .price").eq(i).text(arr1[i])
+            }
+          }else if(courtType=='五人球场'){
+             $(".timeList .selected").last().remove();
+            for(var i=0;i<$(".timeList .deTime .price").length;i++){
+               $(".timeList .deTime .price").eq(i).text(arr2[i])
+            }
+
+          }else{
+            $(".timeList .deTime").hide();
+            $(".timeList .deTime1").show();
+            $(".timeList .selected").first().remove();
+            for(var i=0;i<$(".timeList .deTime1 .price").length;i++){
+               $(".timeList .deTime1 .price").eq(i).text(arr3[i])
+            }
+          }
+        $(".selectDate").text(selectDate);
+        $(".selectWeek").text(selectWeek);
+        $(".selectType").text(selectType);
+        //控制选中
+        var otimeList=$(".timeList");
+
+        otimeList.on('click', 'li', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            $(".timeList .selected").remove();
+            $(this).append('<img src="images/selected.png" class="selected"/>');
+        });
+    }
+        function getDate(){
+            var timePoint=$(".timeList .selected").parent('li').find(".timePoint").text();
+            var price=$(".timeList .selected").parent('li').find(".price").text().split('￥')[1];
+            console.log(price)
+            sessionStorage.setItem('timePoint',timePoint);
+            sessionStorage.setItem('price',price);
+            window.open('orderDetail.html', '_self')
+        }
+    </script>
+</html>

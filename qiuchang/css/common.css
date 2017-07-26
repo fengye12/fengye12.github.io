@@ -1,0 +1,77 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-26 09:20:49
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-01-17 17:08:46
+*/
+.wrap{
+    width: 7.5rem;
+    margin: auto;
+}
+body{
+    font-size: 14px;
+    background-color:#e7e7e7 ;
+    color: #2b2b2b;
+    font-family: Helvetica;
+}
+a{
+    color: #2b2b2b;
+    display: inline-block;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.header{
+    font-size:18px;
+    text-align: center;
+    height:0.88rem;
+    line-height:0.88rem;
+}
+.relative{
+    position:relative;
+}
+.gray{
+    color:#6f6f6f;
+}
+.bigsize{
+    font-size:15px;
+}
+.bigerSize{
+    font-size:18px;
+}
+.smallSize{
+    font-size:12px;
+}
+.whiteBg{
+    background-color: #fff;
+}
+.mainBg{
+    background-color: #2ac134;
+    color: #fff;
+}
+.text-Cenetr{
+    text-align: center;
+}
+.height1{
+    height:0.88rem;
+    line-height:0.88rem
+}
+.height2{
+ height: 0.7rem;
+line-height: 0.7rem;
+}
+.height3{
+    line-height:0.6rem
+}
+.mainColor{
+    color: #2ac134;
+}
+.redColor{
+    color:#ef5350;
+}
+.leftali{
+text-align: left;
+}

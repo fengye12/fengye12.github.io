@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <script src="js/resizeRem.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="css/resetClass.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <title>球场</title>
+    </head>
+    <body ><!-- onload="getLocation()" -->
+    <style>
+        .address{
+            color: #fff;
+            padding-left:0.43rem ;
+            background: url(images/address.png) no-repeat left center;
+            background-size: 0.33rem 0.44rem;
+            position: absolute;
+            left: 0.32rem;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            font-size: 13px;
+        }
+        .CourtImg{
+            width: 7.5rem;
+            height: 3.92rem;
+        }
+        .list{
+            margin-top: 0.09rem;
+        }
+        .list li{
+            width: 7.5rem;
+            box-sizing: border-box;
+            padding: 0.35rem 0.32rem;
+            background: #fff;
+            margin-bottom: 1px;
+        }
+        .list .infoBox{
+            margin-left: 1.4rem;
+            padding-left: 0.22rem;
+            line-height: 0.35rem;
+        }
+        .list .star img{
+            width: 0.24rem;
+            height: 0.24rem;
+            padding-right: 0.11rem;
+            float: left;
+        }
+        .infoBox .leftIMg{
+            width: 1.4rem;
+            height: 1.4rem;
+            position: absolute;
+            left: 0.32rem;
+            top: 0.35rem;
+        }
+.infoBox .Btn{
+    height: 0.44rem;
+    width: 0.88rem;
+    line-height: 0.44rem;
+    position: absolute;
+    right: 0.32rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    background: #fff;
+    border-radius: 5px;
+    border-color:#2ace34 ;
+}
+    </style>
+    <div class="wrap">
+    <header class="header relative mainBg">球场<span class="address " onclick="getLocation()">杭州</span></header>
+    <div id="mapholder" style="width:0;height:0;">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9kBnzifZHYtWxdioZRC8KAHA7eSXS6wb">
+    </script>
+    </div>
+<div>
+    <img src="images/qiuchangIMg.png" class="CourtImg" />
+</div>
+<div class="list">
+    <ul>
+    <a href="courtDetail.html" onclick="getName(this)">
+        <li class="relative">
+            <div class="infoBox">
+                <img src="images/qireniMg.png" class="leftIMg" />
+                <p class="courtName bigsize">七人球场</p>
+                <p class="star"><img src="images/quanatar.png" >
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <span class="redColor">4.8分</span>
+                </p>
+                <p class="gray">共 423人 购买</p>
+                <p class="redColor bigerSize" >¥540    <span class="smallSize">起</span></p>
+               <form action="">
+                   <input type="button"  value="订购"  class="Btn smallSize mainColor "/>
+               </form>
+            </div>
+        </li>
+        </a>
+         <a href="courtDetail.html" onclick="getName(this)">
+        <li class="relative" >
+            <div class="infoBox">
+                <img src="images/wurenImg.png" class="leftIMg" />
+                <p  class="courtName bigsize">五人球场</p>
+                <p class="star"><img src="images/quanatar.png" >
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <span class="redColor">4.8分</span>
+                </p>
+                <p class="gray">共 423人 购买</p>
+                <p class="redColor bigerSize" >¥540    <span class="smallSize">起</span></p>
+               <form action="">
+                   <input type="button"  value="订购"  class="Btn smallSize mainColor "/>
+               </form>
+            </div>
+        </li>
+        </a>
+         <a href="courtDetail.html" onclick="getName(this)">
+        <li class="relative">
+            <div class="infoBox">
+                <img src="images/wangqiuImg.png" class="leftIMg" />
+                <p  class="courtName bigsize">网球场</p>
+                <p class="star"><img src="images/quanatar.png" >
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <img src="images/quanatar.png"/>
+                <span class="redColor">4.8分</span>
+                </p>
+                <p class="gray">共 423人 购买</p>
+                <p class="redColor bigerSize" >¥540    <span class="smallSize">起</span></p>
+               <form action="">
+                   <input type="button"  value="订购"  class="Btn smallSize mainColor "/>
+               </form>
+            </div>
+        </li>
+        </a>
+    </ul>
+</div>
+    </div>
+
+    <script>
+
+    function getName(el){
+        var $this=$(el);
+        var courtName=$this.find(".courtName").text();
+        sessionStorage.setItem('cName',courtName);
+    }
+    var a=sessionStorage.getItem("flag");
+    if(a!='true'){
+        getLocation();
+    }
+    //页面加载进行定位
+                    function getLocation(){
+                        sessionStorage.setItem("flag",'true')
+                        if (navigator.geolocation){
+                          navigator.geolocation.getCurrentPosition(showPosition,showError);
+                         }else{
+                            alert('此设备不支持定位')
+                         }
+
+                    }
+                    function showPosition(position){
+
+                        // 百度地图API功能
+                        var map = new BMap.Map("mapholder");            // 创建Map实例
+                        var point = new BMap.Point(position.coords.longitude, position.coords.latitude);    // 创建点坐标
+
+                        var gc = new BMap.Geocoder();
+                        var pt = point
+                        gc.getLocation(pt, function(rs){
+                        var addComp = rs.addressComponents;
+                        $('.address').text(addComp.city)
+                        // var a=addComp.city;
+                        // var city=new Array();
+
+                        // $('#lis .box_content_box1 span').each(function(index, element) {
+                        //     city.push($(this).text())
+                        // });
+                        // var flag=$.inArray(a, city);  //返回 3,
+                        // if(flag>0){
+                        //     $('.h').text(a)
+                        // }else{$('#lis').show(); getCities();}
+
+
+                            });
+                           }
+
+                     function showError(error){
+                          switch(error.code){
+                            case error.PERMISSION_DENIED:
+                             alert('用户拒绝了地理定位')
+                              break;
+                            case error.POSITION_UNAVAILABLE:
+                        alert('定位信息不可用')
+                              break;
+                            case error.TIMEOUT:
+                            alert('获取定位时间超时')
+                              break;
+                            case error.UNKNOWN_ERROR:
+                             alert('未知错误')
+                              break;
+                            }
+                    }
+    </script>
+    </body>
+</html>
