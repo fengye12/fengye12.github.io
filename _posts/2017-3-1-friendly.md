@@ -13,7 +13,15 @@ leftImg:  /images/ie.png
     ::-webkit-selection { background: #e2eae2; }
 </style>
 ### 转ico
+``` python
 http://www.bitbug.net/
+<link type="image/x-icon" href="../style/image/favcion.ico" rel="shortcut icon" />
+<link rel="fluid-icon" href="../style/image/favcion.png" title="meyoung">
+```
+### 允许添加到主屏幕类似app运行，而不是浏览器中运行
+``` python
+<meta name="apple-mobile-web-app-capable" content="yes">
+```
 ### ie8及以下background-size:100% 100%;不起作用
 浏览器兼容：
 IE 和遨游不支持；
