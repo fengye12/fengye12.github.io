@@ -21,3 +21,6 @@ leftImg:  /images/vue-logo.png
 <img src="/images/react.png" alt="">
 <img src="/images/react2.png" alt="">
 ### jxs用法
+### redux
+实现组建之间共享管理 .交互复杂管理state（存在store里面）。ui==>action====>reducer==>store===>sate==>ui
+### react component (awesome-react)
