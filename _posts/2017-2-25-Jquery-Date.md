@@ -12,7 +12,7 @@ CurrentDate.setDate(CurrentDate.getDate()+5);
 <br>
 五个月后：<br>
 var CurrentDate=new Date();
-CurrentDate.setMonth(CurrentDate.getMonth(),+5);
+CurrentDate.setMonth(CurrentDate.getMonth()+5);
 alert(CurrentDate.getMonth()+1)
 </pre>
 ##  Js计算时间差（天、小时、分钟、秒）
@@ -38,5 +38,25 @@ alert(CurrentDate.getMonth()+1)
     var seconds=Math.round(leave3/1000)
     alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
 </pre>
+### 日期插件
+jeDate可以根据format的类型 显示不同的日历类型 样式也还可以
 
+### es5模板
+var data = {
+    name: '新闻',
+    news: {
+        name: 'Bable升级到6啦',
+        content: 'Bable在某年某月升级到6啦，哈哈哈'
+    }
+};
+var html = (
+'<div class="box">' +
+  '<h2 class="box-header">${name}</h2>' +
+  '<div class="box-body">' +
+    '<h3>${newsName}<h3>' +
+    '<div>${newsContent}</div>' +
+  '</div>' +
+'</div>').replace('${name}', data.name)
+    .replace('${newsName}', data.news.name)
+    .replace('${newsContent}', data.news.content);
 

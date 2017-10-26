@@ -311,6 +311,45 @@ a:active {
 		border-color:#28B2A4 !important;
 		box-shadow: 0 0 1px #007FFF !important;
 	}
+	 .switchCompany{
+        margin-top: 20px;
+        font-size: 12px;
+        position: relative;
+        width: 300px;
+        border: 2px solid #28b2a4;
+    }
+        .s_name{
+            margin-right: 50px;
+            font-size: 14px;
+
+        }
+        .singleC{
+            position: relative;
+            padding: 0 15px;
+            height: 25px;
+            line-height: 25px;
+            border-bottom: 1px solid #28b2a4;
+        }
+        .singleC:last-child{
+            border: none;
+        }
+        .switch{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 25px;
+        }
+        #triangle-up {
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 10px solid #28b2a4;
+        }
 	option{
 		font-weight: normal;
 		display: block;

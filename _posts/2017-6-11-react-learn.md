@@ -20,3 +20,4 @@ leftImg:  /images/vue-logo.png
 ### react生命周期
 <img src="/images/react.png" alt="">
 <img src="/images/react2.png" alt="">
+### jxs用法

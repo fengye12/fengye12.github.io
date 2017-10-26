@@ -43,7 +43,7 @@ align-content 属性定义了多根轴线的对齐方式。如果项目只有一
 .box {
   align-content: flex-start | flex-end | center | space-between | space-around | stretch（默认）;
 }<br>
-### 四、项目的属性 
+### 四、项目的属性
 order 属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。<br>
 flex-grow 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br>
 flex-shrink 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。<br>

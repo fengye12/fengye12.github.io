@@ -13,7 +13,15 @@ leftImg:  /images/ie.png
     ::-webkit-selection { background: #e2eae2; }
 </style>
 ### 转ico
+``` python
 http://www.bitbug.net/
+<link type="image/x-icon" href="../style/image/favcion.ico" rel="shortcut icon" />
+<link rel="fluid-icon" href="../style/image/favcion.png" title="meyoung">
+```
+### 允许添加到主屏幕类似app运行，而不是浏览器中运行
+``` python
+<meta name="apple-mobile-web-app-capable" content="yes">
+```
 ### ie8及以下background-size:100% 100%;不起作用
 浏览器兼容：
 IE 和遨游不支持；
@@ -356,3 +364,134 @@ https://github.com/fengye12/autocomplete
   </body>
   </html>
 </pre>
+
+### 补充jquery 选择器
+<pre>
+  1. 先说说通过位置选择的几个操作：
+:first：默认情况下是相对整个页面来说的第一个，如：li:first表示整个页面的第一个li元素，而ul li:first表示整个页面的第一个li元素，并且是在ul下的子元素；
+:last：同上了，只是是最后一个而已；
+:first- child：为每个父元素匹配第一个子元素，如li:first-child返回每个ul的第一个li元素。可以这样理解，页面中的元素有相同的父元素 的，并且里面又包含li元素的，那么就取第一个li元素，每个子类集合都要进行判断，直到找出所有符合要求的li元素；
+:last-child：这个也与上面相对了，只是取的是最后一个；
+:only- child：返回所有没有兄弟节点的元素，注意，文本元素不是，也就是说类似这样的<div>hello<a href="">jquery</a></div>，对于这段会选出<a>元素；对 于$(”label:only-child“)会选出是label元素，同时它是它父类唯一的子元素的label元素；
+:nth-child(n)：返回第n个子节点，n从1开始，如果n取0，那么就会选择所有的元素。如：[*]li:nth-child(2)返回li元素，并且该元素是其父元素的第二个子元素；
+:nth-child(even|odd)：返回偶数或奇数的子节点；
+:nth-child(An+B)：返回满足表达式An+B的所有子节点，比如3n+1返回所处位置为父节点子元素的是3的倍数加1的那个子元素；
+:even：页面范围内的处于偶数位置的元素，如：li:even返回全部偶数li元素；
+:odd：页面范围内的处于奇数位置的元素；
+:eq(n)：第n个匹配的元素(n从0开始)，如：li:eq(3)返回整个页面的第四个li元素，ul li:eq(1)返回页面中第一个ul元素下的第二个li元素，注意：只匹配一次就返回了；
+:gt(n)：第n个匹配元素(不包括)之后的元素(n从0开始)，如：ul:gt(2)返回从第3个ul开始的所有ul元素(含第三个)；
+:lt(n)：第n个匹配元素(不包括)之前的元素(n从0开始)，如：ul:lt(2)返回从第0个和第1个ul元素；
+2. 利用css选择器进行选择：
+元素标签名：比如说$(”a“)会选出所有链接元素；
+#id：通过元素id进行选择，比如说$("#form1")会选择id为form1的元素；
+.class：通过元素的CSS类来选择，比如说$(".boldstyle")会选择CSS为boldstyle类的元素；
+标签 名#id.class：通过某类元素的id属性和class属性来选择，如：$(a#blog.boldStyle)会选择id为blog并且CSS类型 为.boldStyle类型的链接元素(<a id='blog' class='.boldStyle'>)；
+父标签名 子标签名.class：通过选择父标签下的某种CSS类型的子元素，如：$(p a.redStyle)会选择p段落元素中的链接子元素a，且其css类型为.redStyle；
+3. 通过子选择器，容器选择器和属性选择器进行选择：
+*：匹配所有的元素，比如说:$(*)会把页面中的所有元素都返回；
+E：匹配标签名为E的所有元素，如$("a")返回所有链接元素；
+E F：匹配父元素E下的标签名为F的所有子元素（F可以为E的子类的子类，甚至更远）；
+E>F：匹配父元素E下的所有标签名为F的直接子元素；
+E+F：匹配所有标签名为F的元素，并且有E类型的兄弟节点在该F元素之前（E,F紧挨着）；
+E~F：匹配前面是任何兄弟节点E的所有元素F(E,F不必紧挨着);
+E:has(F)：匹配标签名为E，至少有一个标签名为F的后代节点的所有元素E；
+E.C：匹配带有类名C的所有元素E。.C等效于*.C；
+E#I：匹配id为I的所有元素E，#I等效于*#I；
+E[A]：匹配带有属性A的所有元素E；
+E[A=V]：匹配所有属性A的值为V的元素E；
+E[A^=V]：匹配所有元素E，且A的属性值是V开头的；
+E[A$=V]：匹配所有元素E，且A的属性值是V结尾的；
+E[A*=V]：匹配所有元素E，且A的属性值中包含有V；
+4.利用jQuery自定义的选择器进行选择：
+:button：选择任何按钮类型的元素，包括input[type=submit]等等；
+:checkbox：选择复选框元素；
+:file：选择所有文件类型元素，即input[type=file]；
+:image：选择表单中的图像元素，即input[type=image]，注意此处和前面根据标签名img选择图像有点不同哈；
+:input：选择表单元素，如<input>,<select>,<textarea>,<button>等；
+:radio：选择单选按钮元素；
+:reset：选择复位按钮元素，如input[type=reset]，button[type=reset]；
+:submit：选择提交按钮元素；
+:text：选择文本字段元素，即input[type=text]；
+:animated：选择当前处于动态控制下的元素；
+:contains(hello)：选择包含文本hello的元素；
+:header：选择标题元素，如<h1>；
+:parent：选择拥有后代节点(包括文本)的元素，而排除空元素；
+:selected：选择已选中的选项元素；
+:visible：选择可见元素；
+:enable：选择界面上已经可以使用的表单元素；
+:disabled：选择界面上被禁用的表单元素；
+:checked：选择已选中的复选框或单选按钮；
+</pre>
+
+### 兼容各个浏览器的完美placeholder
+<pre>
+  <input type="text" value="Name *" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name *';}">
+</pre>
+<script>
+  var eventshiv = {
+    // event兼容
+    getEvent: function(event) {
+        return event ? event : window.event;
+    },
+ 
+    // type兼容
+    getType: function(event) {
+        return event.type;
+    },
+ 
+    // target兼容
+    getTarget: function(event) {
+        return event.target ? event.target : event.srcelem;
+    },
+ 
+    // 添加事件句柄
+    addHandler: function(elem, type, listener) {
+        if (elem.addEventListener) {
+            elem.addEventListener(type, listener, false);
+        } else if (elem.attachEvent) {
+            elem.attachEvent('on' + type, listener);
+        } else {
+            // 在这里由于.与'on'字符串不能链接，只能用 []
+            elem['on' + type] = listener;
+        }
+    },
+ 
+    // 移除事件句柄
+    removeHandler: function(elem, type, listener) {
+        if (elem.removeEventListener) {
+            elem.removeEventListener(type, listener, false);
+        } else if (elem.detachEvent) {
+            elem.detachEvent('on' + type, listener);
+        } else {
+            elem['on' + type] = null;
+        }
+    },
+ 
+    // 添加事件代理
+    addAgent: function (elem, type, agent, listener) {
+        elem.addEventListener(type, function (e) {
+            if (e.target.matches(agent)) {
+                listener.call(e.target, e); // this 指向 e.target
+            }
+        });
+    },
+ 
+    // 取消默认行为
+    preventDefault: function(event) {
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+ 
+    // 阻止事件冒泡
+    stopPropagation: function(event) {
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+    }
+};
+</script>
