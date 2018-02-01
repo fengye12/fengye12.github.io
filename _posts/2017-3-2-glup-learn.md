@@ -1,7 +1,7 @@
 ---
 layout: post
 title: gulp篇
-leftImg:  /images/ie.png
+leftImg:  http://upload.ouliu.net/i/20180201150610foq10.png
 ---
 
 ### gulp命令

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  React
-leftImg:  /images/vue-logo.png
+leftImg:  http://upload.ouliu.net/i/20180201145813ewdyf.png
 ---
 
 <style>
