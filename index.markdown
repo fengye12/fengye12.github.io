@@ -34,7 +34,7 @@ put hello
 {% endhighlight %} -->
 <p><b>Find me on:</b></p>
 <ul>
-<li><a href="http://github.io/fengye12/">Github</a></li>
+<li><a href="https://github.com/fengye12">Github</a></li>
 </ul>
 <p><b>Contact Information:</b></p>
 <!-- <blockquote>
