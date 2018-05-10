@@ -4,7 +4,8 @@ html,body{
 	margin:0;
 	padding:0;
 	line-height: 1;
-	font-family: "Microsoft YaHei","Arial","黑体","宋体",sans-serif;
+	/* font-family: "Microsoft YaHei","Arial","黑体","宋体",sans-serif; */
+	font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 	background: #fff;
 }
 div,p,h1,h2,h3,h4,ul,li,span,a,table,caption,tbody,tfoot,thead,tr,th,em,i,input,select{
