@@ -33,7 +33,7 @@
     <div class="hidden-xs col-sm-3  col-md-4">
 
       <div class="clock" style="text-align:center;">
-        <canvas id="clock" width="120px" height="120px" style="margin:20px auto"></canvas>
+        <canvas id="clock" width="120px" height="120px" style="margin:20px auto">
         <script>
           var dom = document.getElementById('clock');
             var ctx = dom.getContext('2d');
