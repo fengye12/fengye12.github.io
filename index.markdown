@@ -1,23 +1,24 @@
 ---
 layout: default
 title: coral's corner
+paginate_path: "blog/page:num"
 ---
 <div class="contentBox col-xs-12 col-sm-10  col-md-9 ">
   <h2 style="border-bottom: 1px solid #ddd; padding-bottom:8px;">文章列表</h2>
   <ul class="posts">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <li class="clearfix">
       <div class="post-header">
         <h1 class="post-title">
           <a class="post-title-link">{{ post.title }}</a>
         </h1>
         <small class="mb_60">
-          <i></i>发表于<span>{{ post.date.replace(' 00:00:00 +0000',"") }}</span>
+          <i></i>发表于<span>{{ post.date | date_to_string }}</span>
         </small>
       </div>
       <div class="post-content-preview">
         <!-- {{ post.content | strip_html | truncate: 700 }} -->
-        {{page.excerpt}}
+        {{page.excerpt | strip_html}}
       </div>
       <div class="post-button text-center mt_20">
         <a class="btn" href="{{ post.url }}" rel="contents">
@@ -41,3 +42,28 @@ title: coral's corner
     <div>专注于前端知识分享，微信公众号：前后端技术分享屋</div>
   </div>
 </div>
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <span>&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>
+    {% elsif page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}

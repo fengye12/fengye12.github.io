@@ -4,3 +4,7 @@ permalink   : none
 markdown    : kramdown
 kramdown:
   input: GFM
+sass:
+    style: :compressed
+paginate: 5
+excerpt_separator:  '<!-- more -->'
