@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  易用、高效、灵活的vue
-leftImg:  https://img.alicdn.com/imgextra/i4/1641711921/TB23mjyqQSWBuNjSszdXXbeSpXa_!!1641711921.png
 ---
 <style>
     img{
