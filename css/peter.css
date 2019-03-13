@@ -43,10 +43,8 @@ body {
 
 
 .pagination {
-  position: absolute;
-  z-index: 20;
-  left: 10px;
-  bottom: 10px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .swiper-pagination-switch {
@@ -77,6 +75,7 @@ body {
 
 .swiper-active-switch {
   background: #fff;
+  
 }
 
 .typo {
@@ -144,10 +143,6 @@ pre {
     margin-left: 3%;
 }
 
-body {
-    background: #ece1df;
-    position: relative;
-}
 
 .typo {
     background: #fff;
