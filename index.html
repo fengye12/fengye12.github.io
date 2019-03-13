@@ -9,10 +9,12 @@ title: "coral blog"
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
   <link type="text/css" href="/css/animate.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/idangerous.swiper.css">
   <link type="text/css" href="/css/typo.css" rel="stylesheet" />
+
   <link type="text/css" href="/css/peter.css" rel="stylesheet" />
   <title>coral's corner</title>
-  <link rel="stylesheet" href="/css/idangerous.swiper.css">
+  
 </head>
 <body>
   <div class="swiper-container">
@@ -51,7 +53,7 @@ title: "coral blog"
         </small>
       </div>
       <div class="post-content-preview">
-        {{ post.content | markdownify | truncate: 700 }}
+        {{ post.content | markdownify | truncate: 400 }}
         <!-- {{post.excerpt | strip_html}} -->
       </div>
       <div class="post-button text-center mt_20">
@@ -123,9 +125,9 @@ title: "coral blog"
 
     }
     var mySwiper = new Swiper('.swiper-container', {
-      pagination: '.pagination',
+      pagination: '.swip_pagination',
       paginationClickable: true,
-      autoplay: 8000,
+      autoplay: 5000,
       onSlideChangeEnd: function (swiper) {
         if (swiper.activeIndex == 1) {
           $(".blue-slide .title").addClass('animated fadeInDown').css('display', 'block');
