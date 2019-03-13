@@ -51,8 +51,8 @@ title: "coral blog"
         </small>
       </div>
       <div class="post-content-preview">
-        <!-- {{ post.content | strip_html | truncate: 700 }} -->
-        {{post.excerpt | strip_html}}
+        {{ post.content | markdownify | truncate: 700 }}
+        <!-- {{post.excerpt | strip_html}} -->
       </div>
       <div class="post-button text-center mt_20">
         <a class="btn" href="{{ post.url }}" rel="contents">
