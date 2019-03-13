@@ -1,6 +1,6 @@
 ---
 layout: post
-title: javascript中apply和call方法的作用及区别说明
+title: apply和call方法的作用及区别说明
 leftImg:  /images/2before.png
 ---
 
