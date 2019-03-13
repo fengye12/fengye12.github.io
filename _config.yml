@@ -1,10 +1,11 @@
 auto        : false
 lsi         : false
-permalink   : none
+# permalink   : none
 markdown    : kramdown
 kramdown:
   input: GFM
 sass:
     style: :compressed
 paginate: 5
+paginate_path: "page:num"
 excerpt_separator:  '<!-- more -->'
