@@ -6,6 +6,6 @@ kramdown:
   input: GFM
 sass:
     style: :compressed
-paginate: 2
+paginate: 5
 paginate_path: "page:num"
-excerpt_separator:  '<!-- more -->'
+

@@ -49,11 +49,12 @@ title: "coral blog"
           <a class="post-title-link">{{ post.title }}</a>
         </h1>
         <small class="mb_60">
-          <i></i>发表于<span>{{ post.date | date_to_string }}</span>
+          <i></i>发表于<span>{{ post.date | date_to_string }}</span> | <span>标签:{{ post.tag}}</span>
         </small>
       </div>
       <div class="post-content-preview">
-        {{ post.content | markdownify | truncate: 400 }}
+        {{ post.excerpt | markdownify | truncate: 400 }}
+        <!-- {{ post.excerpt | markdownify | truncate: 400 }} -->
         <!-- {{post.excerpt | strip_html}} -->
       </div>
       <div class="post-button text-center mt_20">
