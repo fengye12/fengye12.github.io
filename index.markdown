@@ -11,12 +11,13 @@ title: coral's corner
         <h1 class="post-title">
           <a class="post-title-link">{{ post.title }}</a>
         </h1>
-        <div class="fs_12 grayText mb_60">
-          <i></i>发表于<span>{{ post.date }}</span>
-        </div>
+        <small class="mb_60">
+          <i></i>发表于<span>{{ post.date.replace(' 00:00:00 +0000',"") }}</span>
+        </small>
       </div>
       <div class="post-content-preview">
-        {{ post.content | strip_html | truncate: 700 }}
+        <!-- {{ post.content | strip_html | truncate: 700 }} -->
+        {{page.excerpt}}
       </div>
       <div class="post-button text-center mt_20">
         <a class="btn" href="{{ post.url }}" rel="contents">

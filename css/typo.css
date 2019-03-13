@@ -5,6 +5,7 @@ html {
 	color: #555;
 	background: #fff;
 	-webkit-text-size-adjust: 100%;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
 	-ms-text-size-adjust: 100%;
 }
 
@@ -154,6 +155,7 @@ pre {
 /* 底部印刷体、版本等标记 */
 small {
 	font-size: 12px;
+	display: inline-block;
 	color: #888;
 }
 

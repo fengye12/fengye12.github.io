@@ -447,32 +447,7 @@ option {
     min-height: 1.2em;
     padding: 0px 2px 1px;
 }
-.btn {
-	display: inline-block;
-	padding: 0 20px;
-	font-size: 14px;
-	color: #fff;
-	background: #222;
-	border: 2px solid #555;
-	text-decoration: none;
-	border-radius: 0;
-	transition-property: background-color;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-in-out;
-	transition-delay: 0s;
-  }
-  .mt_20{
-	  margin-top: 20px;
-  }
-  .mb_60{
-	  margin-bottom: 60px;
-  }
-  .fs_12{
-	  font-size: 12px;
-  }
-  .grayText{
-	  color:#999;
-  }
+
 @media only screen and (max-width:1346px) {
     .header-nav {
         width: 1346px;
