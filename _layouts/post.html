@@ -4,16 +4,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <link  type="image/x-icon" href="/images/favicon.ico" rel="shortcut icon" />
+<link type="text/css" href="/css/bootstrap.css"  rel="stylesheet" />
 <link type="text/css" href="/css/animate.min.css"  rel="stylesheet" />
 <link  type="text/css" href="/css/typo.css" rel="stylesheet"/>
 <link  type="text/css" href="/css/peter.css" rel="stylesheet" />
-<link type="text/css" href="/css/bootstrap.css"  rel="stylesheet" />
+
 <style>
   h1,.h1,h2,.h2{
     margin: 0;
   }
 </style>
-
 <script src="/js/jquery-3.1.1.js"></script>
 <script src="/js/bootstrap.js"></script>
 
@@ -24,11 +24,10 @@
 
 <title>{{ page.title }}</title>
 </head>
-{% include nav.html %}
+<!-- {% include nav.html %} -->
 <div class="banner">
     <h1>{{ page.title }}</h1>
-
-    <canvas id="canv" width="1763" height="404"></canvas>
+    <canvas id="canv" width="100%" height="100%"></canvas>
     <script>
     var num = 200;
     var w = window.innerWidth;
@@ -359,9 +358,8 @@
     </script>
 </div>
 <div id="wrapperBox">
-<div class="container typo">
+<div class="typo">
 <div class="row">
-  <br>
   <div class="content">
   {{ content }}
   </div>

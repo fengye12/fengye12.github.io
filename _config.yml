@@ -8,5 +8,9 @@ sass:
     style: :compressed
 paginate: 5
 paginate_path: "page:num"
+# Gems
+
+gems: [jekyll-paginate]
 excerpt_separator:  ''
+
 
