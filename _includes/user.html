@@ -11,13 +11,16 @@
           <div>专注于前端知识分享，微信公众号：前后端技术分享屋</div>
         </div>
         {% include nav.html %}
-         <ul class="post_key_stat fs_14 mb_20">
-          <li>文章{{site.posts.size}}</li> |
-          <li>标签{{site.tags.size}}</li> |
-          <li>分类{{site.categories.size}}</li>
-        </ul>
-        {% include search.html %}
-        {% include cateList.html %}
+        <div class="white_bg" style="border-radius: 4px;padding: 10px;">
+            <ul class="post_key_stat fs_14 mb_20">
+                <li>文章{{site.posts.size}}</li><span class="grayText"> | </span>
+                <li>标签{{site.tags.size}}</li><span class="grayText"> | </span>
+                <li>分类{{site.categories.size}}</li>
+              </ul>
+              {% include search.html %}
+              {% include cateList.html %}
+        </div>
+        
         {% include contact.html %}
       </div>
       <script src="/js/lock.js"></script>

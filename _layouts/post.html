@@ -24,11 +24,28 @@
 
 <title>{{ page.title }}</title>
 </head>
-<!-- {% include nav.html %} -->
-<div class="banner">
-    <h1>{{ page.title }}</h1>
-    <canvas id="canv" width="100%" height="100%"></canvas>
-    <script>
+<body>
+   
+    <canvas id="canv" width="100%" height="100%" style="position: fixed;top: 0;bottom: 0;"></canvas>
+   
+<div id="wrapper" class="typo posts-expand pt_20">
+   
+    <div class="contentBox white_bg col-xs-12 col-sm-10  col-md-9  mt_20 pb_20">
+        <div class="post-header pt_20">
+            <h1 class="post-title pt_20">
+              <a class="post-title-link">{{ page.title }}</a>
+            </h1>
+            <small class="mb_60">
+              <i class="glyphicon glyphicon-calendar"></i> 发表于 <span>{{ page.date | date:"%Y-%m-%d" }}</span> | <span>标签:{{ page.tag}}</span>
+            </small>
+          </div>
+        {{ content }}
+      </div>
+  
+      {% include user.html %}
+
+</div>
+<script>
     var num = 200;
     var w = window.innerWidth;
     var h = window.innerHeight;
@@ -356,20 +373,19 @@
       canv.height = h = window.innerHeight;
     }, false);
     </script>
-</div>
-<div id="wrapperBox">
+<!-- <div id="wrapperBox">
 <div class="typo">
 <div class="row">
   <div class="content">
   {{ content }}
   </div>
-  <br>
   </div>
 </div>
-</div>
+</div> -->
 <!-- UY BEGIN -->
 <!-- <div id="uyan_frame"></div>
 <script type="text/javascript" src="https://v2.uyan.cc/code/uyan.js"></script> -->
 <!-- UY END -->
+</body>
 </html>
 
