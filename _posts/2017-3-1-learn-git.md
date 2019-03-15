@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 你会用git吗？
-leftImg:  /images/git1600.png
+categories: 工具类
 ---
 
 <style>

@@ -1,0 +1,24 @@
+<div class="fs_14" style="height: 50px;line-height:50px;border-top:1px solid #ddd"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 文章标签</div>
+<ul class="list-group fs_14" style="line-height: 1">
+    {% for tag in site.tags %}
+    <li class="list-group-item J_category_list">
+        <span class="badge">{{ tag | last | size }} </span>
+        {{ tag | first }}
+        <ul class="arc-list">
+                {% for post in tag.last %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+         </ul>
+         
+    </li>
+    {% endfor %}
+    <!-- {% for category in site.categories %}
+    <h2>{{ category | first }}</h2>
+    </span>{{ category | last | size }}</span>
+    <ul class="arc-list">
+        {% for post in category.last %}
+        <li>{{ post.date | date:"%d/%m/%Y"}}<a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endfor %} -->
+</ul>
