@@ -11,7 +11,7 @@
                 <a class="post-title-link">{{ post.title }}</a>
               </h1>
               <small class="mb_30">
-                <i class="glyphicon glyphicon-calendar"></i> 发表于 <span>{{ post.date | date:"%Y-%m-%d" }}</span>
+                <i class="glyphicon glyphicon-calendar"></i>发表于<span>{{ post.date | date:"%Y-%m-%d" }}{{ site.paginate_path | prepend: site.baseurl}}</span>
                 {% assign numC = post.categories | size %}
                 {% if numC >0 %}
                 <span> | 分类于:
@@ -55,7 +55,8 @@
           {% elsif page == 1 %}
             <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
           {% else %}
-            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+          {% assign num=page %}
+            <a href="{{ '/page:num' | prepend: site.baseurl | replace: '//', '/' |replace: ':num',page}}">{{ page }}</a>
           {% endif %}
         {% endfor %}
       

@@ -4,30 +4,30 @@ title: "coral blog"
 excerpt_separator: ''
 ---
 
-<div class="contentBox  white_bg col-xs-12 col-sm-10  col-md-9 " id="list-group" >
+<div class="contentBox  white_bg col-xs-12 col-sm-10  col-md-9 " id="list-group">
 
 
-        
 
-      
+
+
         <script>
-                        var getQuery = function GetQueryString(name) {
-                                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-                                var r = window.location.search.substr(1).match(reg);
-                                if (r != null) return decodeURI(r[2]); return "";
-                        }
-                        // console.log("getQuery", getQuery("category"))
-                        var dataStr = '{ {% for cat in site.tags %}{% if cat[0] != site.tags.first[0] %},{% endif %}"{{ cat[0] }}":[{% for post in cat[1] %}{% if post != cat[1].first %},{% endif %}{"url":"{{post.url}}", "title":"{{post.title}}", "date":"{{post.date | date:"%d/%m/%Y"}}"}{% endfor %}]{% endfor %} }',
-                                data = JSON.parse(dataStr),
-                                curTag = getQuery("tag"),
-                                archieves = data[curTag];
-                        //     $('.list-grosup ').html(archieves)
-                
-                        var html = '<div class="fs_14 cate-title" style="height: 50px;line-height:50px;border-top:1px solid #ddd"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>  '+curTag+'</div><ul class="list-group fs_14" style="line-height: 1">';
-                        archieves.forEach(function (ele) {
-                                html += '<li class="list-group-item"><a href='+ele.url+'>' + ele.title + '</a><sapn style="float:right">'+ele.date+'</soan></li>'
-                        });
-                        html+="</ul>"
-                        document.getElementById("list-group").innerHTML = html;
-                </script>
+                var getQuery = function GetQueryString(name) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                        var r = window.location.search.substr(1).match(reg);
+                        if (r != null) return decodeURI(r[2]); return "";
+                }
+                // console.log("getQuery", getQuery("category"))
+                var dataStr = '{ {% for cat in site.tags %}{% if cat[0] != site.tags.first[0] %},{% endif %}"{{ cat[0] }}":[{% for post in cat[1] %}{% if post != cat[1].first %},{% endif %}{"url":"{{post.url}}", "title":"{{post.title}}", "date":"{{post.date | date:"%d/%m/%Y"}}"}{% endfor %}]{% endfor %} }',
+                        data = JSON.parse(dataStr),
+                        curTag = getQuery("tag"),
+                        archieves = data[curTag];
+                //     $('.list-grosup ').html(archieves)
+
+                var html = '<div class="fs_14 cate-title" style="height: 50px;line-height:50px;border-top:1px solid #ddd"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>  ' + curTag + '</div><ul class="list-group fs_14" style="line-height: 1">';
+                archieves.forEach(function (ele) {
+                        html += '<li class="list-group-item"><a href=' + ele.url + '>' + ele.title + '</a><sapn style="float:right">' + ele.date + '</soan></li>'
+                });
+                html += "</ul>"
+                document.getElementById("list-group").innerHTML = html;
+        </script>
 </div>
