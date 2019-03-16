@@ -13,4 +13,5 @@ paginate_path: "page:num"
 gems: [jekyll-paginate]
 excerpt_separator:  ''
 permalink: /:year/:month/:day/:title
+baidu-analysis: b98a6fa9c8518c7579189c15807b5d2d
 
