@@ -1,7 +1,8 @@
 ---
 layout: post
 title: css兼容性处理总结
-leftImg:  /images/ie.png
+excerpt_separator:  '[^_^]:more'
+categories: css 
 ---
 
 <style>
@@ -9,17 +10,18 @@ leftImg:  /images/ie.png
     ::-moz-selection { background: #e2eae2; }
     ::-webkit-selection { background: #e2eae2; }
 </style>
-### 转ico
+#### 转ico
 ``` python
 http://www.bitbug.net/
 <link type="image/x-icon" href="../style/image/favcion.ico" rel="shortcut icon" />
 <link rel="fluid-icon" href="../style/image/favcion.png" title="meyoung">
 ```
-### 允许添加到主屏幕类似app运行，而不是浏览器中运行
+#### 允许添加到主屏幕类似app运行，而不是浏览器中运行
 ``` python
 <meta name="apple-mobile-web-app-capable" content="yes">
 ```
-### ie8及以下background-size:100% 100%;不起作用
+[^_^]:more
+#### ie8及以下background-size:100% 100%;不起作用
 浏览器兼容：
 IE 和遨游不支持；
 Firefox 添加私有属性 -moz-background-size 支持；
@@ -39,20 +41,20 @@ Opera 不支持 background-size 属性，添加其私有属性 -o-background-siz
   cover;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='file:///F:/test/images/flashbg.jpg',sizingMethod='scale');
 </pre>
 注意：路径须要一样，并且是绝对路径
-### ie6及以下版本不支持fixed;
+#### ie6及以下版本不支持fixed;
 在IE7以上的浏览器以及标准浏览器，都支持一个属性 position:fixed ，可以很简单地实现想要的效果，而且当窗口滚动时，该元素的滚动也会很平滑，但是在IE6及以下的版本浏览器下，并不支持该属性，所以只好使用position:absolute来代替实现，但新问题出现，你会发现，当滚动窗口时，该元素会出现抖动的现象，看起来就很不舒服，为了去掉这个抖动的BUG，为了实现平滑滚动，就有了以下这个css代码；
 ``` python
 *html{_background-image:url(about:blank);_background-attachment:fixed;}
 ```
-### 检测ie版本的利器
+#### 检测ie版本的利器
 http://caibaojian.com/detect-ie-version.html
-### 透明度
+#### 透明度
 ``` python
 filter:alpha(opacity=80); /* IE */
 -moz-opacity:0.8; /* Moz + FF */
 opacity: 0.8; /* 支持CSS3的浏览器（FF 1.5也支持）*/
 ```
-### flex
+#### flex
 ``` python
 display:flex
 display:-webkit-box;
@@ -64,24 +66,24 @@ flex:1
 -ms-flex:1
 相关的知识可以去看看阮一峰老师的文章
 ```
-### 兼容性代码可以去[http://caniuse.com](http://caniuse.com)看看
-### better-scroll
+#### 兼容性代码可以去[http://caniuse.com](http://caniuse.com)看看
+#### better-scroll
 滚动插件，有空去看看（iscroll没人维护了）
-### position
+#### position
 如果设置了position:absolute .fixed用于打底或者遮盖最好写上z-index
-### transition
+#### transition
 transition: all .5s
 -webkit-transition:all .5s
-### 动画库
+#### 动画库
 js动画库Velocity.js
 css动画库 animation.min.css
-### 毛玻璃透明效果(只有苹果手机可见效果)
+#### 毛玻璃透明效果(只有苹果手机可见效果)
 SS 3 的 filter 想必大家都知道，可以做色调变和模糊处理之类高大上的效果。不过，我今天要讲的是 backdrop-filter，它可以实现 filter 的绝大多数效果，但仅对背景生效。
 比如：
 background-color: rgba(255, 255, 255, 0.5);
 -webkit-backdrop-filter: blur(10px);
 这两行就能实现与 iOS 系统 UI 相同的毛玻璃透明效果
-### @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){}
+#### @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){}
 ``` python
 -webkit-min-device-pixel-ratio为1.0
 所有非Retina的Mac
@@ -120,32 +122,32 @@ js判断
 if (window.devicePixelRatio) {
     alert(window.devicePixelRatio)
 }
-### z.less库
+#### z.less库
 http://www.aibusy.com/zless/
 ```
-### 手机端分割线的颜色
+#### 手机端分割线的颜色
 ``` python
 1px solid rgba(90, 90, 90, 0.1)
 1px solid #eee
 1px solid #D9D9D9
 ```
-###三角形
+####三角形
 ``` python
 .triangle(left,@w:5px,@c:#ccc){
 border-width : @w;
 border-color:  transparent @c transparent transparent;
 border-style:  dashed solid dashed dashed;//解决ie6下面的黑色
 ```
-### flex
+#### flex
 注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
-### ie8以下不兼容placeholder
+#### ie8以下不兼容placeholder
 直接引入补丁文件就可以https://github.com/danbentley/placeholder
-### ie8以下不兼容h5新特性 和css3 新属性
+#### ie8以下不兼容h5新特性 和css3 新属性
 使用补丁文件
 html5shiv.min和respond.min（媒体查询文件，主义只有在服务器端才能生效）
-### layer弹出层的使用
+#### layer弹出层的使用
 注意下载官网的layer文件夹整个放在目录下 只需引入layer.js就可
-### input placeholder颜色
+#### input placeholder颜色
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
     color: #ddd; opacity:1;
 }
@@ -161,11 +163,11 @@ input:-ms-input-placeholder{
 input::-webkit-input-placeholder{
     color: #ddd;opacity:1;
 }
-### box-sizing
+#### box-sizing
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
-### input写法(pc端)
+#### input写法(pc端)
 <div class="layui-form-item">
     <label class="layui-form-label">输入框输入框输入框输入框输入框输入框</label>
     <div class="layui-input-block">
@@ -217,7 +219,7 @@ box-sizing: border-box;
            box-sizing: border-box;
    }
   </style>
-###  高仿google输入框提示
+####  高仿google输入框提示
 https://github.com/fengye12/autocomplete
 缺点：匹配汉字不行
 解决方案：manageData()注释掉（841行）
@@ -237,7 +239,7 @@ https://github.com/fengye12/autocomplete
       })
   </code>
 这个比之前找的都好，因为不会出现程序动态增加input时出现初始化困难。之前的插件使用的是id 选择器更不行
-### 两个数组去重的方法
+#### 两个数组去重的方法
 <pre>
   var arr1 = [1,2,3,4,5]; //数组A
 
@@ -279,7 +281,7 @@ https://github.com/fengye12/autocomplete
   从A跳转到B禁止在返回A
   window.location.replace("index.html?loginOut=true");//禁止浏览器后退
 </pre>
-### 模拟遮罩层
+#### 模拟遮罩层
 <pre>
   <!DOCTYPE html>
   <html lang="en">
@@ -362,7 +364,7 @@ https://github.com/fengye12/autocomplete
   </html>
 </pre>
 
-### 补充jquery 选择器
+#### 补充jquery 选择器
 <pre>
   1. 先说说通过位置选择的几个操作：
 :first：默认情况下是相对整个页面来说的第一个，如：li:first表示整个页面的第一个li元素，而ul li:first表示整个页面的第一个li元素，并且是在ul下的子元素；
@@ -420,7 +422,7 @@ E[A*=V]：匹配所有元素E，且A的属性值中包含有V；
 :checked：选择已选中的复选框或单选按钮；
 </pre>
 
-### 兼容各个浏览器的完美placeholder
+#### 兼容各个浏览器的完美placeholder
 <pre>
   <input type="text" value="Name *" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name *';}">
 </pre>

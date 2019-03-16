@@ -1,10 +1,12 @@
 ---
 layout: post
 title: gulp篇
-leftImg:  http://upload.ouliu.net/i/20180201150610foq10.png
+categories: 工具类
+tags: gulp
+excerpt_separator:  '[^_^]:more'
 ---
 
-### gulp命令
+#### gulp命令
 你仅仅需要知道的5个gulp命令
 
 gulp.task(name[, deps], fn) 定义任务  name：任务名称 deps：依赖任务名称 fn：回调函数
@@ -25,14 +27,15 @@ default 任务执行的话简单只要运行 gulp就可以
 gulp.task这个API用来创建任务，在命令行下可以输入$ gulp [default]，（中括号表示可选）来执行上面的任务。
 前段时间折腾Gulp，主要是搜寻一些插件，组合之以优化前端开发流程。这段折腾历程除了达成所愿外，给予最大的收获是：只要你想实现某功能，基本就已有对应插件供使用；
 <br>
+[^_^]:more
 比如，伊始觉得使用SublimeText的 SFTP 上传代码到FTP很方便（Ctrl+S），而用gulp就会竟也有对应插件 gulp-sftp :heart_eyes::blush:，这下打开了使用 Gulp 的任督二脉;你想让各个task按顺序执行，就有 gulp-sequence 供你搞起；你想使用熊猫压图，果不其然就有 gulp-tinypng ;你想让gulp命令能够接受传参，就有npm的 yargs 模块在等着你去宠幸,如此等等，实在太爽，根本停不下来。此文就使用各路插件路上的些许心得做下记载，以供参考。
 <br>
-### gulp-sequence Run a series of gulp tasks in order.
+#### gulp-sequence Run a series of gulp tasks in order.
 超级有用的类库；众所周知js是单线程的，运用此类库可以： 保证任务按顺序执行，让gulp任务，可以相互独立，解除任务间的依赖，增强task复用；对于复杂的操作非常有用；安装:
 <pre>
 npm install --save-dev gulp-sequence
 </pre>
-### gulp-sftp ：上传本地文件到FTP
+#### gulp-sftp ：上传本地文件到FTP
 个人觉得这个插件太好了。单纯采用传统模式开发，可用 xftp , WinScp 等工具上传到FTP；当然这个好麻烦；为求更方便可以使用SublimeText插件 SFTP ， Ctrl+S 之时就可以上传此文件到FTP；但，一旦用SASS，Gulp等工具，这事儿就得重新考量了。幸好有 gulp-sftp 这样的工具，可以一键上传本地文件到FTP；其gulpfile配置也很简单，并且折腾起来没遇到什么问题。
 <pre>
 var gulp        = require('gulp'),
@@ -71,7 +74,7 @@ gulp.task('upload', function () {
  }
 }
 </pre>
-### gulp.spritesmith 生成雪碧图
+#### gulp.spritesmith 生成雪碧图
 gulp.spritesmith：Convert a set of images into a spritesheet and CSS variables via gulp
 
 这个库需要额外依赖 spritesmith 库；
@@ -99,7 +102,7 @@ gulp.task('sprite', function(){
     .pipe( gulp.dest(outPut+'/images') );
 });
 </pre>
-### gulp-tinypng 使用熊猫压图
+#### gulp-tinypng 使用熊猫压图
 gulp-tinypng：gulp plugin to compress png images using tinypng api
 ``` python
 var gulp        = require('gulp'),
@@ -116,7 +119,7 @@ gulp.task('tinypng', function () {
 
 gulp-tinypng - Credentials are invalid
 
-### gulp-replace :A string replace plugin for gulp
+#### gulp-replace :A string replace plugin for gulp
 ``` python
 npm install --save-dev gulp-replace
 ```
@@ -129,7 +132,7 @@ gulp.task('templates', function(){
     .pipe(gulp.dest('build/file.txt'));
 });
 ```
-### gulp-tap :Easiest way to tap into a pipeline
+#### gulp-tap :Easiest way to tap into a pipeline
 看其描述“最简单打通管道的方法”，官方给出的示例如下：
 ``` python
 gulp.src("src/**/*.{coffee,js}")
@@ -155,7 +158,7 @@ return gulp.src('./examples/*.html')
     .pipe(gulp.dest('./build'));
 });
 ```
-### lazypipe :Use to create an immutable, lazily initialized pipeline from a series of streams.
+#### lazypipe :Use to create an immutable, lazily initialized pipeline from a series of streams.
 ``` python
 npm install --save-dev lazypipe
 ```
@@ -189,6 +192,6 @@ gulp.task('coffee', function() {
 ```
 你可以看到，多个任务中都在使用的 JavaScript 管道（JSHint + Uglify）分离到了一个工厂。工厂可以在任意多的任务中重用。你也可以嵌套这些工厂，或者把它们连接起来，已达到更好的效果。分离出每个共享的管道，也可以让你能够集中地管理，当你的工作流程更改后，你只需要修改一个地方即可。
 
-### 此外还有 yargs ， path ， gulp-changed 等等诸多模块，君之所需，可谓应有尽有—只要你愿意去折腾；实在没有自己写一个也并不是什么大难事。折腾，只为让事物变得更简洁。Not Fucking Excuse ,Just Do It。
+#### 此外还有 yargs ， path ， gulp-changed 等等诸多模块，君之所需，可谓应有尽有—只要你愿意去折腾；实在没有自己写一个也并不是什么大难事。折腾，只为让事物变得更简洁。Not Fucking Excuse ,Just Do It。
 
 [^footnote]:DRY是“Don’t Repeat Yourself”的缩写。意思是说，在一个设计里，对于任何东西，都应该有且只有一个表示，其它的地方都应该引用这一处。这样需要改动的时候，只需调整这一处，所有的地方就都变更过来了。

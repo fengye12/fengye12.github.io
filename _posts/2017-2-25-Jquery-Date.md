@@ -1,7 +1,8 @@
 ---
 layout: post
 title: jquery 日期Date
-leftImg:  http://upload.ouliu.net/i/201802011510051ev0a.jpeg
+excerpt_separator:  '[^_^]:more'
+categories: js
 ---
 
 ## 现在开始往后面推5天是什么时间？往后推5个月呢？
@@ -15,6 +16,7 @@ var CurrentDate=new Date();
 CurrentDate.setMonth(CurrentDate.getMonth()+5);
 alert(CurrentDate.getMonth()+1)
 </pre>
+[^_^]:more
 ##  Js计算时间差（天、小时、分钟、秒）
 <pre>
     var date1= '2015/05/01 00:00:00';  //开始时间
@@ -38,10 +40,10 @@ alert(CurrentDate.getMonth()+1)
     var seconds=Math.round(leave3/1000)
     alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
 </pre>
-### 日期插件
+#### 日期插件
 jeDate可以根据format的类型 显示不同的日历类型 样式也还可以
 
-### es5模板
+#### es5模板
 var data = {
     name: '新闻',
     news: {

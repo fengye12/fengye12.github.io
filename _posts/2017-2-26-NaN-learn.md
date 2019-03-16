@@ -1,7 +1,8 @@
 ---
 layout: post
 title: NaN类型说明
-leftImg:  /images/2before.png
+excerpt_separator:  '[^_^]:more'
+categories: js
 ---
 
 ## 描述
@@ -10,6 +11,7 @@ NaN 属性的初始值就是 NaN，和 Number.NaN 的值一样。在现代浏览
 在编码很少直接使用到 NaN。通常都是在计算失败时，作为 Math 的某个方法的返回值出现的（例如：Math.sqrt(-1)）或者尝试将一个字符串解析成数字但失败了的时候（例如：parseInt("blabla")）。
 ## 判断一个值是否是NaN
 等号运算符（== 和 ===） 不能被用来判断一个值是否是 NaN。必须使用 Number.isNaN() 或 isNaN() 函数。在执行自比较之中：NaN，也只有NaN，比较之中不等于它自己。
+[^_^]:more
 ```
 NaN === NaN;        // false
 Number.NaN === NaN; // false

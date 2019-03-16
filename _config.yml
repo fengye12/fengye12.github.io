@@ -12,5 +12,5 @@ paginate_path: "page:num"
 
 gems: [jekyll-paginate]
 excerpt_separator:  ''
-
+permalink: /:year/:month/:day/:title
 

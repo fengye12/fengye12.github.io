@@ -1,15 +1,16 @@
 ---
 layout: post
 title: 前端小插件
-date:      2017-2-28
-leftImg:  /images/2before.png
+excerpt_separator:  '[^_^]:more'
+categories: js
+tags: 插件
 ---
 
-### 代码改动比较的插件，直接在线使用就好
+#### 代码改动比较的插件，直接在线使用就好
 
 [https://www.diffchecker.com](https://www.diffchecker.com/ "diffchecker")
 <br>
-### 下拉刷新
+#### 下拉刷新
 
 第一步：
 {% highlight console %}
@@ -39,6 +40,7 @@ $.ajax({
             }
         });
 {% endhighlight %}
+[^_^]:more
 第二步：
 {% highlight ruby %}
 //下拉刷新
