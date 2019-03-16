@@ -5,9 +5,6 @@ leftImg:  /images/ie.png
 ---
 
 <style>
-    h3{
-        color: #ff5400;
-    }
     ::selection { background: #e2eae2; }
     ::-moz-selection { background: #e2eae2; }
     ::-webkit-selection { background: #e2eae2; }

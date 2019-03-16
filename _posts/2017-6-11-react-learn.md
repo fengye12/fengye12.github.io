@@ -2,14 +2,14 @@
 layout: post
 title:  React
 leftImg:  http://upload.ouliu.net/i/20180201145813ewdyf.png
+tags: react js
+categories: 框架
+excerpt_separator:  '[^_^]:more'
 ---
 
 <style>
     img{
         max-width: 100%;
-    }
-     h3{
-        color: #ff5400;
     }
     ::selection { background: #e2eae2; }
     ::-moz-selection { background: #e2eae2; }
@@ -18,7 +18,9 @@ leftImg:  http://upload.ouliu.net/i/20180201145813ewdyf.png
 
 ### react
 ### react生命周期
+[^_^]:more
 <img src="/images/react.png" alt="">
+
 <img src="/images/react2.png" alt="">
 ### jxs用法
 ### redux

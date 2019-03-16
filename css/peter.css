@@ -17,7 +17,7 @@ body {
 .swiper-container {
     width: 100%;
     text-align: center;
-    z-index: 1;
+    z-index: 0;
 }
 
 .swiper-slide .title {
@@ -43,7 +43,6 @@ body {
 
 .pagination {
     text-align: center;
-    padding-bottom: 40px;
     display: block;
 }
 
@@ -81,15 +80,11 @@ body {
 
 .typo {
     padding: 0;
-    position: absolute;
     top: 0;
-    width: 960px;
-    left: 50%;
-    min-height:100%;
-    transform: translateX(-50%);
-    margin-bottom: 60px;
-    z-index: 3;
-    overflow: hidden;
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+ 
 }
 
 .little-title p {
@@ -100,6 +95,11 @@ body {
 .swiper-container {
     position: fixed;
     top: 0;
+}
+.footer-inner {
+    margin:0 auto;
+    width: 980px;
+    text-align: center;
 }
 
 @-webkit-keyframes hue {
@@ -137,16 +137,12 @@ a {
     text-decoration: none;
 }
 
-pre {
-    margin-left: 3%;
-}
 
 .contentBox {
-    border-right: 15px solid transparent;
-    min-height: 100%;
     border-radius:5px;
     -webkit-border-radius:5px;
     min-height:100%;
+    margin-bottom: 30px;
     -moz-border-radius:5px;
     -ms-border-radius:5px;
     -o-border-radius:5px;
@@ -155,14 +151,17 @@ pre {
 .posts {
     padding-top: 20px;
 }
-
+.fixed_top{
+    position: fixed;
+    top:-20px;
+    right: 0;
+}
 .contentBox .posts li {
     position: relative;
     display: inline-block;
     width: 100%;
     border-bottom: 1px solid #ddd;
     padding: 15px;
-    margin-bottom: 25px;
 }
 
 .contentBox .post-content-preview {
@@ -247,7 +246,7 @@ pre {
 
 .user-box {
     width: 100%;
-    background: #333;
+    background: #777;
     border-radius: 4px;
     padding: 10px 10px 20px 10px;
     color: #fff;
@@ -377,8 +376,8 @@ h3,
   padding-bottom: 20px;
 }
 
-.mb_60 {
-    margin-bottom: 60px;
+.mb_30 {
+    margin-bottom: 30px;
 }
 
 .fs_12 {

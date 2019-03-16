@@ -28,9 +28,9 @@
    
     <canvas id="canv" width="100%" height="100%" style="position: fixed;top: 0;bottom: 0;"></canvas>
    
-<div id="wrapper" class="typo posts-expand pt_20">
+<div id="wrapper" class="wrapper clearfix typo posts-expand pt_20">
    
-    <div class="contentBox white_bg col-xs-12 col-sm-10  col-md-9  mt_20 pb_20">
+    <div class="contentBox white_bg col-xs-12 col-sm-10  col-md-9  pb_20">
         <div class="post-header pt_20">
             <h1 class="post-title pt_20">
               <a class="post-title-link">{{ page.title }}</a>
@@ -43,9 +43,35 @@
       </div>
   
       {% include user.html %}
-
+     
 </div>
+{% include footer.html %}
 <script>
+  $(window).scroll(function() {
+        var top1 = $('.J_nav_right').offset().top;
+        var left = $('.J_nav_right').offset().left;
+        var width = $('.J_nav_right').width();
+        var gun = $(document).scrollTop();
+        var top = top1-gun;
+        if (top <= 0) {
+          $('.nav_right_content').addClass('fixed_top');
+          $('.nav_right_content').css("left",left+'px');
+          $('.nav_right_content').css("width",width+'px');
+        }else{
+          $('.nav_right_content').removeClass('fixed_top');
+          $('.nav_right_content').css("left",0+'px');
+          $('.nav_right_content').css("width","100%");
+        }
+      }); 
+     
+  $('.J_category_list').on('click',function(){
+ var $that=$(this);
+ if($that.hasClass('show')){
+     $that.removeClass('show')
+ }else{
+     $that.addClass('show')
+ }
+})
     var num = 200;
     var w = window.innerWidth;
     var h = window.innerHeight;

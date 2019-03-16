@@ -10,8 +10,10 @@
               <h1 class="post-title">
                 <a class="post-title-link">{{ post.title }}</a>
               </h1>
-              <small class="mb_60">
-                <i class="glyphicon glyphicon-calendar"></i> 发表于 <span>{{ post.date | date:"%Y-%m-%d" }}</span> | <span>标签:{{ post.tag}}</span>
+              <small class="mb_30">
+                <i class="glyphicon glyphicon-calendar"></i> 发表于 <span>{{ post.date | date:"%Y-%m-%d" }}</span> | <span>标签:
+                  {{ post.tags}}
+                </span>
               </small>
             </div>
             <div class="post-content-preview">

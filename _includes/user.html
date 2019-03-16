@@ -1,17 +1,14 @@
 
 <div class="hidden-xs col-sm-2  col-md-3">
 
-        <div class="clock" style="text-align:center;">
-          <canvas id="clock" width="120px" height="120px" style="margin:20px auto"></canvas>
-        </div>
        
        
-        <div class="user-box">
-          <h2>coral</h2>
-          <div>专注于前端知识分享，微信公众号：前后端技术分享屋</div>
-        </div>
-        {% include nav.html %}
+       
+        
         <div class="white_bg" style="border-radius: 4px;padding: 10px;">
+          <div class="clock" style="text-align:center;">
+            <canvas id="clock" width="120px" height="120px" style="margin:20px auto"></canvas>
+          </div>
             <ul class="post_key_stat fs_14 mb_20">
                 <li>文章{{site.posts.size}}</li><span class="grayText"> | </span>
                 <li>标签{{site.tags.size}}</li><span class="grayText"> | </span>
@@ -20,7 +17,16 @@
               {% include search.html %}
               {% include cateList.html %}
         </div>
-        
-        {% include contact.html %}
+        <div class="J_nav_right"></div>
+       <div class="nav_right_content" >
+          <div class="user-box mt_20">
+              <h2>coral</h2>
+              <div>专注于前端知识分享，微信公众号：前后端技术分享屋</div>
+            </div>
+            {% include nav.html %}
+            {% include contact.html %}
+       </div>
+       
       </div>
+     
       <script src="/js/lock.js"></script>

@@ -8,9 +8,6 @@ categories: 工具类
     img{
         max-width: 100%;
     }
-    h3{
-        color: #ff5400;
-    }
 </style>
 ### 关于教程
 
