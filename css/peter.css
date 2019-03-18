@@ -156,7 +156,7 @@ a {
     top:-20px;
     right: 0;
 }
-.contentBox .posts li {
+.contentBox .posts li.post-type-normal {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -265,15 +265,6 @@ a {
     text-align: center;
 }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 .posts-expand .post-title-link {
     display: inline-block;

@@ -22,7 +22,10 @@
                 {% endif %}
             </small>
           </div>
-        {{ content }}
+          <article class="markdown-body">
+            {{ content | markdownify}}
+          </article>
+        
       </div>
   
       {% include user.html %}

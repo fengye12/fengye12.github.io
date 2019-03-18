@@ -7,29 +7,31 @@ excerpt_separator:  '[^_^]:more'
 ---
 
 #### gulp命令
-你仅仅需要知道的5个gulp命令
 
-gulp.task(name[, deps], fn) 定义任务  name：任务名称 deps：依赖任务名称 fn：回调函数
+> **你仅仅需要知道的5个gulp命令**
 
-gulp.run(tasks...)：尽可能多的并行运行多个task
+- `gulp.task(name[, deps], fn) `定义任务  name：任务名称 deps：依赖任务名称 fn：回调函数
 
-gulp.watch(glob, fn)：当glob内容发生改变时，执行fn
+- `gulp.run(tasks...)`：尽可能多的并行运行多个task
 
-gulp.src(glob)：置需要处理的文件的路径，可以是多个文件以数组的形式，也可以是正则
++ `gulp.watch(glob, fn)`：当glob内容发生改变时，执行fn
 
-gulp.dest(path[, options])：设置生成文件的路径
++ `gulp.src(glob)`：置需要处理的文件的路径，可以是多个文件以数组的形式，也可以是正则
+
++ `gulp.dest(path[, options])`：设置生成文件的路径
 glob：可以是一个直接的文件路径。他的含义是模式匹配。
 gulp将要处理的文件通过管道（pipe()）API导向相关插件。通过插件执行文件的处理任务。
 
-gulp.task('default', function () {...});
++ `gulp.task('default', function () {...});`
 default 任务执行的话简单只要运行 gulp就可以
 
-gulp.task这个API用来创建任务，在命令行下可以输入$ gulp [default]，（中括号表示可选）来执行上面的任务。
-前段时间折腾Gulp，主要是搜寻一些插件，组合之以优化前端开发流程。这段折腾历程除了达成所愿外，给予最大的收获是：只要你想实现某功能，基本就已有对应插件供使用；
-<br>
++ `gulp.task`这个API用来创建任务，在命令行下可以输入`$ gulp [default]`，（中括号表示可选）来执行上面的任务。
+前段时间折腾Gulp，主要是搜寻一些插件，组合之以优化前端开发流程。这段折腾历程除了达成所愿外，给予最大的收获是：只要你想实现某功能，基本就已有对应插件供使用；    
+
+比如，一开始觉得使用SublimeText的 SFTP 上传代码到FTP很方便（Ctrl+S），而用gulp就会竟也有对应插件 gulp-sftp :heart_eyes::blush:，这下打开了使用 Gulp 的任督二脉;你想让各个task按顺序执行，就有 gulp-sequence 供你搞起；你想使用熊猫压图，果不其然就有 gulp-tinypng ;你想让gulp命令能够接受传参，就有npm的 yargs 模块在等着你去宠幸,如此等等，实在太爽，根本停不下来。此文就使用各路插件路上的些许心得做下记载，以供参考。  
+
 [^_^]:more
-比如，伊始觉得使用SublimeText的 SFTP 上传代码到FTP很方便（Ctrl+S），而用gulp就会竟也有对应插件 gulp-sftp :heart_eyes::blush:，这下打开了使用 Gulp 的任督二脉;你想让各个task按顺序执行，就有 gulp-sequence 供你搞起；你想使用熊猫压图，果不其然就有 gulp-tinypng ;你想让gulp命令能够接受传参，就有npm的 yargs 模块在等着你去宠幸,如此等等，实在太爽，根本停不下来。此文就使用各路插件路上的些许心得做下记载，以供参考。
-<br>
+
 #### gulp-sequence Run a series of gulp tasks in order.
 超级有用的类库；众所周知js是单线程的，运用此类库可以： 保证任务按顺序执行，让gulp任务，可以相互独立，解除任务间的依赖，增强task复用；对于复杂的操作非常有用；安装:
 <pre>

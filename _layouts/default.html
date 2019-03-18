@@ -23,9 +23,12 @@
     </div>
     <div class="swip_pagination"></div>
   </div>
+ 
   <div id="wrapper" class="clearfix typo posts-expand">
-    
-    {{ content }}
+
+          {{ content }}
+   
+  
     {% include user.html %}
   </div>
   {% include footer.html %}
@@ -54,7 +57,7 @@
         var width = $('.J_nav_right').width();
         var gun = $(document).scrollTop();
         var top = top1-gun;
-        console.log(gun)
+        // console.log(gun)
         if (top <= 0) {
           $('.nav_right_content').addClass('fixed_top');
           $('.nav_right_content').css("left",left+'px');

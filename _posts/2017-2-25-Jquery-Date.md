@@ -7,11 +7,11 @@ categories: js
 
 ## 现在开始往后面推5天是什么时间？往后推5个月呢？
 <pre>
-五天后：<br>
+五天后：  
 var CurrentDate=new Date();
 CurrentDate.setDate(CurrentDate.getDate()+5);
 <br>
-五个月后：<br>
+五个月后：  
 var CurrentDate=new Date();
 CurrentDate.setMonth(CurrentDate.getMonth()+5);
 alert(CurrentDate.getMonth()+1)

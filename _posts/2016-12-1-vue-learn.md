@@ -11,29 +11,29 @@ tags: vue
     }
 </style>
 ####  简单介绍
-vueJS是一种轻量级的MVVM框架，它同时吸收了react和angular的优点，强调了react组件化的概念，可以轻松的实现数据和展现的分离。也吸收了angular灵活的指令和页面操作的一些方法。
-实现双向数据绑定，目前主要有三种方式：脏检查、观察机制、封装属性访问器
-脏检查：框架将所有需要监控的属性放在一个序列中，当发生特定事件时，遍历整个序列，对被监控的属性做对比，如果发生变化，则调用相应的处理函数。
-观察机制：通过 Object.observe() 「已废弃」方法对对象进行监控，一旦其发生变化，将会执行相应的handler。
-封装属性访问器：使用 Object.defineProperty 将对象的属性转换为 getter/setter ，当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。
-vue易用、高效、灵活
-高效：
-文件很小16kb min+gzip的运行大小
-超快虚拟DOM
-灵活---渐进式
+vueJS是一种轻量级的MVVM框架，它同时吸收了react和angular的优点，强调了react组件化的概念，可以轻松的实现数据和展现的分离。也吸收了angular灵活的指令和页面操作的一些方法。  
+实现双向数据绑定，目前主要有三种方式：脏检查、观察机制、封装属性访问器  
+脏检查：框架将所有需要监控的属性放在一个序列中，当发生特定事件时，遍历整个序列，对被监控的属性做对比，如果发生变化，则调用相应的处理函数。  
+观察机制：通过 Object.observe() 「已废弃」方法对对象进行监控，一旦其发生变化，将会执行相应的handler。  
+封装属性访问器：使用 Object.defineProperty 将对象的属性转换为 getter/setter ，当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。  
+vue易用、高效、灵活、高效：  
+文件很小16kb min+gzip的运行大小  
+超快虚拟DOM  
+灵活---渐进式  
 [^_^]:more
-<img src="/images/vue-1.png" alt="" />
+<img src="/images/vue-1.png" alt="" />  
+
 解决很多问题 行驶ajax的功能,可以实现与后台的交互用到vue -resourse
-做单页面的时候要用到vue-router插件
-项目组够复杂我们就用v-x
-最后用bulid工具来构建系统
-从简单到复杂用什么安装什么
+做单页面的时候要用到vue-router插件  
+项目组够复杂我们就用v-x  
+最后用bulid工具来构建系统  
+从简单到复杂用什么安装什么  
 #### vue.js的一个组件
 .vue文件其实就是一个vue.js的组件，相当于HTML + javascript + css
 #### 安装
-命令行工具
-解决npm国内网络慢的问题。http://npm.taobao.org/  以后使用要用cnpm代替npm就ok
-接下来就可以用：$ cnpm install --global vue-cli
+命令行工具  
+解决npm国内网络慢的问题。http://npm.taobao.org/  以后使用要用cnpm代替npm就ok  
+接下来就可以用：$ cnpm install --global vue-cli  
 <pre>
 # 全局安装 vue-cli
 $ cnpm install --global vue-cli

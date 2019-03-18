@@ -1,8 +1,7 @@
 
-  
+
 <div class="contentBox white_bg col-xs-12 col-sm-10  col-md-9 ">
         <!-- <h2 style="border-bottom: 1px solid #ddd; padding-bottom:8px;">文章列表</h2> -->
-     
         <ul class="posts">
           {% for post in paginator.posts %}
           <li class="clearfix post-type-normal">
@@ -11,7 +10,7 @@
                 <a class="post-title-link">{{ post.title }}</a>
               </h1>
               <small class="mb_30">
-                <i class="glyphicon glyphicon-calendar"></i>发表于<span>{{ post.date | date:"%Y-%m-%d" }}{{ site.paginate_path | prepend: site.baseurl}}</span>
+                <i class="glyphicon glyphicon-calendar"></i>发表于<span>{{ post.date | date:"%Y-%m-%d" }} </span>
                 {% assign numC = post.categories | size %}
                 {% if numC >0 %}
                 <span> | 分类于:
@@ -29,7 +28,9 @@
                 {% else %}
                  {{ post.content | markdownify | truncate: 400 }}
                 {% endif %} -->
+                 <article class="markdown-body">
                 {{ post.excerpt | markdownify }}
+                </article>
               <!-- {{ post.excerpt | markdownify | truncate: 400 }} -->
               <!-- {{post.excerpt | strip_html}} -->
             </div>
