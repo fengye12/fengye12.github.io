@@ -16,7 +16,9 @@ var CurrentDate=new Date();
 CurrentDate.setMonth(CurrentDate.getMonth()+5);
 alert(CurrentDate.getMonth()+1)
 </pre>
+
 [^_^]:more
+
 ##  Js计算时间差（天、小时、分钟、秒）
 <pre>
     var date1= '2015/05/01 00:00:00';  //开始时间
@@ -44,6 +46,7 @@ alert(CurrentDate.getMonth()+1)
 jeDate可以根据format的类型 显示不同的日历类型 样式也还可以
 
 #### es5模板
+```
 var data = {
     name: '新闻',
     news: {
@@ -61,4 +64,5 @@ var html = (
 '</div>').replace('${name}', data.name)
     .replace('${newsName}', data.news.name)
     .replace('${newsContent}', data.news.content);
+```
 
