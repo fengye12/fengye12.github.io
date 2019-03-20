@@ -51,7 +51,7 @@
 .orange-slide,
 .red-slide,
 .blue-slide {
-    background: #333;
+    background: url('https://img.alicdn.com/imgextra/i3/1641711921/O1CN01qk7pju1Q3rLk3TKzU_!!1641711921.jpg') center center;
 }
 
 .swiper-slide {
@@ -405,4 +405,21 @@ a {
 .navbar a{
     color:#555
 
+}
+.nav-mobile{
+    position: fixed;
+    top:0;
+    width:100%;
+    padding-left: 15px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .075);
+}
+.nav-mobile li{
+    float:left;
+}
+.nav-mobile li a{
+    margin-right: 15px;
+    padding-top: 10px;
+    color:#555;
+    display: inline-block;
 }

@@ -25,11 +25,15 @@
   </div>
  
   <div id="wrapper" class="clearfix typo posts-expand">
-
-          {{ content }}
-   
-  
+    {{ content }}
     {% include user.html %}
+    <div class="hidden-md hidden-sm hidden-lg nav-mobile">
+        <!-- <nav class="static-top"> -->
+            <!-- <div class="container"> -->
+                {% include navMobile.html %}  
+            <!-- </div> -->
+          <!-- </nav> -->
+    </div>
   </div>
   {% include footer.html %}
 
