@@ -957,6 +957,9 @@
   padding-left: 128px!important;
 }
 
+.markdown-body ul, .markdown-body li{
+  list-style:disc;
+}
 @media (max-width: 768px) {
   .markdown-body {
       font-size: 14px;
