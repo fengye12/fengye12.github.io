@@ -11,7 +11,23 @@ paginate_path: "page:num"
 # Gems
 
 gems: [jekyll-paginate]
+
+# 摘要
 excerpt_separator:  ''
+
+# 文章链接方式
 permalink: /:year/:month/:day/:title
+
+# 百度统计
 baidu-analysis: b98a6fa9c8518c7579189c15807b5d2d
+
+
+# // 添加这个就行,上面的只是为了你能方便找到地方
+gitalk:
+    enable: true
+    owner: fengye12
+    repo: fengye12.github.io
+    clientID: 301a40ac96a9a6e9873b
+    clientSecret: dfe964b0b4ad9f0cf98c2262bc13fad99f7c0139
+    admin: fengye12
 

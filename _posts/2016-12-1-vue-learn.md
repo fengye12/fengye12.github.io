@@ -5,11 +5,7 @@ excerpt_separator:  '[^_^]:more'
 categories: 框架
 tags: vue
 ---
-<style>
-    img{
-        max-width: 100%;
-    }
-</style>
+
 ####  简单介绍
 vueJS是一种轻量级的MVVM框架，它同时吸收了react和angular的优点，强调了react组件化的概念，可以轻松的实现数据和展现的分离。也吸收了angular灵活的指令和页面操作的一些方法。  
 实现双向数据绑定，目前主要有三种方式：脏检查、观察机制、封装属性访问器  
@@ -93,7 +89,7 @@ vue所有的数据都是放在data里面的
 子组件向父组件传递信息（参数）
 <pre>
     vm.$on('test', function (msg) {
-      console.log(msg)
+      display: inline-block;.log(msg)
     })
     vm.$emit('test', 'hi')
     // -> "hi"  $emit触发当前实例上的事件。附加参数( hi )都会传给监听器回调。

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     {% include header.html %}
-
+<!--//添加评论系统-->
+<link rel="stylesheet" href="/css/gittalk.css">
+<script src="/js/gittalk.js"></script>
 <body>
 
 <!-- <script src="/js/bootstrap.js"></script> -->
@@ -18,17 +20,40 @@
               <i class="glyphicon glyphicon-calendar"></i> 发表于 <span>{{ page.date | date:"%Y-%m-%d" }}</span>
               {% assign numC = page.tags | size %}
               {% if numC >0 %}
-              | 标签: <a href="/preTagList.html?tag={{page.tags}}" style="color:#999">{{ page.tags }} </a>
+              | 标签: <a href="/preTagList.html?tag={{page.tags}}" style="color:#555;text-decoration: underline;">{{ page.tags }} </a>
                 {% endif %}
             </small>
           </div>
           <article class="markdown-body">
             {{ content | markdownify}}
           </article>
+
+          {% if site.disqus_username %}
+          <!-- disqus 评论框 start -->
+          <div class="comment">
+              <div id="disqus_thread" class="disqus-thread"></div>
+          </div>
+          <!-- disqus 评论框 end -->
+          {% endif %}
+    
+          {% if site.netease_comment %}
+          <!-- 网易云跟帖 评论框 start -->
+          <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+          <!-- 网易云跟帖 评论框 end -->
+          {% endif %}
+          
+          <!--   gitalk       -->
+          {% if site.gitalk %}
+          <div class="comment">
+              {% include comments.html %}
+          </div>
+          {% endif %}
         
       </div>
   
       {% include user.html %}
+      
+
      
 </div>
 {% include footer.html %}
