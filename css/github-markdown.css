@@ -58,6 +58,7 @@
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
+  padding:10px;
 }
 
 .markdown-body .pl-c {
@@ -954,4 +955,12 @@
 
 .markdown-body .pl-12 {
   padding-left: 128px!important;
+}
+
+@media (max-width: 768px) {
+  .markdown-body {
+      font-size: 14px;
+      padding: 5px;
+  }
+ 
 }

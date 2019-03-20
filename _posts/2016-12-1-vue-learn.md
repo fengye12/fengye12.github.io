@@ -16,7 +16,9 @@ vue易用、高效、灵活、高效：
 文件很小16kb min+gzip的运行大小  
 超快虚拟DOM  
 灵活---渐进式  
+
 [^_^]:more
+
 <img src="/images/vue-1.png" alt="" />  
 
 解决很多问题 行驶ajax的功能,可以实现与后台的交互用到vue -resourse

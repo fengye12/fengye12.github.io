@@ -20,7 +20,7 @@
               <i class="glyphicon glyphicon-calendar"></i> 发表于 <span>{{ page.date | date:"%Y-%m-%d" }}</span>
               {% assign numC = page.tags | size %}
               {% if numC >0 %}
-              | 标签: <a href="/preTagList.html?tag={{page.tags}}" style="color:#555;text-decoration: underline;">{{ page.tags }} </a>
+               |  <i class="glyphicon glyphicon-tag"></i>  标签: <a href="/preTagList.html?tag={{page.tags}}" style="color:#555;text-decoration: underline;">{{ page.tags }} </a>
                 {% endif %}
             </small>
           </div>

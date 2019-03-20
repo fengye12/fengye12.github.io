@@ -10,12 +10,12 @@
                 <a class="post-title-link">{{ post.title }}</a>
               </h1>
               <small class="mb_30">
-                <i class="glyphicon glyphicon-calendar"></i>发表于<span>{{ post.date | date:"%Y-%m-%d" }} </span>
+                <i class="glyphicon glyphicon-calendar"></i> 发表于<span>{{ post.date | date:"%Y-%m-%d" }} </span>
                 {% assign numC = post.categories | size %}
                 {% if numC >0 %}
-                <span> | 分类于:
+                 | <span class="glyphicon glyphicon-folder-close"></span> 分类于:
                   <a href="/preCateList.html?category={{ post.categories}}" style="color:#555;text-decoration: underline;">{{ post.categories}}</a>
-                </span>
+                
                 {% endif %}
                 <!-- {% if post.tags %}
                 <span> | 标签:{{ post.tags}} </span>
@@ -34,7 +34,7 @@
               <!-- {{ post.excerpt | markdownify | truncate: 400 }} -->
               <!-- {{post.excerpt | strip_html}} -->
             </div>
-            <div class="post-button text-center mt_20">
+            <div class="post-button text-center mt_20 mb_20">
               <a class="btn" href="{{ post.url }}" rel="contents">
                 阅读全文 »
               </a>
