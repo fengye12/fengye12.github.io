@@ -2,9 +2,12 @@
 
 <div id="gitalk-container">
  </div>
+
 <script>
+    // var id=post.date;
+    console.log(location.pathname)
     var gitalk = new Gitalk({
-        id: '2018-11-01 05:32:24 +0000',
+        id: '{{ page.date }}',
         clientID: '301a40ac96a9a6e9873b',
         clientSecret: 'dfe964b0b4ad9f0cf98c2262bc13fad99f7c0139',
         repo: 'fengye12.github.io',

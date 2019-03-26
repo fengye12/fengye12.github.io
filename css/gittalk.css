@@ -529,7 +529,7 @@
   
   .markdown-body ul,
   .markdown-body ol {
-    padding-left: 2em;
+    padding-left: 0.5em;
   }
   
   .markdown-body ul ul,
@@ -642,7 +642,7 @@
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
+    background-color: #333;
     border-radius: 3px;
   }
   

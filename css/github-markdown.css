@@ -607,7 +607,7 @@
 
 .markdown-body ol,
 .markdown-body ul {
-  padding-left: 2em;
+  padding-left: 0.5em;
 }
 
 .markdown-body ol ol,
@@ -719,7 +719,7 @@
 
 .markdown-body .highlight pre,
 .markdown-body pre {
-  background-color: #f6f8fa;
+  background-color: #333;
   border-radius: 3px;
   font-size: 85%;
   line-height: 1.45;
@@ -957,8 +957,13 @@
   padding-left: 128px!important;
 }
 
-.markdown-body ul, .markdown-body li{
+.markdown-body ul li{
   list-style:disc;
+  list-style-position: inside
+}
+.markdown-body ol li{
+  list-style-type: decimal;
+  list-style-position: inside
 }
 @media (max-width: 768px) {
   .markdown-body {
