@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  service worker
-tags: service worker
+tags: serviceWorker
 categories: js
 excerpt_separator:  '[^_^]:more'
 ---
@@ -18,6 +18,8 @@ excerpt_separator:  '[^_^]:more'
 4. 消息推送
 5.  … …   
 
+[^_^]:more
+
 > 注意事项
 
 1. service worker运行在它们自己的完全独立异步的全局上下文中，也就是说它们有自己的容器。
@@ -25,8 +27,6 @@ excerpt_separator:  '[^_^]:more'
 3. service worker是一个可编程的网络代理，允许开发者控制页面上处理的网络请求。
 4. 浏览器可能随时回收service worker，在不被使用的时候，它会自己终止，而当它再次被用到的时候，会被重新激活。
 5. 安全考虑，只能在https下使用，当然localhost除外
-
-[^_^]:more
 
 > Service Worker生命周期
 

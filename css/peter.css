@@ -239,6 +239,7 @@ a {
     border-bottom: none;
     text-decoration: none;
     line-height: 1.2;
+    cursor: pointer;
     vertical-align: top;
 }
 
