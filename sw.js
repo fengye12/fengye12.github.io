@@ -59,28 +59,32 @@ self.addEventListener('activate', function (event) {
 // 拦截fetch 第一次加载不会拦截，因为sw还没有激活
 self.addEventListener('fetch', function (evt) {
   console.log("fetch");
-  evt.respondWith(
-    caches.match(evt.request).then(function (response) {
-      if (response) {
-        return response;
-      }
-      // 请求是一个流，只能使用一次，为了再次使用这里需要克隆
-      var request = evt.request.clone();
-      return fetch(request).then(function (response) {
-        // 请求结果不是200，不缓存
-        if (!response || !response.status == 200) {
+  var requestUrl = new URL(event.request.url);
+  if (requestUrl.origin === location.origin) {
+    evt.respondWith(
+      caches.match(evt.request).then(function (response) {
+        if (response) {
           return response;
         }
-        // 缓存图片等其他get请求
-        var responseClone = response.clone();
-        caches.open(CACHE_NAME).then(function (cache) {
-          console.log("image cached")
-          cache.put(evt.request, responseClone);
+        // 请求是一个流，只能使用一次，为了再次使用这里需要克隆
+        var request = evt.request.clone();
+        return fetch(request).then(function (response) {
+          console.log(response.headers.get('Content-type'))
+          // 请求结果不是200且静态资源，不缓存
+          if (!response || !response.status == 200  || !response.headers.get('Content-type').match(/image|javascript|json|test\/css/i)) {
+            return response;
+          }
+          // 缓存图片等其他get请求
+          var responseClone = response.clone();
+          caches.open(CACHE_NAME).then(function (cache) {
+            console.log("image cached")
+            cache.put(evt.request, responseClone);
+          });
+          return response;
         });
-        return response;
-      });
-    })
-  )
+      })
+    )
+  }
 }, function (err) {
   console.log("fetch err", err)
 });

@@ -1,89 +1,98 @@
 <!DOCTYPE html>
 <html>
-    {% include header.html %}
+{% include header.html %}
 <!--//添加评论系统-->
 <link rel="stylesheet" href="/css/gittalk.css">
 <script src="/js/gittalk.js"></script>
+
 <body>
 
-<!-- <script src="/js/bootstrap.js"></script> -->
-<canvas id="canv" width="100%" height="100%" style="position: fixed;top: 0;bottom: 0;"></canvas>
-   
-<div id="wrapper" class="wrapper clearfix typo posts-expand pt_20">
-   
+  <!-- <script src="/js/bootstrap.js"></script> -->
+  <canvas id="canv" width="100%" height="100%" style="position: fixed;top: 0;bottom: 0;"></canvas>
+
+  <div id="wrapper" class="wrapper clearfix typo posts-expand pt_20">
+
     <div class="contentBox white_bg col-xs-12 col-sm-10  col-md-9  pb_20">
-        <div class="post-header pt_20 mb_40">
-            <h1 class="post-title pt_20">
-              <a class="post-title-link">{{ page.title }}</a>
-            </h1>
-            <small class="mb_60">
-              <i class="glyphicon glyphicon-calendar"></i> 发表于 <span>{{ page.date | date:"%Y-%m-%d" }}</span>
-              {% assign numC = page.tags | size %}
-              {% if numC >0 %}
-               |  <i class="glyphicon glyphicon-tag"></i>  标签: <a href="/preTagList.html?tag={{page.tags}}" style="color:#555;text-decoration: underline;">{{ page.tags }} </a>
-                {% endif %}
-            </small>
-          </div>
-          <article class="markdown-body">
-            {{ content | markdownify}}
-          </article>
-
-          <!-- {% if site.disqus_username %} -->
-          <!-- disqus 评论框 start -->
-          <!-- <div class="comment"> -->
-              <!-- <div id="disqus_thread" class="disqus-thread"></div> -->
-          <!-- </div> -->
-          <!-- disqus 评论框 end -->
-          <!-- {% endif %} -->
-    
-          <!-- {% if site.netease_comment %} -->
-          <!-- 网易云跟帖 评论框 start -->
-          <!-- <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div> -->
-          <!-- 网易云跟帖 评论框 end -->
-          <!-- {% endif %} -->
-          
-          <!--   gitalk       -->
-          {% if site.gitalk %}
-          <div class="comment">
-              {% include comments.html %}
-          </div>
+      <div class="post-header pt_20 mb_40">
+        <h1 class="post-title pt_20">
+          <a class="post-title-link">{{ page.title }}</a>
+        </h1>
+        <small class="mb_60">
+          <i class="glyphicon glyphicon-calendar"></i> 发表于 <span>{{ page.date | date:"%Y-%m-%d" }}</span>
+          {% assign numC = page.tags | size %}
+          {% if numC >0 %}
+          | <i class="glyphicon glyphicon-tag"></i> 标签: <a href="/preTagList.html?tag={{page.tags}}"
+            style="color:#555;text-decoration: underline;">{{ page.tags }} </a>
           {% endif %}
-        
+        </small>
       </div>
-  
-      {% include user.html %}
-      
+      <article class="markdown-body">
+        {{ content | markdownify}}
+      </article>
 
-     
-</div>
-{% include footer.html %}
+      <!-- {% if site.disqus_username %} -->
+      <!-- disqus 评论框 start -->
+      <!-- <div class="comment"> -->
+      <!-- <div id="disqus_thread" class="disqus-thread"></div> -->
+      <!-- </div> -->
+      <!-- disqus 评论框 end -->
+      <!-- {% endif %} -->
 
-<script>
-  $(window).scroll(function() {
-        var top1 = $('.J_nav_right').offset().top;
-        var left = $('.J_nav_right').offset().left;
-        var width = $('.J_nav_right').width();
-        var gun = $(document).scrollTop();
-        var top = top1-gun;
-        if (top <= 0) {
-          $('.nav_right_content').addClass('fixed_top');
-          $('.nav_right_content').css("left",left+'px');
-          $('.nav_right_content').css("width",width+'px');
-        }else{
-          $('.nav_right_content').removeClass('fixed_top');
-          $('.nav_right_content').css("left",0+'px');
-          $('.nav_right_content').css("width","100%");
-        }
-      }); 
-     
-  $('.J_category_list').on('click',function(){
- var $that=$(this);
- if($that.hasClass('show')){
-     $that.removeClass('show')
- }else{
-     $that.addClass('show')
- }
-})
+      <!-- {% if site.netease_comment %} -->
+      <!-- 网易云跟帖 评论框 start -->
+      <!-- <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div> -->
+      <!-- 网易云跟帖 评论框 end -->
+      <!-- {% endif %} -->
+
+      <!--   gitalk       -->
+      {% if site.gitalk %}
+      <div class="comment">
+        {% include comments.html %}
+      </div>
+      {% endif %}
+
+    </div>
+
+    {% include user.html %}
+
+  </div>
+  {% include footer.html %}
+
+  <script>
+    $(window).scroll(function () {
+      var top1 = $('.J_nav_right').offset().top;
+      var left = $('.J_nav_right').offset().left;
+      var width = $('.J_nav_right').width();
+      var gun = $(document).scrollTop();
+      var top = top1 - gun;
+      if (top <= 0) {
+        $('.nav_right_content').addClass('fixed_top');
+        $('.nav_right_content').css("left", left + 'px');
+        $('.nav_right_content').css("width", width + 'px');
+      } else {
+        $('.nav_right_content').removeClass('fixed_top');
+        $('.nav_right_content').css("left", 0 + 'px');
+        $('.nav_right_content').css("width", "100%");
+      }
+    });
+
+    $('.J_category_list').on('click', function () {
+      var $that = $(this);
+      if ($that.hasClass('show')) {
+        $that.removeClass('show')
+      } else {
+        $that.addClass('show')
+      }
+    })
+    function IsPC() {
+      var userAgentInfo = navigator.userAgent;
+      var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+      var flag = true;
+      for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+      }
+      return flag;
+    }
     var num = 200;
     var w = window.innerWidth;
     var h = window.innerHeight;
@@ -91,14 +100,14 @@
     var _x = 0;
     var _y = 0;
     var _z = 150;
-    var dtr = function(d) {
+    var dtr = function (d) {
       return d * Math.PI / 180;
     };
 
-    var rnd = function() {
+    var rnd = function () {
       return Math.sin(Math.floor(Math.random() * 360) * Math.PI / 180);
     };
-    var dist = function(p1, p2, p3) {
+    var dist = function (p1, p2, p3) {
       return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2) + Math.pow(p2.z - p1.z, 2));
     };
 
@@ -130,7 +139,7 @@
         y: h / 2,
         z: 0
       },
-      upd: function() {
+      upd: function () {
         cam.dist.x = cam.dest.x - cam.obj.x;
         cam.dist.y = cam.dest.y - cam.obj.y;
         cam.dist.z = cam.dest.z - cam.obj.z;
@@ -143,7 +152,7 @@
 
     var trans = {
       parts: {
-        sz: function(p, sz) {
+        sz: function (p, sz) {
           return {
             x: p.x * sz.x,
             y: p.y * sz.y,
@@ -151,21 +160,21 @@
           };
         },
         rot: {
-          x: function(p, rot) {
+          x: function (p, rot) {
             return {
               x: p.x,
               y: p.y * Math.cos(dtr(rot.x)) - p.z * Math.sin(dtr(rot.x)),
               z: p.y * Math.sin(dtr(rot.x)) + p.z * Math.cos(dtr(rot.x))
             };
           },
-          y: function(p, rot) {
+          y: function (p, rot) {
             return {
               x: p.x * Math.cos(dtr(rot.y)) + p.z * Math.sin(dtr(rot.y)),
               y: p.y,
               z: -p.x * Math.sin(dtr(rot.y)) + p.z * Math.cos(dtr(rot.y))
             };
           },
-          z: function(p, rot) {
+          z: function (p, rot) {
             return {
               x: p.x * Math.cos(dtr(rot.z)) - p.y * Math.sin(dtr(rot.z)),
               y: p.x * Math.sin(dtr(rot.z)) + p.y * Math.cos(dtr(rot.z)),
@@ -173,7 +182,7 @@
             };
           }
         },
-        pos: function(p, pos) {
+        pos: function (p, pos) {
           return {
             x: p.x + pos.x,
             y: p.y + pos.y,
@@ -182,21 +191,21 @@
         }
       },
       pov: {
-        plane: function(p) {
+        plane: function (p) {
           return {
             x: p.x * cam.ang.cplane + p.z * cam.ang.splane,
             y: p.y,
             z: p.x * -cam.ang.splane + p.z * cam.ang.cplane
           };
         },
-        theta: function(p) {
+        theta: function (p) {
           return {
             x: p.x,
             y: p.y * cam.ang.ctheta - p.z * cam.ang.stheta,
             z: p.y * cam.ang.stheta + p.z * cam.ang.ctheta
           };
         },
-        set: function(p) {
+        set: function (p) {
           return {
             x: p.x - cam.obj.x,
             y: p.y - cam.obj.y,
@@ -204,7 +213,7 @@
           };
         }
       },
-      persp: function(p) {
+      persp: function (p) {
         return {
           x: p.x * cam.dist.z / p.z * cam.zoom,
           y: p.y * cam.dist.z / p.z * cam.zoom,
@@ -212,7 +221,7 @@
           p: cam.dist.z / p.z
         };
       },
-      disp: function(p, disp) {
+      disp: function (p, disp) {
         return {
           x: p.x + disp.x,
           y: -p.y + disp.y,
@@ -220,7 +229,7 @@
           p: p.p
         };
       },
-      steps: function(_obj_, sz, rot, pos, disp) {
+      steps: function (_obj_, sz, rot, pos, disp) {
         var _args = trans.parts.sz(_obj_, sz);
         _args = trans.parts.rot.x(_args, rot);
         _args = trans.parts.rot.y(_args, rot);
@@ -235,9 +244,9 @@
       }
     };
 
-    (function() {
+    (function () {
       "use strict";
-      var threeD = function(param) {
+      var threeD = function (param) {
         this.transIn = {};
         this.transOut = {};
         this.transIn.vtx = (param.vtx);
@@ -246,7 +255,7 @@
         this.transIn.pos = (param.pos);
       };
 
-      threeD.prototype.vupd = function() {
+      threeD.prototype.vupd = function () {
         this.transOut = trans.steps(
 
           this.transIn.vtx,
@@ -257,7 +266,7 @@
         );
       };
 
-      var Build = function() {
+      var Build = function () {
         this.vel = 0.04;
         this.lim = 360;
         this.diff = 200;
@@ -267,7 +276,7 @@
         this.go();
       };
 
-      Build.prototype.go = function() {
+      Build.prototype.go = function () {
         this.canvas = document.getElementById("canv");
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
@@ -293,7 +302,7 @@
         };
       };
 
-      Build.prototype.add = function() {
+      Build.prototype.add = function () {
         this.varr.push(new threeD({
           vtx: {
             x: rnd(),
@@ -323,12 +332,12 @@
         });
       };
 
-      Build.prototype.upd = function() {
+      Build.prototype.upd = function () {
         cam.obj.x += (this.toX - cam.obj.x) * 0.05;
         cam.obj.y += (this.toY - cam.obj.y) * 0.05;
       };
 
-      Build.prototype.draw = function() {
+      Build.prototype.draw = function () {
         this.$.clearRect(0, 0, this.canvas.width, this.canvas.height);
         cam.upd();
         this.rotObj.x += 0.1;
@@ -364,14 +373,14 @@
           this.$.closePath();
         }
       };
-      Build.prototype.anim = function() {
-        window.requestAnimationFrame = (function() {
+      Build.prototype.anim = function () {
+        window.requestAnimationFrame = (function () {
           return window.requestAnimationFrame ||
-            function(callback, element) {
+            function (callback, element) {
               window.setTimeout(callback, 1000 / 60);
             };
         })();
-        var anim = function() {
+        var anim = function () {
           this.upd();
           this.draw();
           window.requestAnimationFrame(anim);
@@ -379,39 +388,42 @@
         window.requestAnimationFrame(anim);
       };
 
-      Build.prototype.run = function() {
+      Build.prototype.run = function () {
         this.anim();
 
-        window.addEventListener('mousemove', function(e) {
+        window.addEventListener('mousemove', function (e) {
           this.toX = (e.clientX - this.canvas.width / 2) * -0.8;
           this.toY = (e.clientY - this.canvas.height / 2) * 0.8;
         }.bind(this));
-        window.addEventListener('touchmove', function(e) {
+        window.addEventListener('touchmove', function (e) {
           e.preventDefault();
           this.toX = (e.touches[0].clientX - this.canvas.width / 2) * -0.8;
           this.toY = (e.touches[0].clientY - this.canvas.height / 2) * 0.8;
         }.bind(this));
-        window.addEventListener('mousedown', function(e) {
+        window.addEventListener('mousedown', function (e) {
           for (var i = 0; i < 100; i++) {
             this.add();
           }
         }.bind(this));
-        window.addEventListener('touchstart', function(e) {
+        window.addEventListener('touchstart', function (e) {
           e.preventDefault();
           for (var i = 0; i < 100; i++) {
             this.add();
           }
         }.bind(this));
       };
-      var app = new Build();
-      app.run();
+      if(IsPC()){
+        var app = new Build();
+        app.run();
+      }
+     
     })();
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       canv.width = w = window.innerWidth;
       canv.height = h = window.innerHeight;
     }, false);
-    </script>
-<!-- <div id="wrapperBox">
+  </script>
+  <!-- <div id="wrapperBox">
 <div class="typo">
 <div class="row">
   <div class="content">
@@ -420,10 +432,10 @@
   </div>
 </div>
 </div> -->
-<!-- UY BEGIN -->
-<!-- <div id="uyan_frame"></div>
+  <!-- UY BEGIN -->
+  <!-- <div id="uyan_frame"></div>
 <script type="text/javascript" src="https://v2.uyan.cc/code/uyan.js"></script> -->
-<!-- UY END -->
+  <!-- UY END -->
 </body>
-</html>
 
+</html>
