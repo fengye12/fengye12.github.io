@@ -6,11 +6,28 @@ categories: js
 excerpt_separator:  '[^_^]:more'
 ---
 
+
+在各种网站上经常能看到PWA（渐进式web应用）的概念，每次都是大致的过一遍，基本概念是知道的，具体是怎么实现的还没看过，最近正好有时间去研究。
+
+### PWA为什么值得关注？
+移动web的优势（SEO，即时性 ，可查找能力，可链接 ，低阻力）为它带来了很多流量，但是它的缺点平均加载时间也会导致损失很多的用户，并且移动网站无法进行推送通知。
+而以上问题的解决方案就是渐进式Web App（PWA）
+
+### 什么是PWA？
+PWA结合了最好的Web应用和最好的原生应用的用户体验。  
+实现pwa技术点：
+- Service Workers 开启服务线程，拦截网络请求
+- Cache 用于离线缓存
+- manifest.json web 应用清单，添加程序到主屏幕
+- Push Notification 推送通知
+
+[^_^]:more
+
 ### service worker
 
 是一段脚本，与web worker一样，也是在后台运行。作为一个独立的线程，运行环境与普通脚本不同，所以不能直接参与web交互行为。native app可以做到离线使用、消息推送、后台自动更新，service worker的出现是正是为了使得web app也可以具有类似的能力。  
 
-> service worker可以
+#### service worker可以
 
 1. 后台消息传递 
 2. 网络代理，转发请求，伪造响应
@@ -18,9 +35,9 @@ excerpt_separator:  '[^_^]:more'
 4. 消息推送
 5.  … …   
 
-[^_^]:more
 
-> 注意事项
+
+#### 注意事项
 
 1. service worker运行在它们自己的完全独立异步的全局上下文中，也就是说它们有自己的容器。
 2. service worker没有直接操作DOM的权限，但是可以通过postMessage方法来与Web页面通信，让页面操作DOM。
@@ -28,7 +45,7 @@ excerpt_separator:  '[^_^]:more'
 4. 浏览器可能随时回收service worker，在不被使用的时候，它会自己终止，而当它再次被用到的时候，会被重新激活。
 5. 安全考虑，只能在https下使用，当然localhost除外
 
-> Service Worker生命周期
+#### Service Worker生命周期
 
 
 service worker拥有一个完全独立于Web页面的生命周期  
@@ -40,14 +57,14 @@ service worker拥有一个完全独立于Web页面的生命周期
 3. 激活后，在sw的作用域下作用所有的页面，首次控制sw不会生效，下次加载页面才会生效。
 4. sw作用页面后，处理fetch（网络请求）和message（页面消息）事件 或者 被终止（节省内存）。
 
-> Service Worker支持使用
+#### Service Worker支持使用
 
 [service worker support](https://jakearchibald.github.io/isserviceworkerready/)  
 
 polyfill
 使用ServiceWorker cache polyfill让旧版本浏览器支持 ServiceWorker cache API，
 
-> 调试
+#### 调试
 
 在调试的时候可以用于unregister、stop、start等操作
 
@@ -55,11 +72,11 @@ polyfill
 
 ![调试](https://img.alicdn.com/imgextra/i2/1641711921/O1CN016pbLnY1Q3rLrFNwGc_!!1641711921.png)
 
-> 离线存储数据
+#### 离线存储数据
 
 对URL寻址资源，使用[Cache API](https://davidwalsh.name/cache)。对其他数据，使用IndexedDB。
 
-> 离线缓存例子（效果）
+#### 离线缓存例子（效果）
 
 想直接看效果的[这里是demo地址](https://github.com/fengye12/service-worker)
 
@@ -72,7 +89,7 @@ polyfill
 
 刷新页面成功后控制台出现`installed And cached`说明页面缓存成功了。
 
-再次刷新提示`image cached`说明图片资源缓存成功了
+再次刷新提示`image cached`说明图片等其他get请求资源缓存成功了
 
 控制台查看状态  
 `application->service workers`插件创建的service。  `application->Cache Storage`查看缓存情况
@@ -87,9 +104,9 @@ polyfill
 
 刷新页面或者从其他页面返回，`页面依然存在`
 
-> 离线缓存例子（原理）
+#### 离线缓存例子（原理）
 
-#### 1.注册 service worker  
+##### 1.注册 service worker  
 创建一个 JavaScript 文件（比如：sw.js）作为 service worker  
 告诉浏览器注册这个JavaScript文件为service worker，检查service worker API是否可用，如果可用就注册service worker  
 
@@ -106,7 +123,7 @@ sw.js文件被放在这个域的根目录下，和网站同源。这个service w
 
 如果将service worker文件注册为/example_service/sw.js，那么，service worker只能收到/example_service/路径下的fetch事件。 
 
-#### 2.sw.js文件内实现缓存文件  
+##### 2.sw.js文件内实现缓存文件  
 
 定义需要缓存的文件，然后在sw注册安装后使用cache Api将资源文件写入缓存。如果所有的文件都被缓存成功了，那么service worker就安装成功了。如果任何一个文件下载失败，那么安装步骤就会失败。
 
@@ -139,7 +156,7 @@ self.addEventListener('install', function(event) {
 });
 ```
 
-#### 3.fetch拦截请求
+##### 3.fetch拦截请求
 
 上面只是缓存成功了，我们真正要取缓存中的文件是通过拦截fetch实现的。
 
@@ -153,10 +170,11 @@ self.addEventListener('fetch', function (evt) {
       }
       var request = evt.request.clone();
       return fetch(request).then(function (response) {
-        if (response && response.status == 200 && !response.headers.get('Content-type').match(/image/)) {
+        // 不成功的请求不缓存
+        if (!response || response.status != 200) {
           return response;
         }
-        // 缓存图片
+        // 缓存图片等其他get请求
         var responseClone = response.clone();
         caches.open(CACHE_NAME).then(function (cache) {
           console.log("image cached")
@@ -171,16 +189,16 @@ self.addEventListener('fetch', function (evt) {
 
 通过监听fetch事件，service worker可以返回自己的响应。  
 
-首先检缓存中是否已经缓存了这个请求，如果有，就直接返回响应，就减少了一次网络请求。否则由service workder发起请求，这时的service workder起到了一个中间代理的作用。
+首先检查缓存中是否已经缓存了这个请求，如果有，就直接返回响应，就减少了一次网络请求。否则由service workder发起请求，这时的service workder起到了一个中间代理的作用。
 
-service worker请求的过程通过fetch api完成，得到response对象以后进行过滤，查看是否是图片文件，如果不是，就直接返回请求，不会缓存。
+service worker请求的过程通过fetch api完成，得到response对象以后进行过滤，如果请求结果不是200，就直接返回请求，不会缓存。
 
 
-如果是图片，要先复制一份response，原因是request或者response对象属于stream，只能使用一次，之后一份存入缓存，另一份发送给页面。
+如果是正常返回的请求，要先复制一份response，原因是request或者response对象属于stream，只能使用一次，之后一份存入缓存，另一份发送给页面。
 这就是service worker的强大之处：拦截请求，伪造响应。fetch api在这里也起到了很大的作用。
 
 
-#### 4.缓存版本管理
+##### 4.缓存版本管理
 
 版本修改的时候会触发activate，将旧版本的缓存清理掉。
 
@@ -206,12 +224,12 @@ self.addEventListener('activate', function (event) {
 
 
 
-### Service Worker 库
+#### Service Worker 库
 - [offline-plugin](https://github.com/NekR/offline-plugin)  
 - [sw-toolbox](https://github.com/GoogleChromeLabs/sw-toolbox)  
 - [sw-precache](https://github.com/GoogleChromeLabs/sw-precache) 
 
-### 参考资料
+#### 参考资料
 
 - [渐进式 Web App 的离线存储](https://segmentfault.com/a/1190000006640450)
 - [service worker初体验](http://www.alloyteam.com/2016/01/9274/)

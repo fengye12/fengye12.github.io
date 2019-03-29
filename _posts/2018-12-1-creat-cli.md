@@ -12,10 +12,9 @@ CLI，全称是command-line interface，也就是命令行交互接口。无论�
 
 ```
 vue init webpack [project-name]
-
-
-在执行这段代码之后，系统会自动下载模板包，随后会询问我们一些问题，比如模板名称，作者，是否需要使用eslint，使用npm或者yarn进行构建等等，当所有问题我们回答之后，就开始生成脚手架项目。
 ```
+在执行这段代码之后，系统会自动下载模板包，随后会询问我们一些问题，比如模板名称，作者，是否需要使用eslint，使用npm或者yarn进行构建等等，当所有问题我们回答之后，就开始生成脚手架项目。
+
 
 
 ### 为什么要开发一个 CLI
@@ -32,7 +31,7 @@ vue init webpack [project-name]
 - inquirer(常用交互式命令行用户界面的集合)
 - ora(主要用来实现node.js命令行环境的loading效果，和显示各种状态的图标等)
 
-新建一个文件夹，名称起做 demo-cli，并在文件夹内 npm init -f。
+新建一个文件夹，名称起做 demo-cli，并在文件夹内 `npm init -f`。
 在 demo-cli 文件夹内，新建 bin 文件夹，并在该文件夹内新建 index.js 文件。紧接着，打开 demo-cli 文件夹内的 package.json 文件，在里面新增如下命令。
 
 
@@ -43,63 +42,54 @@ vue init webpack [project-name]
         "demo": "./bin/index.js"
     }
 }
-
 ```
 
 这句代码的意思是指，在你使用 demo 命令的时候，会去执行 bin 文件夹下的 index.js 文件。
 
-```
-bin 目录本身并没有什么特殊的含义, 不过由于一些约定俗成的原因, 我们一般都将可执行文件放到 bin 目录中.
 
-除了 bin 目录用于存放可执行文件外, 我们还使用 lib 用于存放库文件, include 用于存放头文件, 这些也仅仅是一些约定而已, 为了方便管理, 也并不是说必须要这么做.
-```
+>bin 目录本身并没有什么特殊的含义, 不过由于一些约定俗成的原因, 我们一般都将可执行文件放到 bin 目录中.
+>除了 bin 目录用于存放可执行文件外, 我们还使用 lib 用于存放库文件, include 用于存放头文件, 这些也仅仅是一些约定而已, 为了方便管理, 也并不是说必须要这么做.
+
 
 这时候，我们在 index.js 文件，写入以下代码。
 
 ```
 #!/usr/bin/env node
-
 console.log('hello CLI');
 ```
 
 在 demo-cli 目录下依次运行 npm link、demo，这个时候，你会发现控制台输出了 hello CLI。
 
 
-```
-备注：
+>备注：
 
-#!/usr/bin/env node 告诉操作系统用 Node 来运行此文件
-npm link 作用主要是，在开发 npm 模块的时候，我们会希望边开发边调试。这个时候，npm link 就派上用场了。
+> #!/usr/bin/env node 告诉操作系统用 Node 来运行此文件
+> npm link 作用主要是，在开发 npm 模块的时候，我们会希望边开发边调试。这个时候，npm link 就派上用场了。
 
-npm link命令可以将一个任意位置的npm包链接到全局执行环境，从而在任意位置使用命令行都可以直接运行该npm包
+> npm link命令可以将一个任意位置的npm包链接到全局执行环境，从而在任意位置使用命令行都可以直接运行该npm包
 
-简要地讲，这个命令主要做了两件事：
+> 简要地讲，这个命令主要做了两件事：
 
-- 为npm包目录创建软链接
-- 为可执行文件(bin)创建软链接
-```
+> 为npm包目录创建软链接
+> 为可执行文件(bin)创建软链接
 
 
-# 逐步深入
+### 逐步深入
 1.在 index.js 文件内，写入以下代码。
 
 ```
 #!/usr/bin/env node
-
 const program = require('commander');
-
 program
     .version('1.0.0', '-v, --version')
     .command('init <dir>', 'generate a new project')
     .parse(process.argv);
-
-
 ```
-commander 提供了一种使用 node.js 来开发命令行的可能性。我们可以通过 commander 的 option 方法，来定义 commander 的选项，当然，这些定义的选项也会被作为该命令的帮助文档。
+`commander` 提供了一种使用 node.js 来开发命令行的可能性。我们可以通过 commander 的 option 方法，来定义 commander 的选项，当然，这些定义的选项也会被作为该命令的帮助文档。
 
-- version：用来定义版本号。commander 默认帮我们添加 -V, --version 选项。当然，我们也可以重设它。
-- command：<> 代表必填，[] 代表选填。当 .command() 带有描述参数时，不能采用 .action(callback) 来处理子命令，否则会出错。这告诉 commander，你将采用单独的可执行文件作为子命令
-- parse：解析 process.argv，解析完成后的数据会存放到 new Command().args 数组中。process.argv 里面存储内容如下：
+- `version`：用来定义版本号。commander 默认帮我们添加 -V, --version 选项。当然，我们也可以重设它。
+- `command`：<> 代表必填，[] 代表选填。当 .command() 带有描述参数时，不能采用 .action(callback) 来处理子命令，否则会出错。这告诉 commander，你将采用单独的可执行文件作为子命令
+- `parse`：解析 process.argv，解析完成后的数据会存放到 new Command().args 数组中。process.argv 里面存储内容如下：
 
 2.在 bin 文件下创建 demo-init.js 文件，部分代码如下：
 
@@ -209,33 +199,25 @@ function updateTemplateFile(params){
         spinner.succeed('创建完毕');
     });
 }
-
 ```
-- inquirer 主要提供交互式命令的功能。validate 返回 true 代表输入值验证合法，如果返回任意字符串，则会替代默认的错误消息返回。
+- `inquirer` 主要提供交互式命令的功能。validate 返回 true 代表输入值验证合法，如果返回任意字符串，则会替代默认的错误消息返回。
 - 通过 Node 中 fs 模块来判断文件夹是否已存在
-
-
-
-```
-path.resolve 方法用于将相对路径转为绝对路径。它可以接受多个参数，依次表示所要进入的路径，直到将最后一个参数转为绝对路径。如果根据参数无法得到绝对路径，就以当前所在路径作为基准。除了根目录，该方法的返回值都不带尾部的斜杠。
-```
+- `path.resolve` 方法用于将相对路径转为绝对路径。它可以接受多个参数，依次表示所要进入的路径，直到将最后一个参数转为绝对路径。如果根据参数无法得到绝对路径，就以当前所在路径作为基准。除了根目录，该方法的返回值都不带尾部的斜杠。
 
 ### 开发完成，上传npm
 
-npm publish .
+`npm publish`
 
 
 ### 全局安装
 
 ```
 cnpm i -g xxxx
-
 ```
 
 ```
 找个文件夹执行
 xxxx init 项目文件夹名称
-
 ```
 
 
@@ -253,7 +235,6 @@ program
     .version('1.0.0', '-v, --version')
     .command('init <dir>', 'generate a new project')
     .parse(process.argv);
-
 ```
 
 

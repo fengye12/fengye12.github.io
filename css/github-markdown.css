@@ -965,10 +965,16 @@
   list-style-type: decimal;
   list-style-position: inside
 }
+.markdown-body blockquote{
+  font-size: 16px;
+}
 @media (max-width: 768px) {
   .markdown-body {
       font-size: 14px;
       padding: 5px;
+  }
+  .markdown-body blockquote{
+    font-size: 14px;
   }
  
 }
