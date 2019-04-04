@@ -405,6 +405,7 @@ a {
 }
 .nav-mobile li{
     float:left;
+    margin-right: 4px;
 }
 .nav-mobile li a{
     margin-right: 15px;
@@ -415,13 +416,32 @@ a {
 .rss_box{
     padding:5px 0;
     margin-top: 10px;
-    border-top: 1px solid #f6f6f6;
-    border-bottom: 1px solid #f6f6f6;
+    border-top: 1px solid #ddd;
+    /* border-bottom: 1px solid #f6f6f6; */
     text-align: center;
 }
+
 .rss_box .rss-img{
     width: 15px;
     height: 15px;
+}
+.contact_list{
+    text-align: center;
+}
+.contact_list li{
+    display: inline-block;
+    position: relative;
+}
+.code-img{
+    display: none;
+    position: absolute;
+    top:-80px;
+    left:0;
+    width: 64px;
+    height: 64px;
+}
+.contact_list li:hover .code-img{
+    display: inline-block;
 }
 @media (max-width: 768px) {
     .typo {
