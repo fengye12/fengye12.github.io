@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<rss version="2.0"> 
+<channel> 
+  <title>CORAL个人博客一个web前端工程师分享技术与生活的原创个人网站</title> 
+  <link>https://fengye12.github.io</link> 
+  <description>CORAL个人博客是一个分享在工作中总结的技术经验、提供技术相关教程和前后端工程师常用软件、插件素材以及展示博主在SEO、生活创作和社会时事方面原创文章的网站，也是一个记录旅行生活和展示个人作品的具有个人特色的网站。</description> 
+  <item> 
+    <title>文章很多，不定期更新，直接关注就可以</title> 
+    <link>https://fengye12.github.io</link> 
+    <description>欢迎评论，共同进步</description> 
+  </item> 
+</channel> 
+</rss> 

@@ -412,6 +412,17 @@ a {
     color:#888;
     display: inline-block;
 }
+.rss_box{
+    padding:5px 0;
+    margin-top: 10px;
+    border-top: 1px solid #f6f6f6;
+    border-bottom: 1px solid #f6f6f6;
+    text-align: center;
+}
+.rss_box .rss-img{
+    width: 15px;
+    height: 15px;
+}
 @media (max-width: 768px) {
     .typo {
         width: 100%;
