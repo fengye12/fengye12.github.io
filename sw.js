@@ -59,7 +59,7 @@ self.addEventListener('activate', function (event) {
 // 拦截fetch 第一次加载不会拦截，因为sw还没有激活
 self.addEventListener('fetch', function (evt) {
   console.log("fetch");
-  var requestUrl = new URL(event.request.url);
+  var requestUrl = new URL(evt.request.url);
   if (requestUrl.origin === location.origin) {
     evt.respondWith(
       caches.match(evt.request).then(function (response) {

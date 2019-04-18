@@ -417,17 +417,13 @@ a {
     padding:5px 0;
     margin-top: 10px;
     border-top: 1px solid #ddd;
-    /* border-bottom: 1px solid #f6f6f6; */
-    text-align: center;
 }
 
 .rss_box .rss-img{
     width: 15px;
     height: 15px;
 }
-.contact_list{
-    text-align: center;
-}
+
 .contact_list li{
     display: inline-block;
     position: relative;
@@ -435,10 +431,10 @@ a {
 .code-img{
     display: none;
     position: absolute;
-    top:-80px;
+    top:-120px;
     left:0;
-    width: 64px;
-    height: 64px;
+    width: 120px;
+    height: 120px;
 }
 .contact_list li:hover .code-img{
     display: inline-block;
