@@ -71,7 +71,7 @@ self.addEventListener('fetch', function (evt) {
         return fetch(request).then(function (response) {
           console.log(response.headers.get('Content-type'))
           // 请求结果不是200且静态资源，不缓存
-          if (!response || !response.status == 200  || !response.headers.get('Content-type').match(/image|javascript|json|test\/css/i)) {
+          if (!response || !response.status == 200 || !response.headers.get('Content-type').match(/image|javascript|json|test\/css/i)) {
             return response;
           }
           // 缓存图片等其他get请求

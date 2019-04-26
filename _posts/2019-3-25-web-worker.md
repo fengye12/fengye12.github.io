@@ -47,9 +47,9 @@ excerpt_separator:  '[^_^]:more'
 
 `shared worker`可以在多个js上下文中使用。通常使用的worker是dedicated worker，它的工作情况可以通过chrome的调试工具查看。    
 
-> 一般作为web应用程序、浏览器和网络（如果可用）之前的代理服务器。它们旨在（除开其他方面）创建有效的离线体验，拦截网络请求，以及根据网络是否可用采取合适的行动并更新驻留在服务器上的资源。他们还将允许访问推送通知和后台同步API。  
+`ServiceWorkers ` 一般作为web应用程序、浏览器和网络（如果可用）之前的代理服务器。它们旨在（除开其他方面）创建有效的离线体验，拦截网络请求，以及根据网络是否可用采取合适的行动并更新驻留在服务器上的资源。他们还将允许访问推送通知和后台同步API。  
 
-`Chrome Workers` 是一种仅适用于firefox的worker。如果您正在开发附加组件，希望在扩展程序中使用worker且有在你的worker中访问  js-ctypes 的权限，你可以使用Chrome Workers。详情请参阅ChromeWorker。  
+`Chrome Workers` 是一种仅适用于firefox的worker。如果您正在开发附加组件，希望在扩展程序中使用worker且有在你的worker中访问  js-ctypes 的权限，你可以使用Chrome Workers。详情请参阅[ChromeWorker](https://developer.mozilla.org/en-US/docs/Mozilla/Gecko/Chrome/API/ChromeWorker)。  
 
 `Audio Workers` （音频worker）使得在web worker上下文中直接完成脚本化音频处理成为可能。
 

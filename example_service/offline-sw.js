@@ -63,19 +63,6 @@ window.addEventListener('beforeinstallprompt', function (e) {
   return false;
 });
 
-// let isTooSoon = true;
-// window.addEventListener("beforeinstallprompt", function (e) {
-//   savedPrompt = e;
-//   if (isTooSoon) {
-//     e.preventDefault(); // Prevents prompt display
-//     // Prompt later instead:
-//     setTimeout(function () {
-//       isTooSoon = false;
-//       e.prompt(); // Throws if called more than once or default not prevented
-//     }, 10000);
-//   }
-// });
-
 $('body').on('click', '#btn', function () {
   if (savedPrompt) {
     // 异步触发横幅显示，弹出选择框，代替浏览器默认动作
