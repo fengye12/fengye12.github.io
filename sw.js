@@ -2,6 +2,8 @@ var CACHE_NAME = 'main_v1.0.0';
 
 // Assesto catche
 var assetsToCache = [
+  "/index.html",
+  "/",
   '/css/bootstrap.css',
   '/css/idangerous.swiper.css',
   '/css/github-markdown.css',
