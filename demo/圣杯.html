@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            min-width: 600px;
+        }
+
+        header,
+        footer {
+            text-align: center;
+            width: 100%;
+            background-color: #bbbbbb;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+        }
+
+        .bd {
+            overflow: hidden;
+            padding: 0 200px 0 200px;
+        }
+
+        .main {
+            float: left;
+            width: 100%;
+            background-color: #ddd;
+
+             /* 解决两边的高度跟中间一样 */
+             padding-bottom: 100000px;
+            margin-bottom: -100000px;
+        }
+
+        .left {
+            /* opacity: 0.5; */
+            float: left;
+            width: 200px;
+            background-color: #da4242;
+            /* 产生布局效果的属性 */
+            margin-left: -100%;/*相对于父元素的宽度*/
+            position: relative;
+            left: -200px;/*解决两边留白*/
+            /* 解决两边的高度跟中间一样 */
+            padding-bottom: 100000px;
+            margin-bottom: -100000px;
+        }
+
+        .right {
+            /* opacity: 0.5; */
+            float: left;
+            width: 200px;
+            background-color: #4ddef1;
+            /* 产生布局效果的属性 */
+            margin-left: -200px;
+            position: relative;
+            left: 200px;
+
+             /* 解决两边的高度跟中间一样 */
+             padding-bottom: 100000px;
+            margin-bottom: -100000px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>圣杯布局</header>
+    <div class="bd">
+        <div class="main text">
+            main
+            main
+            <br>
+            main
+        </div>
+        <div class="left text">
+            left
+        </div>
+        <div class="right text">
+            right
+        </div>
+    </div>
+    <footer>footer</footer>
+</body>
+
+</html>
